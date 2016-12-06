@@ -1,4 +1,5 @@
 import { Component, Directive, ElementRef, Renderer, ChangeDetectionStrategy, ViewEncapsulation } from '@angular/core';
+import {TranslateService} from "ng2-translate";
 
 //
 /////////////////////////
@@ -47,6 +48,7 @@ export class XLargeDirective {
       <div>
         <span xLarge>Universal JavaScript {{ title }}!</span>
       </div>
+      <div class="translates">{{'form_status_completed' | translate:param}}</div>
 
       Two-way binding: <input type="text" [value]="title" (input)="title = $event.target.value">
 
@@ -63,4 +65,8 @@ export class XLargeDirective {
 })
 export class AppComponent {
   title = 'ftw';
+  constructor(translate: TranslateService) {
+    translate.setDefaultLang('en');
+    translate.use('en');
+  }
 }

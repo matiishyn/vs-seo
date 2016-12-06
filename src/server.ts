@@ -2,6 +2,7 @@
 // The only modules to be imported higher - node modules with es6-promise 3.x or other Promise polyfill dependency
 // (rule of thumb: do it if you have zone.js exception that it has been overwritten)
 // if you are including modules that modify Promise, such as NewRelic,, you must include them before polyfills
+const proxy = require('express-http-proxy');
 import 'angular2-universal-polyfills';
 import 'ts-helpers';
 import './__workaround.node'; // temporary until 2.1.1 things are patched in Core
@@ -67,7 +68,11 @@ app.use(cacheControl, express.static(path.join(ROOT, 'dist/client'), {index: fal
 import { serverApi, createTodoApi } from './backend/api';
 // Our API for demos only
 app.get('/data.json', serverApi);
-app.use('/api', createTodoApi());
+app.use('/api', proxy('http://localhost:7777', {
+  forwardPath: function(req, res) {
+    return `/api${require('url').parse(req.url).path}`;
+  }
+}));
 
 function ngApp(req, res) {
   res.render('index', {
