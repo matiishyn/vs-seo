@@ -7,7 +7,7 @@ import { TodoRoutingModule } from './todo-routing.module';
 @NgModule({
   imports: [
     SharedModule,
-    TodoRoutingModule
+    // TodoRoutingModule
   ],
   declarations: [
     TodoComponent

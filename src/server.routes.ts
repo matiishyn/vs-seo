@@ -9,10 +9,4 @@
  * 'home', 'about'
  * ];
  **/
-export const routes: string[] = [
-  // 'about',
-  // 'home',
-  // 'todo',
-  // 'lazy',
-  'en', 'es', 'pt'
-];
+export const routes: string[] = ['en', 'es', 'pt'];

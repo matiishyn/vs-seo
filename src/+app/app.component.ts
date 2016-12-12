@@ -1,24 +1,4 @@
-import { Component, Directive, ElementRef, Renderer, ChangeDetectionStrategy, ViewEncapsulation } from '@angular/core';
-import {TranslateService} from "ng2-translate";
-import {ActivatedRoute} from "@angular/router";
-
-//
-/////////////////////////
-// ** Example Directive
-// Notice we don't touch the Element directly
-
-@Directive({
-  selector: '[xLarge]'
-})
-export class XLargeDirective {
-  constructor(element: ElementRef, renderer: Renderer) {
-    // ** IMPORTANT **
-    // we must interact with the dom through -Renderer-
-    // for webworker/server to see the changes
-    renderer.setElementStyle(element.nativeElement, 'fontSize', 'x-large');
-    // ^^
-  }
-}
+import { Component, ChangeDetectionStrategy, ViewEncapsulation } from '@angular/core';
 
 @Component({
   changeDetection: ChangeDetectionStrategy.Default,
@@ -38,12 +18,6 @@ export class XLargeDirective {
   `],
   template: `
   <h3 id="universal">Angular2 Universal</h3>
-  <nav>
-    <a routerLinkActive="router-link-active" routerLink="home">Home</a>
-    <a routerLinkActive="router-link-active" routerLink="about">About</a>
-    <a routerLinkActive="router-link-active" routerLink="todo">Todo</a>
-    <a routerLinkActive="router-link-active" routerLink="lazy">Lazy</a>
-  </nav>
   <div class="hero-universal">
     <div class="inner-hero">
       <div>
@@ -65,13 +39,4 @@ export class XLargeDirective {
 })
 export class AppComponent {
   title = 'ftw';
-  constructor(private translate: TranslateService,
-              private route: ActivatedRoute) {}
-
-  ngOnInit() {
-    this.translate.setDefaultLang('en');
-    this.route.params.subscribe(params => {
-      this.translate.use(params['lang']);
-    });
-  }
 }
