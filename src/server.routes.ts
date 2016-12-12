@@ -10,8 +10,9 @@
  * ];
  **/
 export const routes: string[] = [
-  'about',
-  'home',
-  'todo',
-  'lazy',
+  // 'about',
+  // 'home',
+  // 'todo',
+  // 'lazy',
+  'en', 'es', 'pt'
 ];

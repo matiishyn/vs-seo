@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
+import {MainModule} from "./main/main.module";
 import { HomeModule } from './+home/home.module';
 import { AboutModule } from './+about/about.module';
 import { TodoModule } from './+todo/todo.module';
@@ -9,6 +10,7 @@ import { SharedModule } from './shared/shared.module';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent, XLargeDirective } from './app.component';
+import {TranslateModule} from "ng2-translate";
 
 
 @NgModule({
@@ -18,7 +20,10 @@ import { AppComponent, XLargeDirective } from './app.component';
     HomeModule,
     AboutModule,
     TodoModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    MainModule,
+    TranslateModule
   ]
 })
 export class AppModule {

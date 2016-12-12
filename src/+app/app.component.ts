@@ -1,4 +1,6 @@
 import { Component, Directive, ElementRef, Renderer, ChangeDetectionStrategy, ViewEncapsulation } from '@angular/core';
+import {TranslateService} from "ng2-translate";
+import {ActivatedRoute} from "@angular/router";
 
 //
 /////////////////////////
@@ -48,7 +50,7 @@ export class XLargeDirective {
         <span xLarge>Universal JavaScript {{ title }}!</span>
       </div>
 
-      Two-way binding: <input type="text" [value]="title" (input)="title = $event.target.value">
+      Two-way binding: <input type="text" [(ngModel)]="title">
 
       <br>
       <br>
@@ -63,4 +65,13 @@ export class XLargeDirective {
 })
 export class AppComponent {
   title = 'ftw';
+  constructor(private translate: TranslateService,
+              private route: ActivatedRoute) {}
+
+  ngOnInit() {
+    this.translate.setDefaultLang('en');
+    this.route.params.subscribe(params => {
+      this.translate.use(params['lang']);
+    });
+  }
 }

@@ -4,13 +4,16 @@ import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ApiService } from './api.service';
 import { ModelService } from './model/model.service';
+import {TranslateModule, TranslateService} from "ng2-translate";
+
 
 const MODULES = [
   // Do NOT include UniversalModule, HttpModule, or JsonpModule here
   CommonModule,
   RouterModule,
   FormsModule,
-  ReactiveFormsModule
+  ReactiveFormsModule,
+  TranslateModule
 ];
 
 const PIPES = [
@@ -23,8 +26,9 @@ const COMPONENTS = [
 
 const PROVIDERS = [
   ModelService,
-  ApiService
-]
+  ApiService,
+  TranslateService
+];
 
 @NgModule({
   imports: [

@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { MainComponent } from './main/main.component';
 
 export function getLazyModule() {
   return System.import('./+lazy/lazy.module' + (process.env.AOT ? '.ngfactory' : ''))
@@ -9,7 +10,8 @@ export function getLazyModule() {
 @NgModule({
   imports: [
     RouterModule.forChild([
-      { path: '', redirectTo: '/home', pathMatch: 'full' },
+      { path: '', redirectTo: '/en', pathMatch: 'full'},
+      { path: ':lang', component: MainComponent },
       { path: 'lazy', loadChildren: getLazyModule }
     ])
   ],
