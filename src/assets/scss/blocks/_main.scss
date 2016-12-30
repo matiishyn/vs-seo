@@ -1,0 +1,15 @@
+.main {
+	width: 100%;
+	box-sizing: border-box;
+	.main-header {
+		overflow: hidden;
+		margin-bottom: 35px;
+		h3 {
+			overflow: hidden;
+		}
+		a {
+			float: right;
+			margin-left: 20px;
+		}
+	}
+}

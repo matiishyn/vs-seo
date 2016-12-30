@@ -1,0 +1,59 @@
+@import url("//hello.myfonts.net/count/324913");
+
+@font-face {
+	font-family: 'ProximaNova-Light';
+	src: url('/assets/fonts/324913_3_0.eot');
+	src: url('/assets/fonts/324913_3_0.eot?#iefix') 
+		format('embedded-opentype'),url('/assets/fonts/324913_3_0.woff2') 
+		format('woff2'),url('/assets/fonts/324913_3_0.woff') 
+		format('woff'),url('/assets/fonts/324913_3_0.ttf') 
+		format('truetype');
+}
+$PNLight: 'ProximaNova-Light', Arial, Helvetica, sans-serif; 
+
+@font-face {
+	font-family: 'ProximaNova-Regular';
+	src: url('/assets/fonts/324913_9_0.eot');
+	src: url('/assets/fonts/324913_9_0.eot?#iefix') 
+		format('embedded-opentype'),url('/assets/fonts/324913_9_0.woff2') 
+		format('woff2'),url('/assets/fonts/324913_9_0.woff') 
+		format('woff'),url('/assets/fonts/324913_9_0.ttf') 
+		format('truetype');
+}
+$PNRegular: 'ProximaNova-Regular', Arial, Helvetica, sans-serif;
+  
+@font-face {
+	font-family: 'ProximaNova-Semibold';
+	src: url('/assets/fonts/324913_10_0.eot');
+	src: url('/assets/fonts/324913_10_0.eot?#iefix') 
+		format('embedded-opentype'),url('/assets/fonts/324913_10_0.woff2') 
+		format('woff2'),url('/assets/fonts/324913_10_0.woff') 
+		format('woff'),url('/assets/fonts/324913_10_0.ttf') 
+		format('truetype');
+}
+$PNSemibold: 'ProximaNova-Semibold', Arial, Helvetica, sans-serif;
+  
+
+
+/*
+@font-face{
+    font-family:"Proxima N W10 Light";
+    src:url("/assets/fonts/1133037/e1c0bd44-0f3e-4b17-a614-6d7e857bf7fa.eot?#iefix");
+    src:url("/assets/fonts/1133037/e1c0bd44-0f3e-4b17-a614-6d7e857bf7fa.eot?#iefix") format("eot"),url("/assets/fonts/1133037/5984fa39-765d-4d41-aab0-3ecb15e4ea87.woff2") format("woff2"),url("/assets/fonts/1133037/6ecdbc91-8f9f-4613-9bc9-6b2c98838cb1.woff") format("woff"),url("/assets/fonts/1133037/6efa3fca-282c-41f0-97bd-31fe03e72fa0.ttf") format("truetype");
+}
+$PNLight: 'Proxima N W10 Light', Arial, Helvetica, sans-serif;
+
+@font-face{
+    font-family:"Proxima N W10 Reg";
+    src:url("/assets/fonts/1133043/8fd4bc92-e190-4723-b3e0-bc95e0f51bcb.eot?#iefix");
+    src:url("/assets/fonts/1133043/8fd4bc92-e190-4723-b3e0-bc95e0f51bcb.eot?#iefix") format("eot"),url("/assets/fonts/1133043/36416666-42b7-4dda-b3e4-1bd2db4ce129.woff2") format("woff2"),url("/assets/fonts/1133043/ce8427cc-e7ba-412e-b92d-80cca2fd90d8.woff") format("woff"),url("/assets/fonts/1133043/1d8ed8eb-1df9-470a-818f-af961e274bc6.ttf") format("truetype");
+}
+$PNRegular: 'Proxima N W10 Reg', Arial, Helvetica, sans-serif;
+
+@font-face{
+    font-family:"Proxima N W10 Smbd";
+    src:url("/assets/fonts/1133049/6cf9553e-18ca-4e01-b5f7-309c37c46bac.eot?#iefix");
+    src:url("/assets/fonts/1133049/6cf9553e-18ca-4e01-b5f7-309c37c46bac.eot?#iefix") format("eot"),url("/assets/fonts/1133049/90d1b963-fdd8-421a-b0c0-a50ad267d9e0.woff2") format("woff2"),url("/assets/fonts/1133049/2a3eecdd-8017-4783-915e-fba416c042da.woff") format("woff"),url("/assets/fonts/1133049/6fdd5814-34a1-435b-abab-7cdbfca58478.ttf") format("truetype");
+}
+$PNSemibold: 'Proxima N W10 Smbd', Arial, Helvetica, sans-serif;
+*/

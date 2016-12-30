@@ -1,0 +1,61 @@
+.error404 {
+  max-width: $page_width;
+  margin: 0 auto;
+  text-align: center;
+  height: calc(100vh - 16px);
+  clear: both;
+
+  .box {
+    position:relative;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-top: -39px;
+
+    .logo {
+      width: $logo_width;
+      height: $logo_height;
+      display: block;
+      margin:0 auto;
+      @include hide-text;
+      a {
+        display: block;
+        height: 100%;
+        background: url('/assets/images/logo.svg') no-repeat 0 50%;
+        svg {
+          height: 100%;
+          width: 100%;
+        }
+      }
+    }
+    .number {
+      display: inline-block;
+      color: $white;
+      background: $documents_error_color;
+      padding: 0 12px;
+      font:13px/20px $PNSemibold;
+      margin:0 0 15px;
+      border-radius: 3px;
+    }
+    h1 {
+      font:30px/40px $PNLight;
+      margin:0 0 10px;
+    }
+    p {
+      font:15px/25px $PNRegular;
+      margin:0 0 33px;
+    }
+  }
+  @include respond-to(mobileLG) {
+    height: auto;
+    padding:40px 0;
+    .box {
+      transform: none;
+    }
+  }
+  @media all and (device-width: 768px) and (device-height: 1024px) and (orientation:portrait){
+    height: 369px;
+    .box {
+      transform: translateY(-50%);
+    }
+  }
+}

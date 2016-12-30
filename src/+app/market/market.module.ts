@@ -1,17 +1,18 @@
 import { NgModule } from '@angular/core';
 import { SharedModule } from '../shared/shared.module';
-import { MainComponent } from './main.component';
-import { HomeModule } from '../+home/home.module';
+import { MarketComponent } from './market.component';
 import { TodoModule } from '../+todo/todo.module';
+import { LandingModule } from './modules/landing/landing.module';
 
 @NgModule({
   imports: [
     SharedModule,
-    HomeModule,
+    LandingModule,
     TodoModule
   ],
   declarations: [
-    MainComponent
+    MarketComponent
   ]
 })
-export class MainModule { }
+export class MarketModule {
+}

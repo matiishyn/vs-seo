@@ -1,0 +1,50 @@
+.help-center-wrap {
+	padding-top: 5px;
+	.content-header {
+		margin-bottom: 66px;
+	}
+	.help-center {
+		max-width: 1100px;
+		padding-bottom: 270px;
+		position: relative;
+		.main-handler {
+			margin-left: -2px;
+			margin-right: -4px;
+		}
+		.main-title {
+			font-size: 16px;
+			line-height: 30px;
+			font-family: $PNSemibold;
+			margin-bottom: 17px;
+		}
+		accordion {
+			margin-bottom: 4px;
+			display: block;
+			.title {
+				padding-right: 30px;
+			}
+		}
+		popover {
+			.title {
+				font-family: $PNSemibold;
+				font-size: 16px;
+				line-height: 30px;
+				margin-bottom: 20px;
+			}
+			.btn-shedule {
+				line-height: 20px;
+				font-family: $PNSemibold;
+				font-size: 15px;
+				padding: 20px 40px 15px;
+				margin-bottom: 20px;
+				span {
+					font-family: $PNLight;
+					font-size: 13px;
+				}
+			}
+			.hint {
+				font-size: 13px;
+			}
+		}
+	}
+}

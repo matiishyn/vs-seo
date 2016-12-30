@@ -1,0 +1,392 @@
+.navPanel {
+  background: $nav_panel_bg;
+  border-bottom: 5px solid $link_color;
+  color: $white;
+  margin: -50px 0 40px;
+  @include respond-to (tablet) {
+    padding: 0 20px;
+  }
+  .box {
+    max-width: $page_width;
+    margin: 0 auto;
+    position: relative;
+    padding: 48px 0 26px;
+    .back-btn {
+      position: static;
+      float: left;
+      background: none;
+      border: 0;
+      margin: -9px 0 0 -88px;
+    }
+    .btn-red,
+    .btn-default {
+      float: right;
+      line-height: 38px;
+      margin: -3px 0 0;
+    }
+    h2 {
+      font: 20px/30px $PNLight;
+      vertical-align: baseline;
+      strong {
+        font: 20px/30px $PNSemibold;
+      }
+      .status {
+        display: inline-block;
+        background: $documents_error_color;
+        padding: 0 10px;
+        color: $white;
+        font: 13px/20px $PNSemibold;
+        text-transform: uppercase;
+        border-radius: 3px;
+        margin: 0 0 0 10px;
+      }
+    }
+  }
+  .row {
+    position: relative;
+    &:after {
+      width: 100%;
+      height: 1px;
+      background: $nav_panel_line;
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+    .box {
+      padding: 0;
+    }
+    .navPanelMenu {
+      @include clearfix;
+      position: relative;
+      z-index: 5;
+      margin: 0 0 0 -20px;
+      @include respond-to (tablet) {
+        margin: 0 0 0 -10px;
+      }
+      li {
+        float: left;
+        font: 12px/48px $PNSemibold;
+        text-transform: uppercase;
+      }
+      a {
+        color: $white;
+        display: block;
+        padding: 0 20px;
+        border-top: 1px solid transparent;
+        @include respond-to (tablet) {
+          padding: 0 12px;
+        }
+      }
+      .active a,
+      .activeMenu a,
+      a:hover {
+        background: $nav_panel_line;
+        border-top: 1px solid $documents_error_color;
+      }
+      .conversation {
+        a {
+          padding-right: 30px;
+          position: relative;
+          &:after {
+            background: $section_list_btn_fill_hover;
+            width: 11px;
+            height: 11px;
+            border-radius: 50%;
+            content: "";
+            position: absolute;
+            right: 10px;
+            top: 17px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.employees, .data-table-page, .clients {
+  .heading {
+    @include clearfix;
+    margin: 0 0 30px;
+    .form {
+      float: right;
+      width: 675px;
+      @include clearfix;
+      @include respond-to (mobileLG) {
+        width: 75%;
+      }
+      input {
+        width: calc(100% - 200px);
+        float: right;
+        @include respond-to (mobileLG) {
+          width: calc(100% - 180px);
+        }
+      }
+      .prospects-search-submit {
+        float: right;
+        background: url('/assets/images/i-search.svg') 15px center/15px no-repeat;
+        padding: 19px;
+        box-sizing: border-box;
+        border: 1px solid $input-border;
+        border-right: none;
+        border-radius: 2px 0 0 2px;
+        cursor: pointer;
+        outline: none;
+        height: 40px;
+      }
+      .prospects-search {
+        border-left: none;
+        border-radius: 0 2px 2px 0;
+        padding-left: 5px;
+        &:focus {
+          outline: none;
+          box-shadow: none;
+          border-color: $input-border;
+        }
+      }
+      .btn-grey {
+        line-height: 38px;
+        float: right;
+      }
+    }
+  }
+  .paging {
+    @include clearfix;
+    ul {
+      float: right;
+      border: 1px solid $btn_grey_border;
+      border-radius: 3px;
+      background-image: -moz-linear-gradient(90deg, rgb(249, 250, 252) 0%, rgb(252, 253, 254) 75%, rgb(255, 255, 255) 100%);
+      background-image: -webkit-linear-gradient(90deg, rgb(249, 250, 252) 0%, rgb(252, 253, 254) 75%, rgb(255, 255, 255) 100%);
+      background-image: -ms-linear-gradient(90deg, rgb(249, 250, 252) 0%, rgb(252, 253, 254) 75%, rgb(255, 255, 255) 100%);
+      li {
+        float: left;
+        width: 32px;
+        height: 40px;
+        border-right: 1px solid $btn_grey_border;
+        text-align: center;
+        font: 15px/40px $PNRegular;
+        color: $btn_grey_border;
+        &:last-child,
+        &:first-child {
+          width: 39px;
+        }
+        &:last-child {
+          border-right: 0;
+        }
+
+        &.disabled {
+          pointer-events: none;
+          a {
+            color: $btn_grey_border;
+          }
+        }
+      }
+      a {
+        color: #000;
+        display: block;
+        @at-root .paging li.active a,
+        &:hover {
+          background: #e8e8e8;
+          box-shadow: inset 0px 3px 1px 0px rgba(208, 208, 208, 0.4);
+        }
+      }
+    }
+    .form {
+      float: left;
+      width: 170px;
+      label {
+        white-space: nowrap;
+      }
+      .acc-nav {
+        width: 84px;
+      }
+    }
+  }
+
+  .employeesDetail, .item-details-form {
+    position: relative;
+    @include clearfix;
+    margin: 0 0 45px;
+    .col {
+      float: left;
+      width: calc(50% - 10px);
+      &:first-child {
+        margin-right: 20px;
+      }
+      @include respond-to (mobileLG) {
+        float: none;
+        width: 100%;
+      }
+    }
+    .employeesBox {
+      background: $checkout_bg;
+      border: 1px solid $btn_back_border;
+      padding: 30px;
+      margin: 0 0 20px;
+      h2 {
+        position: relative;
+        text-transform: uppercase;
+        font: 13px/26px $PNSemibold;
+        padding: 0 0 26px;
+        margin: -8px 0 0;
+        &:after {
+          content: "";
+          width: 40px;
+          height: 1px;
+          background: $accordion_title_border_hover;
+          position: absolute;
+          top: 47px;
+          left: 0;
+        }
+      }
+      &.cases {
+        background: $white;
+        .row {
+          padding: 22px 0 0;
+          margin: 0 0 -8px;
+          @include clearfix;
+          .number {
+            color: $price_color;
+            font: 30px/30px $PNSemibold;
+            float: left;
+            margin: 0 10px 0 0;
+          }
+          .text {
+            float: left;
+            font: 15px/40px $PNRegular;
+          }
+          .btn {
+            float: right;
+            line-height: 38px;
+            font-size: 15px;
+          }
+        }
+      }
+      @include respond-to (tablet) {
+        input[type="radio"] + label {
+          min-width: 70px;
+          padding: 0 10px;
+        }
+      }
+    }
+    .form {
+      .form-row {
+        .form-col.col-label {
+          float: left;
+          width: 200px;
+          height: 40px;
+          .infoText {
+            color: $documents_message_color;
+            display: inline-block;
+          }
+        }
+        .form-col + .form-col {
+          padding: 0;
+          float: left;
+          width: calc(100% - 200px);
+          .checkbox {
+            margin-top: 8px;
+          }
+          .btn {
+            line-height: 38px;
+          }
+          .ui-select-match .btn {
+            line-height: 28px;
+          }
+          .status {
+            background: $price_color;
+            color: $white;
+            border-radius: 3px;
+            text-transform: uppercase;
+            padding: 0 10px;
+            display: inline-block;
+            font: 12px/20px $PNSemibold;
+            margin: 12px 0 0;
+          }
+          .calendar {
+            position: relative;
+            table {
+              width: 100%;
+            }
+            .btn {
+              min-width: 100%;
+              padding: 0;
+            }
+            [uib-datepicker-popup-wrap] {
+              min-width: 100%;
+            }
+          }
+          .message {
+            display: none;
+          }
+          .ng-touched.ng-invalid-required ~ .message.error-required {
+            display: block;
+          }
+          .ng-touched.ng-invalid-duplicate ~ .message.error-duplicate {
+            display: block;
+          }
+          .ng-touched.ng-invalid-pattern ~ .message.error-pattern {
+            display: block;
+          }
+          .ng-touched.ng-invalid-email ~ .message.error-email {
+            display: block;
+          }
+        }
+      }
+      &.form-validation.ng-submitted {
+        .form-row {
+          .form-col + .form-col {
+            .ng-invalid-required ~ .message.error-required {
+              display: block;
+            }
+            .ng-invalid-duplicate ~ .message.error-duplicate {
+              display: block;
+            }
+            .ng-invalid-pattern ~ .message.error-pattern {
+              display: block;
+            }
+            .ng-invalid-email ~ .message.error-email {
+              display: block;
+            }
+          }
+        }
+
+      }
+    }
+  }
+  .btns {
+    .control {
+      float: right;
+      .btn {
+        margin-right: 0;
+      }
+    }
+    .btn {
+      margin-right: 6px;
+      line-height: 40px;
+      font-size: 15px;
+    }
+  }
+}
+.clients {
+  .btns {
+    margin-top: 20px;
+  }
+  .twocolumns {
+    @include clearfix;
+    .col {
+      width: 50%;
+      float: left;
+      .profile, .address {
+        width: 100%;
+        float: none;
+      }
+      .appointments {
+        box-sizing: border-box;
+        padding-right: 10px;
+        margin-top: 20px;
+      }
+    }
+  }
+}

@@ -1,0 +1,208 @@
+.account.dependent {
+    .back-btn {
+        top: -17px;
+    }
+
+	.payment {
+		@include clearfix;
+		padding:0 0 30px;
+    .acc-nav.active {
+      .options {
+        min-width: 0;
+      }
+    }
+  }
+	.paymentCnt {
+		float:right;
+		width:calc(100% - 500px);
+		padding:21px 100px 0 0;
+		@include respond-to(tablet) {
+			width:calc(100% - 340px);
+			padding:21px 20px 0 0;
+		}
+		@include respond-to(mobileLG) {
+			width:100%;
+			float: none;
+		}
+		.form-col {
+			&.col-label {
+				width: 200px;
+				+ .form-col {
+					width:calc(100% - 200px);
+					padding:0;
+				}
+				.infoText {
+					color: $documents_message_color;
+				}
+			}
+			h3 {
+				text-transform: uppercase;
+				font:13px $PNSemibold;
+			}
+            input[disabled="disabled"] {
+                pointer-events: none;
+                background-color: #f7f7f7;
+            }
+		}
+		.heading {
+			padding:0 0 30px;
+			.form-col {
+				float: right;
+			}
+		}
+		.addressRow {
+			padding-bottom:28px;
+		}
+		.sameAddress {
+			float: right;
+			width: 220px;
+			text-align: right;
+		}
+		.billingAddress01,
+		.billingAddress02 {
+			float: right;
+			width: 46%;
+			margin-left: 8px;
+			.sameAddress {
+				float: none;
+				width: auto;
+				white-space: nowrap;
+			}
+		}
+		.billingAddress02 {
+			width:52%;
+			margin:0;
+		}
+		.size01,
+		.size02 {
+			width:calc(100% - 170px);
+			display: inline-block;
+      		float: left;
+		}
+		.size02{
+			width:150px;
+			margin-left: 20px;
+		}
+		.proceedPaymentBtn {
+			.btn {
+				margin-top: 30px;
+			}
+		}
+	}
+	.case {
+		.paymentCnt {
+			float: none;
+			width: 880px;
+			padding-right:0;
+			.form-col.col-label {
+    			width: 405px;
+			}
+			& .acc+ .form-col {
+				width: 475px;
+			}
+			.sameAddress {
+				width: 200px;
+			}
+		}
+	}
+	.checkout {
+		float:left;
+		box-sizing: border-box;
+		width:280px;
+		border:1px solid $btn_back_border;
+		background:$checkout_bg;
+		padding:28px;
+		@include respond-to(mobileLG) {
+			width:100%;
+			float: none;
+			margin:-20px 0 20px;
+		}
+		h2 {
+			position:relative;
+			text-transform: uppercase;
+			font:13px/26px $PNSemibold;
+			padding:0 0 42px;
+			&:after {
+				content: "";
+				width: 40px;
+				height: 1px;
+				background:$accordion_title_border_hover;
+				position:absolute;
+				top:48px;
+				left:0;
+			}
+		}
+		p {
+			font:15px/25px $PNRegular;
+			margin:0 0 16px;
+			@include respond-to(mobileLG) {
+				br {display:none;}
+			}
+		}
+		.price {
+			font:30px $PNSemibold;
+			color:$price_color;
+			display: block;
+			margin:0 0 15px;
+		}
+	}
+	.paymentSuccess {
+		height: 400px;
+		background: $checkout_bg;
+		border: 1px solid $btn_back_border;
+		text-align: center;
+		margin:-15px 0 0;
+		@include respond-to(tablet) {
+			height: 560px;
+		}
+		.info {
+			position: relative;
+			top: 50%;
+			transform: translateY(-50%);
+			h2 {
+				margin:0 0 31px;
+				font: 30px $PNLight;
+			}
+			p {
+				font:15px/25px $PNRegular;
+				margin:0 0 47px;
+			}
+			.btn {
+				line-height: 48px;
+				font-size: 15px;
+			}
+		}
+	}
+	.ach {
+		padding:18px 0 30px;
+		p {
+			font:15px/25px $PNRegular;
+			margin:0 0 25px;
+		}
+		ul.list {
+			box-sizing: border-box;
+			font:15px/25px $PNRegular;
+			@include clearfix;
+			display: table;
+			li {
+				width: 33.333%;
+				display: table-cell;
+				vertical-align: top;
+				&:last-child {
+					padding:0;
+					text-align: right;
+					vertical-align: middle;
+				}
+				p {
+					padding-right:50px;
+					margin:0;
+				}
+				.btn {
+					font-size: 15px;
+					line-height: 50px;
+					display: inline-block;
+				}
+			}
+		}
+	}
+}

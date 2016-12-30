@@ -1,0 +1,52 @@
+.aside {
+	float: left;
+	max-width: $aside_width;
+	width: 100%;
+	padding-right: 10px;
+	box-sizing: border-box;
+	.aside-header {
+		overflow: hidden;
+		margin-bottom: 40px;
+		h3 {
+			overflow: hidden;
+		}
+		a {
+			float: right;
+			margin-left: 20px;
+		}
+	}
+	.btn {
+		width: 100%;
+	}
+	+ .main {
+		float: left;
+		padding-left: 10px;
+		box-sizing: border-box;
+		max-width: $aside_main_width;
+		margin-left: 16.666%;
+	}
+	@include respond-to(tablet) {
+		max-width: 33.333%;
+		padding-right: 15px;
+		box-sizing: border-box;
+		// + .main {
+		// 	padding-left: 15px;
+		// 	max-width: 66.666%;
+		// 	box-sizing: border-box;
+		// }
+		.btn {
+			padding: 0 18px;
+		}
+	}
+	@include respond-to(mobileLG) {
+		float: none;
+		max-width: 100%;
+		padding: 0;
+		margin-bottom: 25px;
+		+ .main {
+			max-width: 100%;
+			margin: 0;
+			padding: 0 10px; 
+		}
+	}
+}

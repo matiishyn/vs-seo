@@ -1,0 +1,20 @@
+.main-layout {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+
+  .layout-header {
+    flex-shrink: 0;
+  }
+
+  .layout-main {
+    flex: 1 0 auto;
+    position: relative;
+  }
+
+  .layout-footer {
+    flex-shrink: 0;
+    margin-top: 11px;
+    z-index: 1;
+  }
+}

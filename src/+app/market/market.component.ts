@@ -16,11 +16,12 @@ import {isBrowser} from 'angular2-universal';
   <select [(ngModel)]="language" (ngModelChange)="changeLanguage(language)">
     <option value="en">English</option>
     <option value="es">Espagnol</option>
+    <option value="pt">Portuguese</option>
   </select>
   <div>{{'payment_form_creditCardNumber' | translate}}</div><router-outlet></router-outlet>`
 })
 
-export class MainComponent implements OnInit {
+export class MarketComponent implements OnInit {
   private language: string;
 
   constructor(private translate: TranslateService,
@@ -29,6 +30,7 @@ export class MainComponent implements OnInit {
   }
 
   changeLanguage(lang: string): void {
+    this.translate.use(lang);
     const children: UrlSegmentGroup = this.router.parseUrl(this.router.url).root.children[PRIMARY_OUTLET];
     const s: UrlSegment[] = children.segments;
     const paths = s.map(segment => segment.path);

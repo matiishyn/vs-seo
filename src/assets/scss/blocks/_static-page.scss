@@ -1,0 +1,1476 @@
+.page-wrap {
+	margin-top: -39px;
+	&.home-page {
+		margin-top: 0;
+	}
+	.img-header {
+		margin: 0 -20px;
+		padding: 80px 0 86px;
+		text-align: center;
+		background: url('/assets/images/jpg/img-contact-us.jpg') no-repeat 50% 50%;
+		background-size: cover;
+		position: relative;
+		.overlay {
+			position: absolute;
+			left: 0;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			background: #384961;
+			opacity: .9;
+		}
+		.container {
+			position: relative;
+			z-index: 1;
+		}
+		.page {
+			font-family: $PNSemibold;
+			font-size: 13px;
+			line-height: 35px;
+			color: #748ea4;
+			text-transform: uppercase;
+			@include respond-to(mobileMD) {
+				font-size: 14px;
+				margin-bottom: 11px;
+			}
+		}
+		h2 {
+			font-size: 50px;
+			line-height: 60px;
+			margin-top: 10px;
+			color: $white;
+			@include respond-to(mobileMD) {
+				margin-bottom: 11px;
+			}
+		}
+		.hint {
+			max-width: 450px;
+			margin: 18px auto 0;
+			color: #c7d4df;
+			font-size: 16px;
+			line-height: 25px;
+			@include respond-to(mobileMD) {
+				font-size: 20px;
+				line-height: 30px;
+			}
+		}
+		@include respond-to(mobileLG) {
+			padding: 55px 30px;
+		}
+	}
+	.page-content {
+		padding: 71px 0 55px;
+		h2 {
+			text-align: center;
+			line-height: 40px;
+			margin-bottom: 60px;
+			&:after {
+				content: '';
+				display: block;
+				width: 40px;
+				margin: 35px auto 0;
+				border-bottom: 1px solid #4c9ce0;
+			}
+		}
+		.visa-details-page {
+			padding: 45px 0 0;
+			@include clearfix;
+			.breadcrumb {
+				margin-top: 23px;
+				font-weight: 700;
+				color: #848790;
+
+				.blue-text {
+					color: #4c9ce0;
+				}
+			}
+			.visa-details-control {
+				display: inline-block;
+				width: 100%;
+
+				.start-app-btn {
+					font-size: 15px;
+					margin-top:44px;
+					margin-bottom: 18px;
+				}
+			}
+			.content-header-holder {
+				padding-bottom: 20px;
+				.page-header {
+					font-size: 29px;
+					line-height: 30px;
+					margin-bottom: 14px;
+					margin-top:38px;
+				}
+				.content-subheader {
+					margin-bottom: 0;
+				}
+			}
+			.main {
+				max-width: 890px;
+				width: 100%;
+				float: left;
+				box-sizing: border-box;
+				padding-right: 10px;
+				.form-col {
+					&.col-label {
+						width: 44.444%;
+						line-height: 20px;
+						+ .form-col {
+							width: 55.55%;
+						}
+					}
+				}
+				.visa-details-text{
+					font-size: 16px;
+					line-height: 30px;
+				}
+				.visa-logo {
+					margin-bottom: 28px;
+				}
+			}
+			.aside {
+				float:right;
+				width: 100%;
+				max-width: 288px;
+				padding-left: 9px;
+				padding-right: 0;
+				// padding-top: 55px;
+				box-sizing: border-box;
+				.visa-details, .qualifying-hint {
+					padding: 20px 28px;
+					background: #fbfbfb;
+					border: 1px solid #eef0f0;
+				}
+				.visa-details {
+					h3 {
+						line-height: 40px;
+						margin-bottom: 27px;
+						text-transform: uppercase;
+						font-size: 14px;
+						&:after {
+							content: '';
+							display: block;
+							width: 40px;
+							border-bottom: 1px solid #c7c9d3;
+							margin-top: 15px;
+						}
+					}
+					.details,
+					.price-box,
+					.additional-box {
+						font: 15px/24px $PNRegular;
+						.price, .additional {
+							font: 30px/50px $PNSemibold;
+						}
+						.price {
+							color: $price_color;
+						}
+						.additional {
+							color: $app_text_dark_color;
+						}
+					}
+					.details {
+						margin-bottom: 28px;
+					}
+					.price-box {
+						margin-bottom: 12px;
+					}
+					.additional-box {
+						margin-bottom: 0;
+					}
+				}
+				.qualifying-hint {
+					margin-top: 140px;
+					padding: 30px 30px 45px;
+					font-size: 16px;
+					line-height: 28px;
+					h3 {
+						font-size: 16px;
+						line-height: 28px;
+					}
+				}
+			}
+		}
+		.details-box {
+			padding-top: 5px;
+			margin-bottom: 40px;
+			@include clearfix;
+			.address {
+				width: 25%;
+				box-sizing: border-box;
+				display: inline-block;
+				vertical-align: middle;
+				margin-right: -4px;
+				.logo {
+					width: 85px;
+					height: 15px;
+					background: url('/assets/images/logo.svg') no-repeat 0 50%;
+					margin-bottom: 26px;
+					margin-left: -2px;
+					svg {
+						width: 100%;
+						height: 100%;
+					}
+				}
+				h3 {
+					margin-bottom: 22px;
+				}
+				.address-details {
+					margin-bottom: 45px;
+					font-size: 16px;
+					line-height: 20px;
+					padding-left: 2px;
+				}
+				.btn {
+					line-height: 58px;
+				}
+			}
+			.map-box {
+				display: inline-block;
+				vertical-align: middle;
+				width: 50%;
+				height: 390px;
+				box-sizing: border-box;
+				margin-right: -4px;
+				padding: 0 4px 0 7px;
+				.map {
+					height: 100%;
+					background: #fafafa;
+					border-radius: 3px;
+					background: url('/assets/images/jpg/map02.png') no-repeat 50% 50%;
+					background-size: cover;
+				}
+			}
+			.contacts-box {
+				width: 25%;
+				display: inline-block;
+				vertical-align: middle;
+				box-sizing: border-box;
+				padding-left: 16px;
+				.contacts {
+					background: #fafafa;
+					padding: 47px 30px 55px;
+					border-radius: 3px;
+					.contact {
+						margin-bottom: 16px;
+						font-size: 16px;
+						line-height: 20px;
+						h3 {
+							margin-bottom: 12px;
+						}
+						p {
+							padding-left: 1px;
+						}
+						&:after {
+							content: '';
+							display: block;
+							width: 40px;
+							margin: 15px 0 0;
+							border-bottom: 1px solid #4c9ce0;
+						}
+						&:last-child {
+							margin: 0;
+							&:after {
+								display: none;
+							}
+						}
+					}
+				}
+			}
+			@include respond-to(mobileLG) {
+				.address {
+					padding-left: 30px;
+				}
+				.address, .contacts-box{
+					width: 50%;
+					.contacts {
+						@include clearfix;
+						margin-bottom: -160px;
+						.contact {
+							width: 50%;
+							float: left;
+						}
+					}
+				}
+				.contacts-box {
+					width: 100%;
+					padding: 30px 0 0;
+				}
+			}
+			@include respond-to(mobileMD) {
+				.address {
+					padding: 0 0 30px;
+					h3, .address-details {
+						font-size: 20px;
+						line-height: 30px;
+					}
+				}
+				.address, .contacts-box, .map-box {
+					width: 100%;
+				}
+				.map-box {padding:0;}
+				.contacts-box {
+					.contacts {
+						.contact {
+							width: 100%;
+							float: none;
+							font-size: 20px;
+							line-height: 30px;
+							h3 {
+								font-size: 20px;
+								line-height: 30px;
+							}
+						}
+					}
+				}
+
+			}
+		}
+	}
+	&.about-us {
+		.img-header {
+			background-image: url('/assets/images/jpg/img-about-us.jpg');
+			.hint {
+				margin-top: 50px;
+				max-width: 805px;
+			}
+		}
+		.page-content {
+			padding-bottom: 0;
+			h2 {
+				margin-bottom: 20px;
+				&:after {
+					margin-top: 18px;
+				}
+			}
+			.heading-text {
+				font-size: 16px;
+				line-height: 30px;
+				text-align: center;
+				max-width: 780px;
+				margin: auto;
+				margin-bottom: 50px;
+			}
+			.persons {
+				margin: 0 -15px 40px;
+				@include clearfix;
+				.person {
+					width: 33.333%;
+					float: left;
+					box-sizing: border-box;
+					text-align: center;
+					padding: 0 15px;
+					img {
+						margin-bottom: 40px;
+					}
+					h3 {
+						font-size: 22px;
+						line-height: 30px;
+						margin-bottom: 7px;
+						color: #4a4a4a;
+					}
+					.role-title {
+						font-size: 16px;
+						line-height: 20px;
+						color: #748ea4;
+						margin-bottom: 30px;
+					}
+					.description {
+						max-width: 380px;
+						font-size: 16px;
+						line-height: 20px;
+						color: #4a4a4a;
+					}
+				}
+				@include respond-to(mobileLG){
+					.person {
+						width: 50%;
+						.description {
+							max-width: 100%;
+							padding: 0 20px;
+							font-size: 16px;
+							margin-bottom: 30px;
+						}
+					}
+				}
+			}
+			@include respond-to(mobileMD) {
+				.heading-text {
+					font-size: 20px;
+					line-height: 30px;
+				}
+				.persons {
+					margin: 0 -20px 40px;
+					.person {
+						width: 100%;
+						&:nth-child(n){
+							padding: 0;
+						}
+						.description,
+						.role-title {
+							font-size: 20px;
+							line-height: 30px;
+						}
+					}
+				}
+			}
+		}
+	}
+	&.faq {
+		.img-header {
+			background-image: url('/assets/images/jpg/img-faq.jpg');
+			.hint {
+				margin-top: 48px;
+				max-width: 805px;
+			}
+		}
+		.scrollable-content {
+			overflow: hidden;
+			h2 {
+				text-align: left;
+				margin-bottom: 39px;
+				&:after {
+					display: none;
+				}
+			}
+			.scrollable-parent {
+				float: left;
+				position: relative;
+				width: 428px;
+				min-height: 1px;
+				.scrollable {
+					&.fixed {
+						position: fixed;
+						top: 95px;
+					}
+					.faq-nav {
+						h3 {
+							margin-bottom: 20px;
+							line-height: 30px;
+						}
+						.goTo-links {
+							font-size: 16px;
+							line-height: 30px;
+							font-family: $PNRegular;
+							margin-bottom: 30px;
+							.goTo-link {
+								color: #2a2b2e;
+								padding-left: 27px;
+								display: block;
+								border-left: 3px solid transparent;
+								@include transition($property: border-left-color);
+								&.active {
+									border-left-color: #4c9ce0;
+								}
+							}
+						}
+					}
+				}
+				@include respond-to(mobileLG) {
+					float: none;
+					width: 100%;
+					.scrollable {
+						margin:0 !important;
+						&.fixed {
+							position:static;
+						}
+					}
+				}
+				@include respond-to(mobileLG) {
+					.scrollable {
+						.faq-nav {
+							h3, .goTo-links {
+								font-size: 20px;
+							}
+						}
+					}
+				}
+			}
+			.faq-content-holder {
+				overflow: hidden;
+				font-size: 16px;
+				line-height: 20px;
+				h2 {
+					margin-bottom: 34px;
+				}
+				h3 {
+					padding: 6px 0 21px 30px;
+				}
+				.accordion-list {
+					line-height: 30px;
+					margin-bottom: 41px;
+					li {
+						margin-bottom: 4px;
+						icon {
+							right: 25px;
+						}
+					}
+				}
+				p {
+					margin-bottom: 29px;
+				}
+				@include respond-to(mobileLG) {
+					float: none;
+					width: 100%;
+				}
+			}
+		}
+	}
+	&.individual-visas {
+		padding: 0 10px;
+		.img-header {
+			margin: 0 -30px;
+			background-image: url('/assets/images/jpg/img-individual-visas.jpg');
+			.container {
+				h2 {
+					max-width: 700px;
+					margin: 0 auto;
+				}
+			}
+		}
+		.page-content {
+			padding-top: 0;
+		}
+		.individual-visas-links {
+			.individual-visas-links-nav {
+				border: 1px solid #f2f2f2;
+				border-width: 1px 0;
+				margin: 0 -9999px 84px;
+				padding: 0 9999px;
+				ul {
+					max-width: 780px;
+					margin: 0 auto -1px;
+					overflow: hidden;
+					li {
+						float: left;
+						width: 60%;
+						text-align: right;
+						&:first-child {
+							text-align: left;
+							width: 40%;
+						}
+						a {
+							text-align: center;
+							padding: 24px 20px;
+							min-width: 280px;
+							box-sizing: border-box;
+							font-size: 16px;
+							color: #2a2b2e;
+							border-bottom: 3px solid transparent;
+							display: inline-block;
+							vertical-align: top;
+							&:hover,
+							&.active {
+								font-family: $PNSemibold;
+								border-bottom-color: #4c9ce0;
+							}
+						}
+					}
+				}
+				@include respond-to(mobileMD) {
+					padding: 0;
+					margin:0 -30px 62px;
+					max-width: none;
+					ul {
+						li {
+							a {
+								min-width: 0;
+								font-size: 20px;
+								padding: 24px 12px;
+								width: 100%;
+							}
+						}
+					}
+				}
+				@include respond-to(mobileSM) {
+					ul {
+						li {
+							a {
+								font-size: 16px;
+							}
+						}
+					}
+				}
+			}
+		}
+		.step-holder {
+			font-size: 16px;
+			line-height: 25px;
+			color: #666973;
+			max-width: 980px;
+			margin: 0 auto;
+			@include clearfix;
+			@include respond-to(tablet) {
+				font-size: 20px;
+			}
+			&.step-dark {
+				color: #fff;
+				background: #485468;
+				margin: 0 -9999px;
+				padding: 0 9999px;
+				h2 {
+					color: #fff;
+				}
+				h3 {
+					color: #fff;
+				}
+			}
+			&.step-grey {
+				background: #f6f8f9;
+				margin: 0 -9999px;
+				padding: 0 9999px;
+			}
+			&.step-type01 {
+				text-align: center;
+				.step-inner {
+					max-width: 590px;
+					margin: 0 auto;
+				}
+				.step-columns {
+					padding-top: 47px;
+				}
+				@include respond-to(tablet) {
+					.step-inner {
+						max-width: none;
+						padding: 0 10%;
+						margin: 0 -30px;
+					}
+				}
+			}
+			&.step-type02 {
+				&.invert {
+					.step-right {
+						box-sizing: border-box;
+						padding-left: 110px;
+					}
+				}
+				.step-left {
+					padding-right: 40px;
+					box-sizing: border-box;
+				}
+				@include respond-to(tablet) {
+					.step-left {
+						padding-right: 0;
+					}
+					&.invert {
+						.step-right {
+							padding-left: 0;
+						}
+						.step-left {
+							text-align: center;
+						}
+					}
+					.step-inner {
+						max-width: none;
+						padding: 0 10%;
+						margin: 0 -30px;
+					}
+				}
+			}
+			&.step-type03 {
+				margin-left: -168px;
+				margin-bottom: 103px;
+				max-width: 1350px;
+				.step-left {
+					width: 60.5%;
+				}
+				.step-right {
+					width: 35.6%;
+					padding-top: 66px;
+				}
+				@include respond-to(desktopSM) {
+					margin-left: 0;
+					.step-right {
+						padding-top:20px;
+					}
+				}
+				@include respond-to(tablet) {
+					.step-inner {
+						max-width: none;
+						padding: 0 10%;
+						margin: 0 -30px;
+					}
+					.step-left,.step-right {
+						width: 100%;
+					}
+					.step-right {
+						padding-top:60px;
+						text-align: center;
+					}
+				}
+				&.invert {
+					margin-right: -182px;
+					margin-bottom: 103px;
+					max-width: 1350px;
+					margin-left: 17px;
+					.step-left {
+						width: 35.6%;
+						padding-left: 83px;
+						box-sizing: border-box;
+						padding-top: 58px;
+					}
+					.step-right {
+						width: 57.65%;
+						padding-top: 0;
+					}
+					@include respond-to(desktopSM) {
+						margin-right: 0;
+						margin-left: 0;
+						.step-left {
+							// width: 100%;
+							padding: 0;
+						}
+					}
+					@include respond-to(tablet) {
+						.step-left {
+							width: 100%;
+							text-align: center;
+						}
+					}
+				}
+			}
+			&.step-type04 {
+				padding: 52px 10099px 36px;
+				.step-right {
+					margin: -132px -128px 0 0;
+					width: 53%;
+				}
+				&.invert {
+					padding: 63px 9999px 0;
+					.step-block {
+						margin: 0 -145px;
+						@include respond-to(desktopSM) {
+							margin: 0;
+							.step-left {
+								padding-left: 0;
+							}
+						}
+					}
+					.step-left {
+						box-sizing: border-box;
+						padding-left: 164px;
+						width: 53.8%;
+						margin-top: -10px;
+						margin-bottom: -57px;
+					}
+					.step-right {
+						margin: 0;
+						width: 33.46%;
+					}
+				}
+				@include respond-to(tablet) {
+					.step-inner {
+						max-width: none;
+						padding: 0 10%;
+						margin: 0 -30px;
+					}
+					.step-block {
+						margin: 0;
+						.step-left {
+							padding-left: 0;
+							margin-left: -250px;
+						}
+						.step-right {
+							width: 50%;
+						}
+						@include respond-to(mobileMD) {
+							.step-right {
+								width: 100%;
+							}
+						}
+					}
+				}
+				@include respond-to(tablet) {
+					padding: 52px 9999px 36px;
+					img {
+						margin: 0 -5%;
+						width: 150%;
+					}
+					.step-left {
+						width: 60%;
+					}
+				}
+				@include respond-to(mobileMD) {
+					.step-left {
+						width: 100%;
+					}
+				}
+			}
+			&.step-type05 {
+				padding: 56px 100px 27px;
+				.step-right {
+					margin: 56px -109px 0 0;
+				}
+				@include respond-to(tablet) {
+					.step-right {
+						margin: 0;
+					}
+				}
+			}
+			&.individual-step01 {
+				margin-bottom: 90px;
+				@include respond-to(tablet) {
+					margin-bottom: 40px;
+				}
+			}
+			&.individual-step02 {
+				margin-bottom: 75px;
+				.step-left {
+					padding-top: 163px;
+					@include respond-to(tablet) {
+						padding-top: 120px;
+					}
+				}
+				.step-right {
+					text-align: center;
+				}
+			}
+			&.individual-step03 {
+				margin-bottom: 109px;
+				@include respond-to(tablet) {
+					line-height: 30px;
+				}
+			}
+			&.individual-step04 {
+
+			}
+			&.individual-step05 {
+
+			}
+			&.individual-step06 {
+				margin-bottom: 92px;
+			}
+			&.individual-step07 {
+				margin-bottom: 120px;
+			}
+			&.business-step01 {
+				margin-bottom: 106px;
+				@include respond-to(tablet) {
+					margin-bottom: 40px;
+				}
+			}
+			&.business-step02 {
+				margin-bottom: 125px;
+				.step-right {
+					padding-top: 141px;
+				}
+			}
+			&.business-step03 {
+				margin-bottom: 71px;
+			}
+			&.business-step04 {
+				margin-bottom: 95px;
+				padding: 56px 10099px 27px;
+				@include respond-to(tablet) {
+					padding: 56px 9999px 27px;
+				}
+			}
+			&.business-step05 {
+				margin-bottom: 130px;
+				@include respond-to(tablet) {
+					line-height: 30px;
+				}
+			}
+			&.business-step06 {
+				margin-bottom: -40px !important;
+			}
+			&.business-step07 {
+				margin-bottom: 116px;
+			}
+			&.business-step08 {
+				margin-bottom: 49px;
+			}
+			.step-label {
+				text-transform: uppercase;
+				font-family: $PNSemibold;
+				color: #fff;
+				background: #cf3951;
+				line-height: 20px;
+				display: inline-block;
+				vertical-align: top;
+				padding: 0 10px;
+				border-radius: 1px;
+				font-size: 13px;
+			}
+			h2 {
+				margin-bottom: 12px;
+				text-align: inherit;
+				margin-top: 11px;
+				color: #2a2b2e;
+				&:after {
+					display: none;
+				}
+				@include respond-to(tablet) {
+					font-size: 30px;
+					line-height: 40px;
+				}
+			}
+			p {
+				margin-bottom: 25px;
+			}
+			h3 {
+				color: #4a4a4a;
+				font-size: 18px;
+				margin-bottom: 21px;
+				@include respond-to(tablet) {
+					font-size: 20px;
+					line-height: 30px;
+				}
+			}
+			.btn {
+				@include respond-to(mobileMD) {
+					display: block;
+					margin-top: 38px;
+				}
+			}
+			.step-left {
+				float: left;
+			}
+			.step-right {
+				float: right;
+			}
+			.step-half-width {
+				width: 50%;
+				@include respond-to(tablet) {
+					width: 100%;
+				}
+			}
+			.step-third-width {
+				width: 33.33333%;
+				display: inline-block;
+				vertical-align: top;
+				max-width: 344px;
+				padding: 0 37px;
+				box-sizing: border-box;
+				margin-right: -3px;
+				@include respond-to(tablet) {
+					width: 100%;
+					max-width: none;
+					padding: 0 10%;
+				}
+			}
+			.step-visa-type {
+				li {
+					border: 1px solid #f2f2f2;
+					background: #fff;
+					padding: 35px 36px 30px;
+					margin-bottom: 20px;
+					icon {
+						float: left;
+						margin-top: -13px;
+						height: 68px;
+						svg {
+							width: 100%;
+							height: 100%;
+						}
+					}
+					h3 {
+						margin-bottom: 4px;
+						overflow: hidden;
+						margin-top: 5px;
+					}
+					p {
+						margin: 0;
+						overflow: hidden;
+					}
+				}
+				@include respond-to(tablet) {
+					float: none;
+					margin-right: 0;
+					overflow: hidden;
+					padding-top: 23px;
+					li {
+						float: left;
+						width: 33.333%;
+						box-sizing: border-box;
+						text-align: center;
+						border-left-width: 0;
+						padding: 18px 10px 5px;
+						&:first-child {
+							border-left-width: 1px;
+						}
+						icon {
+							margin: 0 !important;
+							float: none;
+							height: 54px;
+							display: inline-block;
+							margin-bottom:
+							svg {
+								height: 100%;
+								width: 100%;
+							}
+						}
+						h3 {
+							font-size: 15px;
+							margin-top: 0;
+						}
+						p {
+							display: none;
+						}
+					}
+				}
+			}
+			.step-columns {
+				margin: 0 -35px;
+				line-height: 20px;
+				icon {
+					display: block;
+					width: 38px;
+					height: 41px;
+					margin: 0 auto 30px;
+					svg {
+						width: 100%;
+						height: 100%;
+					}
+				}
+				.img-holder {
+					margin: 16px -19px 57px;
+					text-align: center;
+					img {
+						max-width: 300px;
+					}
+				}
+				@include respond-to(tablet) {
+					line-height: 30px;
+				}
+			}
+			.step-table {
+				max-width: 580px;
+				margin: 0 auto 38px;
+				table {
+					width: 100%;
+					td {
+						text-align: right;
+						padding-bottom: 6px;
+						border-bottom: 1px dotted #b7b7b7;
+						padding-top: 30px;
+						&:first-child {
+							text-align: left;
+							padding-right: 10px;
+						}
+						h3 {
+							font-size: 20px;
+							margin-bottom: 9px;
+						}
+						.price {
+							font-size: 30px;
+							color: #51ae5b;
+							margin-bottom: 10px;
+						}
+						.type {
+							color: #666973;
+							font-family: $PNSemibold;
+						}
+					}
+					tr {
+						&:last-child {
+							td {
+								border-bottom: none;
+							}
+						}
+					}
+				}
+			}
+			.step-list {
+				padding-top: 15px;
+				h3 {
+					margin-bottom: 3px;
+				}
+				li {
+					padding-left: 41px;
+					margin-top: 18px;
+					overflow: hidden;
+				}
+				icon {
+					float: left;
+					width: 20px;
+					margin-left: -40px;
+					height: 20px;
+					@include respond-to(tablet) {
+						margin-top: 5px;
+					}
+				}
+			}
+			.visa-pay-types {
+				padding-top: 60px;
+				margin: 0 -170px;
+				line-height: 20px;
+				.visa-pay-type {
+					display: inline-block;
+					vertical-align: top;
+					width: 40%;
+				}
+				icon {
+					width: 42px;
+					height: 47px;
+					display: block;
+					margin: 0 auto 30px;
+
+				}
+				.or {
+					display: inline-block;
+					font-size: 30px;
+					color: #51ae5b;
+					text-transform: uppercase;
+					font-family: $PNSemibold;
+					margin: 35px 30px;
+				}
+				h3 {
+					margin-bottom: 22px;
+				}
+				@include respond-to(tablet) {
+					margin: 0;
+					.visa-pay-type {
+						display: block;
+						width: 100%;
+						line-height: 30px;
+					}
+				}
+			}
+		}
+		.step-diagonal-gradient {
+
+		}
+		.step-linear-gradient {
+			background: url('/assets/images/bg-visas-steps.gif') repeat-x 0 100%;
+			margin: 0 -9999px;
+			padding: 0 9999px 126px;
+		}
+		.help-block {
+			background: #fcfcfc;
+			border-top: 1px solid #f3f3f3;
+			margin: 0 -9999px -95px;
+			padding: 49px 9999px 40px;
+			text-align: center;
+			h2 {
+				margin-bottom: 12px;
+				&:after {
+					display: none;
+				}
+			}
+			h3 {
+				text-transform: uppercase;
+				font-size: 13px;
+				margin-bottom: 18px;
+				color: #748ea4;
+			}
+			p {
+				font-size: 16px;
+				line-height: 25px;
+				margin:0 auto 35px;
+				max-width: 500px;
+			}
+			@include respond-to(tablet) {
+				h2 {
+					font-size: 35px;
+				}
+				p {
+					font-size: 20px;
+					line-height: 30px;
+				}
+			}
+			.btn {
+				margin-bottom: 50px;
+			}
+		}
+		.visa-types {
+			margin-top: -13px;
+			@include clearfix;
+			.visa-types-nav {
+				float: left;
+				max-width: 430px;
+				width: 36.4%;
+				border: none;
+				margin: 0;
+				padding: 0;
+				h2 {
+					text-align: left;
+					margin-bottom: 40px;
+					&:after {
+						display: none;
+					}
+				}
+				ul {
+					li {
+						float: none;
+						width: auto;
+						text-align: left;
+						margin-bottom: 10px;
+						a {
+							padding: 0;
+							border: none;
+							min-width: 0;
+							font-family: $PNLight;
+							border-left: 3px solid transparent;
+							padding-left: 27px;
+							line-height: 30px;
+							&.active {
+								border-left-color: #4c9ce0;
+							}
+						}
+					}
+				}
+				@include respond-to(mobileLG) {
+					float: none;
+					max-width: none;
+					width: auto;
+					margin-bottom: 40px;
+					ul {
+						max-width: none;
+						li {
+							a {
+								text-align: left;
+							}
+						}
+					}
+				}
+			}
+			.visa-types-desc {
+				float: right;
+				width: 63.6%;
+				max-width: 750px;
+				h2 {
+					text-align: left;
+					margin-bottom: 40px;
+					&:after {
+						display: none;
+					}
+				}
+				p {
+					font-size: 16px;
+					line-height: 30px;
+					margin-bottom: 23px;
+				}
+				h3 {
+					margin-bottom: 57px;
+					.price {
+						color: #51ae5b;
+						font-size: 30px;
+						padding-left: 19px;
+					}
+				}
+				.btn {
+					margin-right: 10px;
+					margin-bottom: 10px;
+				}
+				@include respond-to(tablet) {
+					h3 {
+						text-align: center;
+					}
+					.visa-types-desc-btns {
+						text-align: center;
+						a {
+							display: inline-block;
+							margin:0 10px 10px;
+						}
+					}
+				}
+				@include respond-to(mobileLG) {
+					float: none;
+					max-width: none;
+					width: auto;
+				}
+				@include respond-to(mobileMD) {
+					.visa-types-desc-btns {
+						a {
+							display: block;
+							margin:0 0 10px;
+						}
+					}
+				}
+			}
+		}
+		.schedule-block {
+			background: #fbfbfb;
+			border: 1px solid #f2f2f2;
+			text-align: center;
+			font-size: 16px;
+			margin-top: 79px;
+			padding: 47px 20px 64px;
+			margin-bottom: -56px;
+			h3 {
+				margin-bottom: 13px;
+			}
+		}
+	}
+}
+.static-page {
+	font-size: 16px;
+	line-height: 25px;
+	color: #666973;
+	.content-inner {
+		max-width: 820px;
+		margin: 0 auto;
+		box-sizing: border-box;
+		padding: 17px 20px 0;
+		margin-bottom: -25px;
+	}
+	.static-header {
+		font-size: 30px;
+		line-height: 30px;
+		text-align: center;
+		&:after {
+			content: '';
+			display: block;
+			width: 48px;
+			height: 1px;
+			background: #c7c9d3;
+			margin: 23px auto;
+		}
+		.effective {
+			    font-size: 16px;
+		}
+	}
+
+	p {
+		margin-bottom: 25px;
+	}
+	h2 {
+		margin: 37px 0 37px;
+		position: relative;
+		line-height: 40px;
+		.num {
+			position: absolute;
+			margin-right: 7px;
+			right: 100%;
+			top: 0;
+			text-align: right;
+		}
+		&.alt-heading {
+			margin-bottom: 13px;
+		}
+	}
+	h3 {
+		margin-bottom: 5px;
+		margin-top: 29px;
+		&.goTo-heading {
+			margin-top: -1px;
+		}
+	}
+
+	strong {
+		font-family: $PNSemibold;
+	}
+	ul {
+		margin-top: -10px;
+		padding-left: 17px;
+		margin-bottom: -5px;
+		li {
+			margin-bottom: 25px;
+			position: relative;
+			&:before {
+				content: '';
+				position: absolute;
+				width: 5px;
+				height: 5px;
+				background: #666973;
+				left: -15px;
+				top: 10px;
+				border-radius: 100%;
+			}
+		}
+	}
+	.goTo-links {
+		padding: 10px 0 0 1px;
+		margin-top: 0;
+		li {
+			&:before {
+				display: none;
+			}
+			margin-top: 5px;
+			margin-bottom: 0;
+		}
+	}
+}
+
+@media (max-width:1360px) {
+	.page-wrap {
+		.page-content {
+			.visa-details-page {
+				.back-btn {
+					display: none;
+				}
+			}
+		}
+	}
+}
+
+@media (max-width:1024px) {
+	.page-wrap {
+		.page-content {
+			.visa-details-page {
+				.content-header-holder {
+					padding-left: 10px;
+				}
+				.main {
+					max-width: 715px;
+					padding-left: 10px;
+				}
+				.aside {
+					padding-right: 10px;
+				}
+				.back-btn {
+					display: none;
+				}
+				.visa-details-control {
+					margin-left: 10px;
+				}
+			}
+		}
+	}
+}
+
+@media (max-width:768px) {
+	.page-wrap, .page-wrap.individual-visas {
+		padding: 0 20px;
+		.page-content {
+			.visa-details-page {
+				.main {
+					max-width: none;
+				}
+				.aside {
+					float:none;
+					display: inline-block;
+					max-width: none;
+					max-width: none;
+					padding: 0;
+				}
+				.visa-details-control {
+					padding: 0;
+					text-align: center;
+					margin: 0;
+				}
+			}
+		}
+	}
+}
+
+@media (max-width:414px) {
+	.page-wrap {
+		.page-content {
+			.visa-details-page {
+				.aside {
+					max-width: none;
+				}
+				.visa-details-control {
+					.start-app-btn {
+						width: 100%;
+					}
+				}
+			}
+		}
+	}
+}
+.gradient {
+	background: url('/assets/images/gradient.svg') no-repeat 100% 500px;
+	@include respond-to(tablet) {
+		background-position:100% 430px;
+	}
+	@include respond-to(mobileLG) {
+		background-position:100% 360px;
+	}
+	@include respond-to(mobileMD) {
+		background-position:100% 540px;
+	}
+}

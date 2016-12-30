@@ -1,0 +1,180 @@
+.btn {
+	display: inline-block;
+	min-width: 108px;
+	padding: 0 30px;
+	box-sizing: border-box;
+	font-family: $PNRegular;
+	font-size: 16px;
+	color: $white;
+	text-align: center;
+	border: none;
+	cursor: pointer;
+	line-height: 48px;
+	border-radius: 2px;
+	border: 1px solid transparent;
+	position:relative;
+	@include transition($property: background);
+	&.disabled {
+		outline: 0;
+	}
+  &.btn-block {
+    width:100%;
+  }
+  .btn-arrow {
+		padding-right:15px;
+		&:after {
+			content: "";
+			width: 0;
+			height: 0;
+			border-style: solid;
+			border-width: 6px 5.5px 0 5.5px;
+			border-color: $btn_back_fill transparent transparent transparent;
+			position:absolute;
+			top: 50%;
+			right: 20px;
+			transform: translateY(-50%);
+		}
+    @at-root .optionsShow.active .btn-arrow {
+      &:after {
+        border-width: 0 5.5px 6px 5.5px;
+        border-color: transparent transparent $btn_back_fill transparent;
+      }
+    }
+    @at-root .optionsShow .btn-arrow {
+      &:after {
+        border-width: 6px 5.5px 0 5.5px;
+        border-color: #c2c5cc transparent transparent;
+      }
+		}
+
+	}
+	&.btn-default {
+		border-color: $btn_default_bg;
+		background: $btn_default_bg;
+		&:hover {
+			border-color: $btn_default_bg_hover;
+			background: $btn_default_bg_hover;
+			color: $white;
+		}
+		&.disabled, &:disabled {
+			color: $btn_default_color_disabled;
+			border-color: $btn_default_bg_disabled;
+			background: $btn_default_bg_disabled;
+			cursor: default;
+			&:hover {
+				background: $btn_default_bg_disabled;
+			}
+		}
+		.btn-arrow {
+			padding-right:50px;
+			&:after {
+				border-width: 6px 5.5px 0 5.5px;
+				border-color: $white transparent transparent transparent;
+			}
+		}
+		@at-root .btn-default.optionsShow .btn-arrow {
+			&:after {
+				border-width: 0 5.5px 6px 5.5px;
+				border-color: transparent transparent $white transparent;
+			}
+		}
+	}
+	&.btn-grey {
+		border-color: $btn_grey_border;
+		background: $white url('/assets/images/bg-btn-grey.png') repeat-x;
+		background: -webkit-linear-gradient(top, $white 0%, $btn_grey_gradient_to 100%);
+		background: linear-gradient(to bottom, $white 0%, $btn_grey_gradient_to 100%);
+		color: $btn_grey_color;
+		@include transition($property: none);
+		&:hover {
+			background: $white;
+		}
+		&:disabled {
+			background: $white url('/assets/images/bg-btn-grey.png') repeat-x;
+			background: -webkit-linear-gradient(top, $white 0%, $btn_grey_gradient_to 100%);
+			background: linear-gradient(to bottom, $white 0%, $btn_grey_gradient_to 100%);
+			color: $btn_grey_disabled;
+            cursor: default;
+		}
+	}
+	&.btn-red {
+		background:$btn_red_bg;
+		&:hover {
+			background: $btn_red_hover;
+		}
+	}
+	&.btn-block {
+		width: 100%;
+	}
+	&.btn-filter {
+		position:relative;
+		&:before {
+			width: 1px;
+			height: 100%;
+			background: $btn_separator;
+			content: "";
+			position: absolute;
+			top:0;
+			right:49px;
+		}
+	}
+	.options {
+		display: none;
+		position:absolute;
+		width: 100%;
+		min-width: 170px;
+		top: 100%;
+		right: -1px;
+		border:1px solid $btn_back_fill;
+		border-radius:2px;
+		background:$white;
+		margin:-1px 0 0;
+		z-index: 20;
+		ul {
+			padding:15px 10px 15px 30px;
+			li {
+				line-height: 22px;
+				padding:0 0 10px;
+				text-align: left;
+				color: $text_dark_color;
+				font: 14px/22px $PNLight;
+				.label {
+					font: 14px/22px $PNLight;
+				}
+			}
+		}
+	}
+	&.optionsShow {
+		.options {display:none;}
+	}
+
+  &.optionsShow.open {
+    .options {display:block;}
+  }
+}
+.back-btn {
+    position: absolute;
+    top: 41px;
+    left: -88px;
+    border: 1px solid #eef0f0;
+    width: 56px;
+    cursor: pointer;
+    height: 48px;
+    border-radius: 3px;
+    background: #fafafa;
+
+    &:hover {
+        opacity: 0.5;
+    }
+
+    .back-btn-icon {
+        display: block;
+        position: relative;
+        top:20px;
+        left: -1px;
+        width: 20px;
+        height: 8px;
+        margin: 0 auto;
+        background: url("/assets/images/i-back.svg") no-repeat 0 50%;
+    }
+}

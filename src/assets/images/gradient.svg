@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="2660" height="1346" viewBox="0 0 2660 1346">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fcfcfc;
+        fill-rule: evenodd;
+        filter: url(#filter);
+      }
+    </style>
+    <clipPath id="clip-path">
+      <rect x="530" y="-733" width="2660" height="4800"/>
+    </clipPath>
+    <filter id="filter" x="-494" y="733" width="2660" height="1346" filterUnits="userSpaceOnUse">
+      <feImage preserveAspectRatio="none" x="-494" y="733" width="2660" height="1346" result="image" xlink:href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMjY2MCIgaGVpZ2h0PSIxMzQ2IiB2aWV3Qm94PSIwIDAgMjY2MCAxMzQ2Ij4KICA8ZGVmcz4KICAgIDxzdHlsZT4KICAgICAgLmNscy0xIHsKICAgICAgICBmaWxsOiB1cmwoI2xpbmVhci1ncmFkaWVudCk7CiAgICAgIH0KICAgIDwvc3R5bGU+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9ImxpbmVhci1ncmFkaWVudCIgeDE9IjE3MTguNTU3IiB5MT0iMTM0NiIgeDI9Ijk0MS40NDMiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIj4KICAgICAgPHN0b3Agb2Zmc2V0PSIwIiBzdG9wLWNvbG9yPSIjZmZmIi8+CiAgICAgIDxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iI2Y3ZjdmNyIvPgogICAgPC9saW5lYXJHcmFkaWVudD4KICA8L2RlZnM+CiAgPHJlY3QgY2xhc3M9ImNscy0xIiB3aWR0aD0iMjY2MCIgaGVpZ2h0PSIxMzQ2Ii8+Cjwvc3ZnPgo="/>
+      <feComposite result="composite" operator="in" in2="SourceGraphic"/>
+      <feBlend result="blend" in2="SourceGraphic"/>
+      <feGaussianBlur result="blur" in="SourceAlpha"/>
+      <feFlood result="flood" flood-color="#f3f4f9"/>
+      <feComposite result="composite-2" operator="out" in2="blur"/>
+      <feOffset result="offset" dx="-0.07" dy="0.998"/>
+      <feComposite result="composite-3" operator="in" in2="SourceAlpha"/>
+      <feBlend result="blend-2" in2="blend"/>
+    </filter>
+  </defs>
+  <g clip-path="url(#clip-path)">
+    <path class="cls-1" d="M-304.364,733L2166.01,1371.84,1976.36,2079-494.014,1440.16Z" transform="translate(530 -733)"/>
+  </g>
+</svg>

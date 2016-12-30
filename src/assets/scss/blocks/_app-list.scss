@@ -1,0 +1,41 @@
+.app-list {
+	margin-bottom: 35px;
+	li {
+		margin-top: 37px;
+		&:first-child {
+			margin-top: 0;
+		}
+		a {
+			color: $text_dark_color;
+			font-size: 0;
+			line-height: 0;
+			display: inline-block;
+			vertical-align: top;
+			@include clearfix;
+			&:hover {
+				span {
+					text-decoration: underline;
+				}
+			}
+			i {
+				width: 25px;
+				display: inline-block;
+				vertical-align: middle;
+				margin-right: 22px;
+				svg {
+					width: 100%;
+					height: 20px;
+				}
+			}
+			span {
+				font-size: 15px;
+				line-height: 1em;
+				display: inline-block;
+				vertical-align: middle;
+				strong {
+					font-family: $PNSemibold;
+				}
+			}
+		}
+	}
+}

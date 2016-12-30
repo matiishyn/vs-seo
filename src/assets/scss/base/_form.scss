@@ -1,0 +1,882 @@
+@mixin inputInvalid() {
+  outline: none;
+  border-color: $input_border_error;
+  -webkit-box-shadow: 0 0 2px 1px $input_box_shadow_focus;
+  box-shadow: 0 0 2px 1px $input_box_shadow_focus;
+}
+
+select::-ms-expand {
+  display: none;
+}
+
+%s-input {
+  background: $white;
+  border: 1px solid $input_border;
+  padding: 0 20px;
+  line-height: 38px;
+  font-size: 16px;
+  color: $text_dark_color;
+  font-family: $PNLight;
+  border-radius: 2px;
+  box-sizing: border-box;
+  width: 100%;
+  height: 40px;
+  outline: none;
+  &::-webkit-input-placeholder {
+    color: $input_border;
+  }
+  &:-ms-input-placeholder {
+    color: $input_border;
+  }
+  &.focus,
+  &:focus {
+    border-color: $input_border_focus;
+    -webkit-box-shadow: 0 0 2px 1px $input_box_shadow;
+    box-shadow: 0 0 2px 1px $input_box_shadow;
+  }
+  &.server-error,
+  &.error,
+  &.ng-touched.ng-invalid {
+    @include inputInvalid();
+  }
+  &.date {
+    background: $white url('/assets/images/i-calendar.svg') no-repeat calc(100% - 17px) 10px;
+  }
+  &.disabled {
+    background-color: $footer_bg;
+  }
+}
+
+%s-col-fullsize {
+  width: 58.333%;
+  @include respond-to (mobileLG) {
+    width: 100%;
+  }
+}
+
+textarea {
+  border: 1px solid $input_border;
+  width: 100%;
+  resize: none;
+  overflow: auto;
+  border-radius: 2px;
+  box-sizing: border-box;
+  padding: 10px 20px;
+  font-size: 16px;
+  color: $text_dark_color;
+  font-family: $PNLight;
+  &::-webkit-input-placeholder {
+    color: $input_border;
+  }
+  &:-ms-input-placeholder {
+    color: $input_border;
+  }
+  &.focus,
+  &:focus {
+    border-color: $input_border_focus;
+    -webkit-box-shadow: 0 0 2px 1px $input_box_shadow;
+    box-shadow: 0 0 2px 1px $input_box_shadow;
+  }
+}
+
+.form {
+
+  &.form-validation {
+    &.ng-submitted {
+      input.ng-invalid, input-selector.ng-invalid input, input-selector.ng-invalid .switch {
+        @include inputInvalid();
+      }
+      input-selector.ng-invalid .switch {
+        display: inline-block;
+        border: 1px solid $input_border_error;
+        label {
+          margin: 0;
+          border: none;
+          border-left: 1px solid $btn_grey_border;
+        }
+        .radio-holder:first-child label {
+          border-left: none;
+        }
+      }
+      multiple-language.ng-invalid {
+        .ui-select-container {
+          @include inputInvalid();
+        }
+      }
+      .ng-invalid-required ~ .message.error-required {
+        display: block;
+      }
+      .ng-invalid-duplicate ~ .message.error-duplicate {
+        display: block;
+      }
+      .ng-invalid-pattern ~ .message.error-pattern {
+        display: block;
+      }
+      .ng-invalid-email ~ .message.error-email {
+        display: block;
+      }
+    }
+    .ng-touched.ng-invalid {
+      @include inputInvalid();
+    }
+    .message {
+      display: none;
+      &.show {
+        display: block;
+      }
+    }
+    .ng-touched.ng-invalid-required ~ .message.error-required {
+      display: block;
+    }
+    .ng-touched.ng-invalid-duplicate ~ .message.error-duplicate {
+      display: block;
+    }
+    .ng-touched.ng-invalid-pattern ~ .message.error-pattern {
+      display: block;
+    }
+    .ng-touched.ng-invalid-email ~ .message.error-email {
+      display: block;
+    }
+    .ng-touched.ng-invalid-phone-number ~ .message.error-phone-number {
+      display: block;
+    }
+  }
+
+  input-selector[disabled] {
+    pointer-events: none;
+    input {
+      background: #f7f7f7;
+    }
+    vl-select {
+      & > .acc-nav {
+        pointer-events: none;
+        background-color: #f7f7f7;
+      }
+    }
+  }
+
+  .form-group-title {
+    font-family: $PNSemibold;
+    font-size: 16px;
+    margin-top: 50px;
+    margin-bottom: 40px;
+    max-width: 875px;
+  }
+  .form-group {
+    .form-row:first-child {
+      margin-top: 20px;
+    }
+  }
+  .form-row {
+    display: table;
+    width: 100%;
+    margin-top: 20px;
+    @include clearfix;
+    &.submit-row {
+      margin-top: 30px;
+    }
+    &.text-left {
+      text-align: left;
+    }
+    &:first-child {
+      //margin-top: 0;
+    }
+    .form-col {
+      display: table-cell;
+      vertical-align: top;
+      margin-right: -4px;
+      + .form-col {
+        padding-left: 15px;
+        box-sizing: border-box;
+      }
+      &.col-half-width {
+        width: 50%;
+        padding-left: 10px;
+        box-sizing: border-box;
+        &:first-child {
+          padding-left: 0;
+          padding-right: 10px;
+        }
+      }
+      &.col-7 {
+        width: 58.333%
+      }
+      &.col-5 {
+        width: 41.666%
+      }
+      &.pull-right {
+        text-align: right;
+      }
+      &.col-label {
+        line-height: 40px;
+        + .form-col {
+          &.col-fullsize {
+            @extend %s-col-fullsize;
+          }
+        }
+      }
+      &.col-heading {
+        width: auto;
+      }
+      &.col-fullsize {
+        @extend %s-col-fullsize;
+      }
+      &.col-quarter-width {
+        width: 25%;
+        padding-left: 10px;
+        box-sizing: border-box;
+      }
+      &.col-three-quarters-width {
+        width: 75%;
+        padding-left: 10px;
+        box-sizing: border-box;
+      }
+      .two-column {
+        @include clearfix();
+        input[type="number"] {
+          width: 48%;
+          float: left;
+        }
+        vl-select {
+          width: 48%;
+          display: block;
+          float: right;
+        }
+        .date-picker-3-columns {
+          width: 48%;
+          float: left;
+          &:last-child {
+            float: right;
+          }
+        }
+      }
+      .acc-nav {
+        border: 1px solid #c2c5cc;
+        background: $white;
+        .options {
+          border: 1px solid #c2c5cc;
+          input[type=text] {
+            border-width: 0 0 1px;
+          }
+          ul {
+            li {
+              padding: 5px 20px;
+              font-size: 15px;
+              line-height: 30px;
+              margin: 0;
+              border: none;
+              white-space: normal;
+              &.active {
+                border-left: 2px solid #4c9ce0;
+                padding: 5px 20px 5px 18px;
+              }
+            }
+          }
+        }
+      }
+      .pattern-error {
+        font: 15px/30px $PNRegular;
+        color: #e9385d;
+        margin: 5px 0 -5px 0;
+        padding: 11px 10px 0 20px;
+      }
+      .hint {
+        font: 15px/30px $PNRegular;
+        color: #797c86;
+        margin: 5px 0 -5px 0;
+        &.error {
+          display: none;
+          color: #e9385d;
+          padding: 11px 10px 0 20px;
+          &.show {
+            display: block;
+          }
+        }
+      }
+      .ng-dirty.ng-invalid-pattern + .error,
+      .ng-dirty.ng-invalid-required + .error,
+      .ng-dirty.ng-invalid-phone-number + .error {
+        display: block;
+      }
+      .phone-number.ng-invalid-required {
+        outline: none;
+        border-color: $input_border_error;
+        -webkit-box-shadow: 0 0 2px 1px $input_box_shadow_focus;
+        box-shadow: 0 0 2px 1px $input_box_shadow_focus;
+      }
+      my-date-range {
+        .message {
+          display: none;
+        }
+        &.ng-invalid-date-range {
+          .message {
+            display: block;
+          }
+        }
+      }
+    }
+    &.form-btns {
+      margin-top: 45px;
+    }
+    @include respond-to(mobileLG) {
+      &.form-btns {
+        text-align: center;
+        .col-label {
+          display: none;
+          + .form-col {
+            padding: 0;
+            width: auto;
+          }
+        }
+      }
+      .form-col {
+        &.col-label {
+          width: 25%;
+          margin-bottom: 10px;
+          + .form-col {
+            padding: 0;
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+  .approved-element {
+    opacity: 0.5;
+    display: block;
+    pointer-events: none;
+  }
+  .group {
+    margin-top: 20px;
+    &.disabled {
+      .element {
+        input, vl-select {
+          pointer-events: none;
+          background: #f7f7f7;
+          .acc-nav {
+            background: #f7f7f7;
+          }
+        }
+      }
+    }
+  }
+  .elements {
+    margin-top: 20px;
+
+    .element {
+      margin-top: 20px;
+      &:first-child {
+        margin-top: 0;
+      }
+      &.disabled, &[disabled], .disabled, input-selector[disabled] {
+        pointer-events: none;
+        input {
+          background: #f7f7f7;
+        }
+        vl-select {
+          & > .acc-nav {
+            pointer-events: none;
+            background-color: #f7f7f7;
+          }
+        }
+      }
+    }
+  }
+  .remove-link {
+    float: right;
+    width: 25%;
+    padding-left: 20px;
+    margin-bottom: -20px;
+    box-sizing: border-box;
+    z-index: 1;
+    position: relative;
+  }
+  .form-divider,
+  .form-divider02 {
+    border: none;
+    border-bottom: 1px dashed #c2c5cc;
+    margin: 30px 0;
+  }
+  .form-divider02 {
+    border-bottom: 1px solid $nav_border_bottom_active;
+    margin: 40px 0;
+  }
+  input[type="text"] {
+    @extend %s-input;
+  }
+  select {
+    @extend %s-input;
+  }
+  input[type="email"] {
+    @extend %s-input;
+  }
+  input[type="number"] {
+    -moz-appearance: textfield;
+    @extend %s-input;
+    &::-webkit-inner-spin-button, &::-webkit-outer-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+  }
+  input[type="email"].ng-dirty:focus {
+    border-color: $input_border_focus;
+    -webkit-box-shadow: 0 0 2px 1px $input_box_shadow;
+    box-shadow: 0 0 2px 1px $input_box_shadow;
+  }
+  input[type="password"] {
+    @extend %s-input;
+  }
+  button[type="submit"],
+  input[type="reset"] {
+    //width: 100%;
+    font-family: $PNLight;
+  }
+  .date-picker-3-columns, .date-picker {
+    .col-control, .calendar {
+      [datepicker-popup-wrap] {
+        z-index: 2;
+      }
+    }
+  }
+  .message, .error-message {
+    color: #e9385d;
+    font-size: 15px;
+    padding: 11px 10px 0 20px;
+    text-align: left;
+    &.success {
+      color: #28a725;
+    }
+    + .message {
+      display: none;
+    }
+    + .submit-row {
+      margin-top: 20px;
+    }
+    &.alt-message {
+      padding: 26px 10px 6px 20px;
+    }
+  }
+  .errorMsg {
+    clear: both;
+    padding: 10px 0 20px 420px;
+    color: $rejectd_color;
+    font: 16px/20px $PNLight;
+    box-sizing: border-box;
+    max-width: 865px;
+    @include respond-to (mobileLG) {
+      padding: 10px 0 20px 32%;
+    }
+    strong {
+      font-family: $PNSemibold;
+    }
+  }
+  .password-holder {
+    position: relative;
+    input[type="password"] {
+      padding-right: 70px;
+    }
+    .hidden-password {
+      + .alt-password {
+        display: block !important;
+      }
+    }
+    .show-password {
+      cursor: pointer;
+      position: absolute;
+      right: 12px;
+      top: 10px;
+      background: $btn_show_password_bg;
+      font-size: 12px;
+      color: $btn_show_password_color;
+      text-align: center;
+      line-height: 20px;
+      padding: 0 10px;
+      border-radius: 2px;
+    }
+  }
+  label, .optional {
+    font-family: $PNRegular;
+    font-size: 15px;
+    line-height: 20px;
+    cursor: text;
+    display: inline-block;
+    strong {
+      font-family: $PNSemibold;
+    }
+    .infoText {
+      color: $documents_message_color;
+    }
+  }
+  .optional {
+    margin-left: 5px;
+    color: #c7c9d3;
+  }
+  select {
+    width: 100%;
+    height: 40px;
+    padding: 0 20px;
+    box-sizing: border-box;
+  }
+  .g-recaptcha {
+    @include transform(scale(1.05));
+    transform-origin: 0 0;
+  }
+  form-select, form-builder {
+    div:first-child {
+      & > div .form-group-title {
+        margin-top: 0;
+      }
+    }
+  }
+}
+
+.cs-wrapper {
+  position: relative;
+  select {
+    display: none;
+  }
+  .cs-input-holder {
+    .cs-input {
+      cursor: pointer;
+      &:focus {
+        box-shadow: none;
+        border-color: #f2f2f2; // Needs to be moved to settings once decided on select styling
+      }
+    }
+    .cs-arrow {
+      position: absolute;
+      right: 20px;
+      top: 50%;
+      margin-top: -3.5px;
+      width: 0;
+      height: 0;
+      border-top: 4px solid #c8d2e5; // Needs to be moved to settings once decided on select styling
+      border-left: 4px solid transparent;
+      border-right: 4px solid transparent;
+      @include hide-text;
+    }
+  }
+  &.active {
+    .cs-input {
+      background: $white;
+    }
+    .cs-arrow {
+      border-top: none;
+      border-bottom: 4px solid #c8d2e5; // Needs to be moved to settings once decided on select styling
+    }
+  }
+}
+
+.cs-drop-holder {
+  .cs-drop {
+    display: none;
+    position: fixed;
+    border: 1px solid #f2f2f2;
+    border-bottom: none;
+    box-sizing: border-box;
+    .cs-option {
+      color: $text_dark_color;
+      font-size: 16px;
+      line-height: 48px;
+      display: block;
+      border-bottom: 1px solid #f2f2f2; // Needs to be moved to settings once decided on select styling
+      box-sizing: border-box;
+      padding-left: 30px;
+      background: $white;
+      &:hover {
+        background: #fafafa; // Needs to be moved to settings once decided on select styling
+      }
+    }
+  }
+}
+
+.switch {
+  white-space: nowrap;
+  @include clearfix;
+}
+
+@mixin timeSlotButton() {
+  margin: 2px 0 3px;
+  padding: 0 23px;
+  box-sizing: border-box;
+  display: block;
+  min-width: 78px;
+  height: 35px;
+  line-height: 35px;
+  text-align: center;
+  cursor: pointer;
+  border: 1px solid $btn_grey_border;
+  border-right-width: 0;
+  background: $white url('/assets/images/bg-radio.png') repeat-x;
+  background: -webkit-linear-gradient(top, $white 0%, #fafbfd 100%);
+  background: linear-gradient(to bottom, $white 0%, #fafbfd 100%);
+  font-size: 16px;
+  &:hover {
+    background: $white;
+  }
+  @include respond-to(mobileMD) {
+    padding: 0;
+  }
+}
+
+@mixin timeSlotButtonDisabled() {
+  cursor: default;
+  color: #a9a9ab;
+  border-color: #edeef1;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+@mixin timeSlotButtonSelected() {
+  color: $white;
+  background: #54af5d;
+  cursor: default;
+  border: 1px solid #54af5d;
+  -webkit-box-shadow: inset 0 2px 1px 0 #449e4d;
+  box-shadow: inset 0 2px 1px 0 #449e4d;
+}
+
+.time-slots-container {
+  display: flex;
+  flex-wrap: wrap;
+  width: 324px;
+
+  .time-slot-btn {
+    flex-shrink: 1;
+    width: 50%;
+    font-family: $PNRegular;
+    &:nth-child(2n) {
+      border-right-width: 1px;
+    }
+    @include timeSlotButton();
+    &.disabled {
+      @include timeSlotButtonDisabled();
+    }
+    &.selected {
+      @include timeSlotButtonSelected();
+      cursor: pointer;
+    }
+  }
+}
+
+input[type="radio"] {
+  display: none;
+  + label {
+    float: left;
+    @include timeSlotButton();
+    &:last-child {
+      border-radius: 0 2px 2px 0;
+      border-right-width: 1px;
+    }
+  }
+  &:first-child {
+    + label {
+      border-radius: 2px 0 0 2px;
+    }
+  }
+  &:checked {
+    + label {
+      @include timeSlotButtonSelected();
+      + input[type="radio"] {
+        + label {
+          border-left-width: 0;
+        }
+      }
+    }
+  }
+  @at-root .onOff &:nth-child(3):checked {
+    + label {
+      background: #929aa8;
+      box-shadow: inset 0 3px 1px 0 rgba(123, 133, 149, 0.5);
+      border: 1px solid #7b8595;
+    }
+  }
+  &:disabled {
+    + label {
+      @include timeSlotButtonDisabled();
+    }
+  }
+}
+
+.radio-rows {
+  overflow: hidden;
+  margin-top: 3px;
+  .radio-row {
+    overflow: hidden;
+    margin-top: -1px;
+    &:first-child {
+      margin-top: 0;
+    }
+    label {
+      width: 50%;
+      margin: 0;
+    }
+  }
+}
+
+.radio-holder {
+  display: inline-block;
+  input[type="radio"] {
+    + label {
+      float: none;
+      &:last-child {
+        border-radius: 0;
+        border-right-width: 0;
+      }
+    }
+    &:first-child {
+      + label {
+        border-radius: 0;
+      }
+    }
+  }
+  &.checked {
+    + .radio-holder {
+      input[type="radio"] {
+        + label {
+          border-left-color: transparent;
+        }
+      }
+    }
+  }
+  &:first-child {
+    input[type="radio"] {
+      + label {
+        border-radius: 2px 0 0 2px;
+      }
+    }
+  }
+  &:last-child {
+    input[type="radio"] {
+      + label {
+        border-radius: 0 2px 2px 0;
+        border-right-width: 1px;
+      }
+    }
+  }
+}
+
+.password-tooltip,
+.info-tooltip {
+  position: absolute;
+  top: 19px;
+  left: 100%;
+  padding: 14px;
+  background: $white;
+  border: 1px solid #c2c5cc;
+  margin-left: 20px;
+  width: 100%;
+  text-align: left;
+  display: none;
+  @include transform(translateY(-50%));
+  h4 {
+    font-family: $PNSemibold;
+    font-size: 13px;
+    line-height: 20px;
+  }
+  ul {
+    li {
+      font-size: 12px;
+      line-height: 20px;
+      color: $app_text_dark_color;
+    }
+  }
+  .arrow {
+    position: absolute;
+    left: -10px;
+    top: 50%;
+    margin-top: -10px;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-right: 10px solid #c2c5cc;
+    &:before {
+      content: '';
+      display: block;
+      position: absolute;
+      top: -10px;
+      left: 1px;
+      border-top: 10px solid transparent;
+      border-bottom: 10px solid transparent;
+      border-right: 10px solid #fff;
+    }
+  }
+  @include respond-to(mobileLG) {
+    max-width: 135px;
+  }
+}
+
+.password-tooltip {
+  max-width: 248px;
+}
+
+input[type="password"] {
+  &.focus:not([style*="display: none"]),
+  &:focus {
+    ~ .password-tooltip {
+      display: block;
+    }
+  }
+}
+
+.info-tooltip {
+  width: 300px;
+  top: 8px;
+  z-index: 20;
+}
+
+.infoLabel {
+  width: 16px;
+  height: 16px;
+  background: url('/assets/images/info.svg') repeat-x;
+  position: relative;
+  display: inline-block;
+  margin: 0 0 0 15px;
+  cursor: pointer;
+  vertical-align: sub;
+  &:hover {
+    .info-tooltip {
+      display: block;
+    }
+  }
+}
+
+.progressSlider {
+  width: 100%;
+  padding: 5px 0;
+  margin: 25px 0 0;
+  .progressArea {
+    position: relative;
+    background: $white;
+    border: 1px solid $acc_nav_border;
+    border-radius: 2px;
+    width: 100%;
+    height: 8px;
+  }
+  .progressLine {
+    position: absolute;
+    background: $price_color;
+    border: solid $progressbar_border;
+    border-width: 1px 0;
+    height: 8px;
+    bottom: -1px;
+    margin: -1px 0 0;
+  }
+  .slider, .rz-pointer {
+    background: $white;
+    border: 1px solid $acc_nav_border;
+    border-radius: 2px;
+    width: 13px;
+    height: 18px;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+    span {
+      position: absolute;
+      top: -22px;
+      left: 50%;
+      transform: translateX(-50%);
+      font: 13px/14px $PNRegular;
+    }
+  }
+}

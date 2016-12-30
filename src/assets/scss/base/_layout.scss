@@ -1,0 +1,29 @@
+body {
+	font: 14px/18px $PNLight;
+	color: $text_dark_color;
+	background: $white;
+	&.popup-body {
+		overflow: hidden;
+	}
+}
+a {
+	color: $link_color;
+	text-decoration: none;
+	&:hover {
+		color: $link_color_hover;
+		text-decoration: none;
+	}
+}
+.wrapper {
+	height: 100%;
+	.page {
+		overflow: hidden;
+	}
+}
+.container {
+	max-width: $page_width;
+	margin: 0 auto;
+}
+.ng-hide {
+	display: none;
+}

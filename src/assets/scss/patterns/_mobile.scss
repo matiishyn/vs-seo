@@ -1,0 +1,42 @@
+.mobileMD-hide {
+	@include respond-to(mobileMD) {
+		display: none !important;
+	}
+}
+.mobileMD-show {
+	display: none;
+	@include respond-to(mobileMD) {
+		display: block;
+		&.btn {
+			display: inline-block;
+		}
+	}
+}
+.tablet-hide {
+	@include respond-to(tablet) {
+		display: none !important;
+	}
+}
+.tablet-show {
+	display: none;
+	@include respond-to(tablet) {
+		display: block;
+		&.btn {
+			display: inline-block;
+		}
+	}
+}
+.desktopSM-hide {
+	@include respond-to(desktopSM) {
+		display: none !important;
+	}
+}
+.desktopSM-show {
+	display: none;
+	@include respond-to(desktopSM) {
+		display: block;
+		&.btn {
+			display: inline-block;
+		}
+	}
+}

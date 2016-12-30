@@ -1,0 +1,85 @@
+/* Window width */
+$mobileSM: 320px;
+$mobileMD: 640px;
+$mobileLG: 768px;
+$tablet: 1024px;
+$desktopSM: 1240px;
+
+@mixin respond-to($media) {
+	@if $media == mobileSM {
+		@media only screen and (max-width: $mobileSM) {
+			@content;
+		}
+	}
+	@else if $media == mobileMD {
+		@media only screen and (max-width: $mobileMD) {
+			@content;
+		}
+	}
+	@else if $media == mobileLG {
+		@media only screen and (max-width: $mobileLG) {
+			@content;
+		}
+	}
+	@else if $media == tablet {
+		@media only screen and (max-width: $tablet) {
+			@content;
+		}
+	}
+	@else if $media == desktopSM {
+		@media only screen and (max-width: $desktopSM) {
+			@content;
+		}
+	}
+}
+
+/* Clearfix */
+@mixin clearfix {
+	&:after {
+		content: '';
+		display: block;
+		clear: both;
+	}
+}
+.clearfix {
+  @include clearfix;
+}
+
+/* Hide text */
+@mixin hide-text {
+	text-indent: 100%;
+	overflow: hidden;
+	white-space: nowrap;
+}
+
+/* Transforms */
+@mixin transform($transforms) {
+	-webkit-transform: $transforms;
+	-moz-transform: $transforms;
+	-ms-transform: $transforms;
+	-o-transform: $transforms;
+	transform: $transforms;
+}
+
+/* Transitions */
+@mixin transition($property: all, $duration: .25s, $animation: '') {
+    -webkit-transition: $property $duration #{$animation};
+    -moz-transition: $property $duration #{$animation};
+    -ms-transition: $property $duration #{$animation};
+    -o-transition: $property $duration #{$animation};
+    transition: $property $duration #{$animation};
+}
+
+/* Center align vertically */
+// @mixin center-vertical($height) {
+// 	position: absolute;
+// 	top: 50%;
+// 	margin-top: -$height / 2;
+// }
+
+/* Center align horisontally */
+// @mixin center-horisontal($width) {
+// 	position: absolute;
+// 	left: 50%;
+// 	margin-left: -$width / 2;
+// }

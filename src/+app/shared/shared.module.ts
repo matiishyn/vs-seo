@@ -4,7 +4,7 @@ import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ApiService } from './api.service';
 import { ModelService } from './model/model.service';
-import {TranslateModule, TranslateService} from "ng2-translate";
+import { TranslateModule, TranslateService } from "ng2-translate";
 
 
 const MODULES = [
@@ -21,7 +21,7 @@ const PIPES = [
 ];
 
 const COMPONENTS = [
-  // put shared components here
+  // put shared modules here
 ];
 
 const PROVIDERS = [

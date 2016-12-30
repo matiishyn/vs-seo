@@ -1,0 +1,98 @@
+.popup, .popup-el {
+  display: block;
+  background-color: rgba(0, 0, 0, 0.4);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 99999;
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  @include transition($property: opacity, $duration: 0.15s, $animation: linear);
+  .popup-holder {
+    display: table;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    vertical-align: middle;
+    cursor: default;
+    .popup-box {
+      display: table-cell;
+      vertical-align: middle;
+      .popup-body {
+        width: 580px;
+        margin: auto;
+        border-radius: 5px;
+        background: $white;
+        border: 1px solid $popup_border;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.35);
+        overflow: hidden;
+        position: relative;
+        @include transform(translateY(-25%));
+        @include transition($property: all, $duration: 0.3s, $animation: ease-out);
+        .popup-content {
+          padding: 40px 100px 140px;
+        }
+        .popup-footer {
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          background: $popup_footer_fill;
+          padding: 20px;
+          .btn {
+            font-size: 15px;
+            margin: 0 5px;
+          }
+        }
+        @include respond-to(mobileLG) {
+          width: 95%;
+          .popup-content {
+            padding: 45px;
+          }
+        }
+      }
+    }
+  }
+  &.active {
+    opacity: 1;
+    visibility: visible;
+    overflow: auto;
+    .popup-holder {
+      .popup-box {
+        .popup-body {
+          @include transform(translateY(0));
+        }
+      }
+    }
+  }
+}
+
+.confirmation {
+  .popup {
+    .popup-box {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+
+      .popup-body {
+        min-width: 300px;
+        .popup-content {
+          padding: 20px 100px 80px;
+          h4 {
+            font-family: $PNSemibold;
+          }
+        }
+        .popup-footer {
+          padding: 10px;
+          .btn {
+            line-height: 38px;
+          }
+        }
+      }
+    }
+  }
+}

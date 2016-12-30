@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 20.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd" [
+	<!ENTITY ns_extend "http://ns.adobe.com/Extensibility/1.0/">
+	<!ENTITY ns_ai "http://ns.adobe.com/AdobeIllustrator/10.0/">
+	<!ENTITY ns_graphs "http://ns.adobe.com/Graphs/1.0/">
+	<!ENTITY ns_vars "http://ns.adobe.com/Variables/1.0/">
+	<!ENTITY ns_imrep "http://ns.adobe.com/ImageReplacement/1.0/">
+	<!ENTITY ns_sfw "http://ns.adobe.com/SaveForWeb/1.0/">
+	<!ENTITY ns_custom "http://ns.adobe.com/GenericCustomNamespace/1.0/">
+	<!ENTITY ns_adobe_xpath "http://ns.adobe.com/XPath/1.0/">
+]>
+<svg version="1.1" id="Layer_1" xmlns:x="&ns_extend;" xmlns:i="&ns_ai;" xmlns:graph="&ns_graphs;"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 865 148.3"
+	 style="enable-background:new 0 0 865 148.3;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#354763;}
+	.st1{fill:#CF3A51;}
+</style>
+<metadata>
+	<sfw  xmlns="&ns_sfw;">
+		<slices></slices>
+		<sliceSourceBounds  bottomLeftOrigin="true" height="148.3" width="865" x="68" y="-574.1"></sliceSourceBounds>
+	</sfw>
+</metadata>
+<g>
+	<path class="st0" d="M0,1.9h35l40.2,110.6L115,1.9h35l-56,144H56L0,1.9z"/>
+	<path class="st0" d="M163,1.9h30v144h-30V1.9z"/>
+	<path class="st0" d="M228.9,102.2c10.1,10.5,25.8,19.4,45.6,19.4c16.8,0,25-8,25-16.1c0-10.8-12.5-14.4-29-18.3
+		c-23.5-5.4-53.6-11.8-53.6-43.9c0-23.9,20.7-43.2,54.5-43.2c22.8,0,41.7,6.9,55.9,20l-17,22.4c-11.6-10.8-27.1-15.7-41.1-15.7
+		c-13.8,0-21.1,6-21.1,14.6c0,9.7,12,12.7,28.6,16.6c23.7,5.4,53.8,12.5,53.8,44.3c0,26.3-18.7,46-57.5,46
+		c-27.5,0-47.3-9.3-60.7-22.8L228.9,102.2z"/>
+	<g>
+		<polygon class="st0" points="391.7,77.9 409,29.4 426.2,77.9 457,77.9 428,1.9 390,1.9 360.9,77.9 		"/>
+		<polygon class="st0" points="460.1,85.1 436.1,105.5 450,145.9 483,145.9 		"/>
+		<polygon class="st0" points="357.8,85.1 334.3,145.7 367.9,145.7 381.9,105.5 		"/>
+	</g>
+</g>
+<path class="st1" d="M497,1.9h30v117h61v27h-91V1.9z"/>
+<path class="st1" d="M792.5,93.3l-36.2,52.5l-36.4,0l52.1-73.6L723,1.9h36l33.5,49.4l32.7-49.4h36.9L813,72l52.1,73.8l-36.6,0
+	L792.5,93.3z"/>
+<g>
+	<rect x="609" y="1.9" class="st1" width="101" height="27"/>
+	<rect x="609" y="60.9" class="st1" width="101" height="27"/>
+	<rect x="609" y="118.9" class="st1" width="100" height="27"/>
+</g>
+</svg>
