@@ -3,9 +3,9 @@ import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { UniversalModule, isBrowser, isNode } from 'angular2-universal/node'; // for AoT we need to manually split universal packages
 
-import { AppModule, AppComponent } from './+app/app.module';
-import { SharedModule } from './+app/shared/shared.module';
-import { CacheService } from './+app/shared/cache.service';
+import { AppModule, AppComponent } from './app/app.module';
+import { SharedModule } from './app/shared/shared.module';
+import { CacheService } from './app/shared/cache.service';
 
 import {TranslateModule, TranslateLoader} from 'ng2-translate';
 import {Http} from "@angular/http";

@@ -5,9 +5,9 @@ import { UniversalModule, isBrowser, isNode, AUTO_PREBOOT } from 'angular2-unive
 import { IdlePreload, IdlePreloadModule } from '@angularclass/idle-preload';
 import {TranslateUniversalLoader} from "./universal-loader";
 
-import { AppModule, AppComponent } from './+app/app.module';
-import { SharedModule } from './+app/shared/shared.module';
-import { CacheService } from './+app/shared/cache.service';
+import { AppModule, AppComponent } from './app/app.module';
+import { SharedModule } from './app/shared/shared.module';
+import { CacheService } from './app/shared/cache.service';
 
 // Will be merged into @angular/platform-browser in a later release
 // see https://github.com/angular/angular/pull/12322
