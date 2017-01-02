@@ -8,11 +8,17 @@ import {SharedModule} from './shared/shared.module';
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {HeaderComponent} from './components/header/header.component';
-import {FooterComponent} from "./components/footer/footer.component";
+import {FooterComponent} from './components/footer/footer.component';
+import {ImgHeaderComponent} from './components/img-header/img-header.component';
 
 
 @NgModule({
-  declarations: [AppComponent, HeaderComponent, FooterComponent],
+  declarations: [
+    AppComponent,
+    HeaderComponent,
+    FooterComponent,
+    ImgHeaderComponent
+  ],
   imports: [
     SharedModule,
     // HomeModule,
@@ -24,6 +30,7 @@ import {FooterComponent} from "./components/footer/footer.component";
     TranslateModule
   ]
 })
+
 export class AppModule {
 }
 
