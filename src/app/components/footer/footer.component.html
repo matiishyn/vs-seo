@@ -1,7 +1,7 @@
 <footer id="footer" class="footer">
   <div class="footer-inner">
     <div class="footer-content">
-      <span class="copy">{{'layout_copyright' | translate}}</span>
+      <span class="copy" [innerHTML]="'layout_copyright' | translate"></span>
       <ul class="footer-nav">
         <li class="footer-nav-item">
           <a ui-sref=".termsConditions" ng-click="$ctrl.disable($event)">{{'layout_terms' | translate}}</a>
