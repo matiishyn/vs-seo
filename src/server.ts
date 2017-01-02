@@ -68,7 +68,7 @@ app.use(cacheControl, express.static(path.join(ROOT, 'dist/client'), {index: fal
 import { serverApi, createTodoApi } from './backend/api';
 // Our API for demos only
 app.get('/data.json', serverApi);
-app.use('/api', proxy('http://localhost:7777', {
+app.use('/api', proxy('http://imatiyshin.universe.dart.spb:7777', {
   forwardPath: function(req, res) {
     return `/api${require('url').parse(req.url).path}`;
   }
