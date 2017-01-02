@@ -1,10 +1,11 @@
-import { Component, ChangeDetectionStrategy, ViewEncapsulation } from '@angular/core';
+import {Component, ChangeDetectionStrategy, ViewEncapsulation} from '@angular/core';
 
 @Component({
   changeDetection: ChangeDetectionStrategy.Default,
   encapsulation: ViewEncapsulation.None,
   selector: 'app',
   styleUrls: ['../index.scss'],
-  template: `<router-outlet></router-outlet>`
+  templateUrl: './app.component.html'
 })
-export class AppComponent {}
+export class AppComponent {
+}

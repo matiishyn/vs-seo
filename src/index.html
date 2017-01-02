@@ -2,16 +2,9 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>Angular 2 Universal Starter</title>
-  <meta name="description" content="Angular 2 Universal">
-  <meta name="keywords" content="Angular 2,Universal">
-  <meta name="author" content="PatrickJS">
+  <title>Title</title>
   <meta name="viewport" content="width=device-width,minimum-scale=1">
 
-  <link rel="icon" href="data:;base64,iVBORw0KGgo=">
-
-  <link rel="prerender" href="http://localhost:3000/lazy">
-  <link rel="preload" href="/assets/logo.png">
   <base href="/">
 
 </head>
@@ -20,6 +13,42 @@
   <app>
     Loading Universal ...
   </app>
+
+  <!-- Facebook JavaScript SDK integration -->
+  <script>
+    window.fbAsyncInit = function() {
+      FB.init({
+        appId: '1275057739171112',
+        xfbml: true,
+        version: 'v2.8'
+      });
+      FB.AppEvents.logPageView();
+    };
+
+    (function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) {return;}
+      js = d.createElement(s); js.id = id;
+      js.src = '//connect.facebook.net/en_US/sdk.js';
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+  </script>
+
+  <!--<div id="spinner" class="spinner">
+    <div class="shader"></div>
+    <div class="spinner-wrapper">
+      <div class="spinner-icon">
+        <div class="rect1"></div><div class="rect2"></div><div class="rect3"></div><div class="rect4"></div><div class="rect5"></div>
+      </div>
+    </div>
+  </div>-->
+
+  <!-- Google JavaScript SDK integration -->
+  <script src="https://apis.google.com/js/api.js"></script>
+  <script src="https://plus.google.com/js/client:platform.js" async defer></script>
+
+  <!-- Re-captcha -->
+  <script src="https://www.google.com/recaptcha/api.js?onload=vcRecaptchaApiLoaded&render=explicit" async defer></script>
 
   <script async src="/main.bundle.js"></script>
 </body>
