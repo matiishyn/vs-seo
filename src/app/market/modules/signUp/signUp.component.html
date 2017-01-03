@@ -1,0 +1,106 @@
+<section class="content" id="content">
+  <div class="container">
+    <div class="content-inner">
+      <div class="login-form-wrapper">
+        <div class="login-form-holder">
+          <form
+            name="$ctrl.form"
+            class="form login-form form-validation"
+            ng-submit="$ctrl.submit($event, $ctrl.form)" novalidate>
+            <fieldset>
+              <h2>{{'registration_getStarted' | translate}}</h2>
+              <div class="form-row text-left">
+                <div class="form-col col-half-width" style="padding: 0;">
+                  <a class="btn-facebook" ng-click="$ctrl.authenticateViaFacebook()">{{'login_facebook' |
+                    translate}}</a>
+                </div>
+                <div class="form-col col-half-width" style="padding: 0;">
+                  <a href="" class="btn-google">{{'login_google' | translate}}</a>
+                </div>
+              </div>
+              <!--<h4 class="subheading">{{$ctrl.getSubHeading()}}</h4>-->
+              <div class="form-row text-left">
+                <div class="form-col col-half-width">
+                  <input
+                    type="text"
+                    name="firstName"
+                    placeholder="{{'profile_firstName' | translate}}"
+                    maxlength="100"
+                    ng-model="$ctrl.firstName"
+                    required
+                    ng-disabled="$ctrl.emailRequired"/>
+                  <div class="message error-required">{{'user_registration_missing_firstName' | translate}}</div>
+                </div>
+                <div class="form-col col-half-width">
+                  <input
+                    type="text" id="lastName"
+                    name="lastName"
+                    placeholder="{{'profile_lastName' | translate}}"
+                    maxlength="100"
+                    ng-model="$ctrl.lastName"
+                    required
+                    ng-disabled="$ctrl.emailRequired"/>
+                  <div class="message error-required">{{'user_registration_missing_lastName' | translate}}</div>
+                </div>
+              </div>
+              <div class="form-row">
+                <input
+                  type="email"
+                  name="email"
+                  />
+                <!--ng-attr-placeholder="{{'profile_email' | translate}}"
+                  maxlength="100"
+                  ng-model="$ctrl.email"
+                  required
+                  ng-disabled="$ctrl.isEmailDisabled()"
+                  ng-pattern="$ctrl.emailPattern"
+                  unique-email="$ctrl.failureMessages"
+                  ng-model-options="{ allowInvalid: true, updateOnDefault: true }"-->
+                <div class="message error-duplicate">
+                  {{'user_registration_duplicate_email' | translate}}
+                </div>
+                <div class="message error-required">
+                  {{'user_registration_missing_email' | translate}}
+                </div>
+                <div class="message error-pattern">
+                  {{'user_registration_incorrect_email' | translate}}
+                </div>
+              </div>
+              <div class="form-row" ng-if="!$ctrl.nameRequired && !$ctrl.socialProvider">
+                <div class="password-holder password-show">
+                  <!--<password-display
+                    password="$ctrl.password"
+                    required
+                    ng-attr-placeholder="{{'profile_password' | translate}}"
+                    with-tooltip="true"
+                    pattern="$ctrl.passwordPattern"
+                  ></password-display>-->
+                </div>
+              </div>
+              <div
+                class="form-row"
+                style="min-height: 78px;"
+                ng-if="!$ctrl.nameRequired && !$ctrl.emailRequired && !$ctrl.socialProvider">
+                <!--<div
+                  vc-recaptcha
+                  ng-model="$ctrl.reCaptchaResponse"
+                  key="'6LdbhgoUAAAAAP4ldiltcNrE-NEiatPMBh3gsPtZ'"></div>-->
+              </div>
+              <div
+                class="message server-message captcha-message"
+                ng-if="$ctrl.form.$submitted && !$ctrl.reCaptchaResponse && !$ctrl.nameRequired && !$ctrl.emailRequired && !$ctrl.socialProvider">
+                {{'recaptcha_error_invalid' | translate}}
+              </div>
+              <div class="form-row submit-row">
+                <button type="submit" value class="btn btn-default">{{'login_signup' | translate}}</button>
+              </div>
+              <div class="form-row form-footer text-center"
+                   [innerHTML]="'registration_haveAnAccount' | translate"></div>
+              <div class="form-row agreement" [innerHTML]="'registration_agreement' | translate"></div>
+            </fieldset>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
