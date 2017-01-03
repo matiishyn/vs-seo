@@ -5,6 +5,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ApiService } from './api.service';
 import { ModelService } from './model/model.service';
 import { TranslateModule, TranslateService } from "ng2-translate";
+import {ImgHeaderComponent} from "../market/components/imgHeader/imgHeader.component";
 
 
 const MODULES = [
@@ -21,6 +22,8 @@ const PIPES = [
 ];
 
 const COMPONENTS = [
+  ImgHeaderComponent
+
   // put shared modules here
 ];
 

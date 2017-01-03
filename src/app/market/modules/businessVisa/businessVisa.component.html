@@ -1,1 +1,12 @@
-businessVisa
+<section id="content" class="content" ng-class="{gradient: $root.gradientBg}">
+  <div class="content-inner">
+    <div class="page-wrap individual-visas">
+
+      business visa
+
+
+    </div>
+  </div>
+</section>
+
+<footer class="pre-footer"> <div class="container"> <div class="pre-footer-nav"> <div class="nav"><h3>{{ 'prefooter_headings_product' | translate }}</h3> <ul> <li><a ui-sref="app.market.individualVisas">{{ 'prefooter_links_individualVisas' | translate }}</a></li> <li><a ui-sref="app.market.businessVisas">{{ 'prefooter_links_businessVisas' | translate }}</a></li> <li><a href="#">{{ 'prefooter_links_visaFinder' | translate }}</a></li> </ul> </div> <div class="nav"> <h3>{{ 'prefooter_headings_company' | translate }}</h3> <ul> <li><a ui-sref="app.market.aboutUs">{{ 'prefooter_links_aboutUs' | translate }}</a></li> <li><a href="/blog" target="_self">{{ 'prefooter_links_blog' | translate }}</a></li> <li><a ui-sref="app.market.faq">{{ 'prefooter_links_faq' | translate }}</a></li> </ul> </div> <div class="nav"> <h3>{{ 'prefooter_headings_getInTouch' | translate }}</h3> <ul> <li><a ui-sref="app.market.contactUs">{{ 'prefooter_links_contactUs' | translate }}</a></li> <li><a class="phone" href="tel:+18448472537">{{ 'prefooter_phone01' | translate }}</a></li> <li><a class="phone" href="tel:+12123020235">{{ 'prefooter_phone02' | translate }}</a></li> <li><a class="phone" href="mailto:advisor@visalex.com">{{ 'prefooter_email' | translate }}</a></li> </ul> </div> <div class="nav social-media"> <h3>{{ 'prefooter_headings_media' | translate }}</h3> <ul> <li><a href="#" class="btn-facebook">{{ 'prefooter_media_facebook' | translate }}</a></li> <li><a href="#" class="btn-twitter">{{ 'prefooter_media_twitter' | translate }}</a></li> <li><a href="#" class="btn-youtube">{{ 'prefooter_media_youtube' | translate }}</a></li> <li><a href="#" class="btn-linkedin">{{ 'prefooter_media_linkedin' | translate }}</a></li> </ul> </div> </div> <div class="details" [innerHTML]="'prefooter_details' | translate"></div> </div> </footer>

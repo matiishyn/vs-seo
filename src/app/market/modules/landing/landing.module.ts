@@ -6,7 +6,7 @@ import {ImgHeaderComponent} from "../../components/imgHeader/imgHeader.component
 
 @NgModule({
   imports: [SharedModule],
-  declarations: [LandingComponent, ImgHeaderComponent],
+  declarations: [LandingComponent],
 })
 export class LandingModule {
 }
