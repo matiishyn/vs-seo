@@ -43,7 +43,7 @@
         </ul>
       </nav>
       <div class="auth-box" ng-if="!$ctrl.twoFactorAuth">
-        <a ui-sref=".login" class="btn btn-grey">{{ 'login_login' | translate }}</a>
+        <a [routerLink]="['login']" class="btn btn-grey">{{ 'login_login' | translate }}</a>
         <a ui-sref=".signup" class="btn btn-default">{{ 'login_signup' | translate }}</a>
       </div>
     </div>

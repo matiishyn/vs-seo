@@ -1,0 +1,68 @@
+<section id="content" class="content" style="min-height: 500px;">
+  <div class="content-inner">
+    <div class="login-form-wrapper">
+      <div class="login-form-holder">
+        <div class="login-form-box">
+          <form
+            class="form login-form form-validation"
+            name="loginForm"
+            ng-submit="$ctrl.submit($event, loginForm)"
+            novalidate>
+            <fieldset>
+              <h2>{{'login_welcome_back' | translate}}</h2>
+              <div class="form-row">
+                <div class="form-col col-half-width" style="padding: 0;">
+                  <a
+                    href=""
+                    class="btn-facebook"
+                    ng-click="$ctrl.authenticateViaFacebook()">{{'login_facebook' | translate}}</a>
+                </div>
+                <div class="form-col col-half-width" style="padding: 0;">
+                  <a href="" class="btn-google">{{'login_google' | translate}}</a>
+                </div>
+              </div>
+              <h4 class="subheading">{{'login_with_text' | translate}}</h4>
+              <div class="form-row">
+                <input
+                  type="text"
+                  id="email"
+                  name="email"
+                  class="email"
+                  placeholder="{{'profile_email' | translate}}"
+                  ng-model="$ctrl.login"
+                  ng-change="$ctrl.wrongEmailOrPassword = false"
+                  ng-class="{error: $ctrl.wrongEmailOrPassword}"
+                  required>
+                <div class="message error-required">{{'user_registration_missing_email' | translate}}</div>
+              </div>
+              <div class="form-row">
+                <div class="password-holder">
+                  <!--<password-display
+                    ng-attr-placeholder="{{'profile_password' | translate}}"
+                    password="$ctrl.password"
+                    on-change="$ctrl.wrongEmailOrPassword = false"
+                    custom-class="{error: $ctrl.wrongEmailOrPassword}"
+                    required></password-display>-->
+                  <div
+                    ng-if="$ctrl.wrongEmailOrPassword"
+                    class="message show">{{'login_incorrect_details' | translate}}
+                  </div>
+                </div>
+              </div>
+              <div class="form-row">
+                <button type="submit" class="btn btn-default btn-block">{{'login_login' | translate}}</button>
+              </div>
+              <div class="form-row form-footer">
+                <div class="form-col col-7" [innerHTML]="'login_dont_have_account1' | translate"></div>
+                <div class="form-col col-5 pull-right">
+                  <a ui-sref="^.forgotPassword">{{'login_forgot_password' | translate}}</a>
+                </div>
+              </div>
+              <div class="form-row agreement" [innerHTML]="'login_agreement1' | translate"></div>
+            </fieldset>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

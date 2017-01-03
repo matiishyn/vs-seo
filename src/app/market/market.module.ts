@@ -7,6 +7,7 @@ import {HeaderComponent} from "./components/header/header.component";
 import {FooterComponent} from "./components/footer/footer.component";
 import {IndividualVisaModule} from "./modules/individualVisa/individualVisa.module";
 import {BusinessVisaModule} from "./modules/businessVisa/businessVisa.module";
+import {LoginModule} from "./modules/login/login.module";
 
 @NgModule({
   imports: [
@@ -14,6 +15,7 @@ import {BusinessVisaModule} from "./modules/businessVisa/businessVisa.module";
     LandingModule,
     IndividualVisaModule,
     BusinessVisaModule,
+    LoginModule,
     TodoModule
   ],
   declarations: [
