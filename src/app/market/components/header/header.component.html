@@ -24,20 +24,20 @@
         <span></span>
       </span>
       <h1 class="logo">
-        <a ui-sref="app.market">{{ 'header_company_name' | translate }}</a>
+        <a >{{ 'header_company_name' | translate }}</a>
       </h1>
       <nav id="nav" ng-class="{'open':openmenu}">
         <ul class="nav-list">
-          <li class="nav-item" ui-sref-active="active">
-            <a ui-sref=".individualVisas" class="nav-link">{{ 'header_individual_visas' | translate }}</a>
+          <li class="nav-item" routerLinkActive="active">
+            <a [routerLink]="['individual-visa']" class="nav-link">{{ 'header_individual_visas' | translate }}</a>
           </li>
-          <li class="nav-item" ui-sref-active="active">
-            <a ui-sref=".businessVisas" class="nav-link">{{ 'header_business_visas' | translate }}</a>
+          <li class="nav-item" routerLinkActive="active">
+            <a [routerLink]="['business-visa']" class="nav-link">{{ 'header_business_visas' | translate }}</a>
           </li>
-          <li class="nav-item" ui-sref-active="active">
+          <li class="nav-item" routerLinkActive="active">
             <a href="#" class="nav-link">{{ 'header_visa_finder' | translate }}</a>
           </li>
-          <li class="nav-item" ui-sref-active="active">
+          <li class="nav-item" routerLinkActive="active">
             <a href="/blog" target="_self" class="nav-link">{{ 'header_blog' | translate }}</a>
           </li>
         </ul>
