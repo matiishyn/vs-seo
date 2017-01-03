@@ -3,6 +3,8 @@ import {SharedModule} from '../shared/shared.module';
 import {MarketComponent} from './market.component';
 import {TodoModule} from '../+todo/todo.module';
 import {LandingModule} from './modules/landing/landing.module';
+import {HeaderComponent} from "./components/header/header.component";
+import {FooterComponent} from "./components/footer/footer.component";
 
 @NgModule({
   imports: [
@@ -11,7 +13,9 @@ import {LandingModule} from './modules/landing/landing.module';
     TodoModule
   ],
   declarations: [
-    MarketComponent
+    MarketComponent,
+    HeaderComponent,
+    FooterComponent
   ]
 })
 export class MarketModule {

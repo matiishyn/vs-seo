@@ -1,0 +1,13 @@
+<div class="page">
+  <my-header></my-header>
+
+  <select [(ngModel)]="language" (ngModelChange)="changeLanguage(language)">
+    <option value="en">English</option>
+    <option value="es">Espagnol</option>
+    <option value="pt">Portuguese</option>
+  </select>
+
+  <router-outlet></router-outlet>
+
+  <my-footer></my-footer>
+</div>

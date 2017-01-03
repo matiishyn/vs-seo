@@ -8,17 +8,7 @@ import {isBrowser} from 'angular2-universal';
   changeDetection: ChangeDetectionStrategy.Default,
   encapsulation: ViewEncapsulation.Emulated,
   selector: 'main',
-  template: `<nav>
-    <a routerLinkActive='router-link-active' routerLink='./'>Home</a>
-    <a routerLinkActive='router-link-active' routerLink='todo'>Todo</a>
-    <a routerLinkActive='router-link-active' routerLink='lazy'>Lazy</a>
-  </nav>
-  <select [(ngModel)]="language" (ngModelChange)="changeLanguage(language)">
-    <option value="en">English</option>
-    <option value="es">Espagnol</option>
-    <option value="pt">Portuguese</option>
-  </select>
-  <div>{{'payment_form_creditCardNumber' | translate}}</div><router-outlet></router-outlet>`
+  templateUrl: 'market.component.html'
 })
 
 export class MarketComponent implements OnInit {
