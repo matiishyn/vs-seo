@@ -12,12 +12,7 @@ import * as express from 'express';
 import * as bodyParser from 'body-parser';
 import * as cookieParser from 'cookie-parser';
 import * as morgan from 'morgan';
-import * as mcache from 'memory-cache';
-
-const { gzipSync } = require('zlib');
-const accepts = require('accepts');
-const { compressSync } = require('iltorb');
-const interceptor = require('express-interceptor');
+import * as compression from 'compression';
 
 // Angular 2
 import { enableProdMode } from '@angular/core';
@@ -54,38 +49,7 @@ app.set('json spaces', 2);
 
 app.use(cookieParser('Angular 2 Universal'));
 app.use(bodyParser.json());
-
-app.use(interceptor((req, res)=>({
-  // don't compress responses with this request header 
-  isInterceptable: () => (!req.headers['x-no-compression']),
-  intercept: ( body, send ) => {
-    const encodings  = new Set(accepts(req).encodings());
-    const bodyBuffer = new Buffer(body);
-    // url specific key for response cache
-    const key = '__response__' + req.originalUrl || req.url;
-    let output = bodyBuffer;
-    // check if cache exists
-    if (mcache.get(key) === null) {
-      // check for encoding support
-      if (encodings.has('br')) {
-        // brotli
-        res.setHeader('Content-Encoding', 'br');
-        output = compressSync(bodyBuffer);
-        mcache.put(key, {output, encoding: 'br'});
-      } else if (encodings.has('gzip')) {
-        // gzip
-        res.setHeader('Content-Encoding', 'gzip');
-        output = gzipSync(bodyBuffer);
-        mcache.put(key, {output, encoding: 'gzip'});
-      }
-    } else {
-      const { output, encoding } = mcache.get(key);
-      res.setHeader('Content-Encoding', encoding);
-      send(output);
-    }
-    send(output);
-  }
-})));
+app.use(compression());
 
 const accessLogStream = fs.createWriteStream(ROOT + '/morgan.log', {flags: 'a'})
 
@@ -112,16 +76,30 @@ import { serverApi, createTodoApi } from './backend/api';
 app.get('/data.json', serverApi);
 app.use('/api', createTodoApi());
 
+process.on('uncaughtException', function (err) { 
+  console.error('Catching uncaught errors to avoid process crash', err);
+});
+
 function ngApp(req, res) {
-  res.render('index', {
-    req,
-    res,
-    // time: true, // use this to determine what part of your app is slow only in development
-    preboot: false,
-    baseUrl: '/',
-    requestUrl: req.originalUrl,
-    originUrl: `http://localhost:${ app.get('port') }`
+
+  function onHandleError(parentZoneDelegate, currentZone, targetZone, error)  {
+    console.warn('Error in SSR, serving for direct CSR');
+    res.sendFile('index.html', {root: './src'});
+    return false;
+  }
+
+  Zone.current.fork({ name: 'CSR fallback', onHandleError }).run(() => {
+    res.render('index', {
+      req,
+      res,
+      // time: true, // use this to determine what part of your app is slow only in development
+      preboot: false,
+      baseUrl: '/',
+      requestUrl: req.originalUrl,
+      originUrl: `http://localhost:${ app.get('port') }`
+    });
   });
+
 }
 
 /**

@@ -2,7 +2,6 @@
 // The only modules to be imported higher - node modules with es6-promise 3.x or other Promise polyfill dependency
 // (rule of thumb: do it if you have zone.js exception that it has been overwritten)
 // if you are including modules that modify Promise, such as NewRelic,, you must include them before polyfills
-// const proxy = require('express-http-proxy');
 const proxy = require('http-proxy-middleware');
 import 'angular2-universal-polyfills';
 import 'ts-helpers';
@@ -16,15 +15,15 @@ import * as morgan from 'morgan';
 import * as compression from 'compression';
 
 // Angular 2
-import {enableProdMode} from '@angular/core';
+import { enableProdMode } from '@angular/core';
 // Angular 2 Universal
-import {createEngine} from 'angular2-express-engine';
+import { createEngine } from 'angular2-express-engine';
 
 // App
-import {MainModule} from './node.module';
+import { MainModule } from './node.module';
 
 // Routes
-import {routes} from './server.routes';
+import { routes } from './server.routes';
 
 // enable prod for faster renders
 enableProdMode();
@@ -66,30 +65,41 @@ app.use(cacheControl, express.static(path.join(ROOT, 'dist/client'), {index: fal
 /////////////////////////
 // ** Example API
 // Notice API should be in aseparate process
-import {serverApi, createTodoApi} from './backend/api';
+import { serverApi, createTodoApi } from './backend/api';
 // Our API for demos only
-app.get('/data.json', serverApi);
-/*app.use('/api', proxy('https://dev.visalex.com', {
- forwardPath: function(req, res) {
- return `/api${require('url').parse(req.url).path}`;
- }
- }));*/
+// app.get('/data.json', serverApi);
+// app.use('/api', createTodoApi());
+
 app.use(proxy('/api', {
   target: 'https://dev.visalex.com/',
   changeOrigin: true,
   auth: 'visalex:e57h495YowZn'
 }));
 
+process.on('uncaughtException', function (err) {
+  console.error('Catching uncaught errors to avoid process crash', err);
+});
+
 function ngApp(req, res) {
-  res.render('index', {
-    req,
-    res,
-    // time: true, // use this to determine what part of your app is slow only in development
-    preboot: false,
-    baseUrl: '/',
-    requestUrl: req.originalUrl,
-    originUrl: `http://localhost:${ app.get('port') }`
+
+  function onHandleError(parentZoneDelegate, currentZone, targetZone, error)  {
+    console.warn('Error in SSR, serving for direct CSR');
+    res.sendFile('index.html', {root: './src'});
+    return false;
+  }
+
+  Zone.current.fork({ name: 'CSR fallback', onHandleError }).run(() => {
+    res.render('index', {
+      req,
+      res,
+      // time: true, // use this to determine what part of your app is slow only in development
+      preboot: false,
+      baseUrl: '/',
+      requestUrl: req.originalUrl,
+      originUrl: `http://localhost:${ app.get('port') }`
+    });
   });
+
 }
 
 /**
@@ -101,9 +111,9 @@ routes.forEach(route => {
   app.get(`/${route}/*`, ngApp);
 });
 
-app.get('*', function (req, res) {
+app.get('*', function(req, res) {
   res.setHeader('Content-Type', 'application/json');
-  var pojo = {status: 404, message: 'No Content'};
+  var pojo = { status: 404, message: 'No Content' };
   var json = JSON.stringify(pojo, null, 2);
   res.status(404).send(json);
 });
@@ -112,3 +122,4 @@ app.get('*', function (req, res) {
 let server = app.listen(app.get('port'), () => {
   console.log(`Listening on: http://localhost:${server.address().port}`);
 });
+
