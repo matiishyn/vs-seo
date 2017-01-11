@@ -1,5 +1,5 @@
 import {Routes} from '@angular/router';
-import {IndividualVisaMainComponent} from "./individualVisaMain.component";
+import {IndividualVisaMainComponent} from "./individualVisaHowItWorks.component";
 import {IndividualVisaListComponent} from "./individualVisaList.component";
 
 export const individualVisaRoutes: Routes = [
