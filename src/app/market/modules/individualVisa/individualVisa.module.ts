@@ -2,10 +2,16 @@ import {NgModule} from '@angular/core';
 
 import {IndividualVisaComponent} from './individualVisa.component';
 import {SharedModule} from '../../../shared/shared.module';
+import {IndividualVisaMainComponent} from "./individualVisaMain.component";
+import {IndividualVisaListComponent} from "./individualVisaList.component";
 
 @NgModule({
   imports: [SharedModule],
-  declarations: [IndividualVisaComponent],
+  declarations: [
+    IndividualVisaComponent,
+    IndividualVisaListComponent,
+    IndividualVisaMainComponent
+  ],
 })
 export class IndividualVisaModule {
 }
