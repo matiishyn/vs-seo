@@ -1,9 +1,14 @@
-import { Component } from '@angular/core';
+import {Component, Input} from '@angular/core';
 
 @Component({
-    selector: 'img-header',
-    templateUrl: 'imgHeader.component.html'
+  selector: 'img-header',
+  templateUrl: 'imgHeader.component.html'
 })
 export class ImgHeaderComponent {
-    constructor() { }
+  @Input() subHeader: string;
+  @Input() header: string;
+  @Input() p: string;
+
+  constructor() {
+  }
 }

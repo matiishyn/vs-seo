@@ -2,7 +2,33 @@
   <div class="content-inner">
     <div class="page-wrap individual-visas">
 
-      business visa
+      <div>
+        <img-header
+          [subHeader]="'businessVisas_pageTitle'"
+          [header]="'businessVisas_subtitle'"
+          [p]="'businessVisas_hint'"
+        ></img-header>
+
+        <div class="page-content container">
+          <div class="individual-visas-links">
+            <div class="individual-visas-links-nav">
+              <ul>
+                <li>
+                  <a ui-sref="app.market.businessVisas" ui-sref-active-eq="active">
+                    {{ 'businessVisas_labels_howItWorks' | translate }}
+                  </a>
+                </li>
+                <li>
+                  <a ui-sref="app.market.businessVisas.list" ui-sref-active-eq="active">
+                    {{ 'businessVisas_labels_pricing' | translate }}
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+      </div>
 
 
     </div>
