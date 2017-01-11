@@ -1,8 +1,11 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 
 @Component({
-    templateUrl: 'landing.component.html'
+  templateUrl: 'landing.component.html'
 })
 export class LandingComponent {
-    constructor() {}
+  activeTab = '1';
+
+  constructor() {
+  }
 }

@@ -39,13 +39,13 @@
           <h2 [innerHTML]="'landing_easiestWay' | translate"></h2>
           <div class="tabs">
             <div class="switch tabs-nav">
-              <input type="radio" ng-model="$ctrl.activeTab" value="1" name="visas" id="individual2">
+              <input type="radio" [(ngModel)]="activeTab" value="1" name="visas" id="individual2">
               <label for="individual2" tab-target="individual">{{ 'landing_individualVisas' | translate }}</label>
-              <input type="radio" ng-model="$ctrl.activeTab" value="2" name="visas" id="business2">
+              <input type="radio" [(ngModel)]="activeTab" value="2" name="visas" id="business2">
               <label for="business2" tab-target="business">{{ 'landing_businessVisas' | translate }}</label>
             </div>
           </div>
-          <div class="tab-content" ng-class="{active: $ctrl.activeTab === '1'}" id="individual">
+          <div class="tab-content" [class.active]="activeTab === '1'" id="individual">
             <div class="benefits-list">
               <div class="benefit" [innerHTML]="'landing_multipleLanguages' | translate"></div>
               <div class="benefit" [innerHTML]="'landing_compliance' | translate"></div>
@@ -53,11 +53,11 @@
               <div class="benefit" [innerHTML]="'landing_approveRate' | translate"></div>
             </div>
             <div class="btns">
-              <a ui-sref=".individualVisas" class="btn btn-default">{{ 'landing_learnMore' | translate }}</a>
-              <a ui-sref=".signup" class="create">{{ 'landing_createAccount' | translate }}</a>
+              <a [routerLink]="['individual-visa']" class="btn btn-default">{{ 'landing_learnMore' | translate }}</a>
+              <a [routerLink]="['signup']" class="create">{{ 'landing_createAccount' | translate }}</a>
             </div>
           </div>
-          <div class="tab-content" ng-class="{active: $ctrl.activeTab === '2'}" id="business">
+          <div class="tab-content" [class.active]="activeTab === '2'" id="business">
             <div class="benefits-list">
               <div class="benefit" [innerHTML]="'landing_multipleLanguages' | translate"></div>
               <div class="benefit" [innerHTML]="'landing_compliance' | translate"></div>
@@ -65,8 +65,8 @@
               <div class="benefit" [innerHTML]="'landing_approveRate' | translate"></div>
             </div>
             <div class="btns">
-              <a ui-sref=".businessVisas" class="btn btn-default">{{ 'landing_learnMore' | translate }}</a>
-              <a ui-sref=".signup" class="create">{{ 'landing_createAccount' | translate }}</a>
+              <a [routerLink]="['business-visa']" class="btn btn-default">{{ 'landing_learnMore' | translate }}</a>
+              <a [routerLink]="['signup']" class="create">{{ 'landing_createAccount' | translate }}</a>
             </div>
           </div>
         </div>
