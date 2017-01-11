@@ -6,6 +6,7 @@ import { ApiService } from './api.service';
 import { ModelService } from './model/model.service';
 import { TranslateModule, TranslateService } from "ng2-translate";
 import {ImgHeaderComponent} from "../market/components/imgHeader/imgHeader.component";
+import {PreFooterComponent} from "../market/components/preFooter/preFooter.component";
 
 
 const MODULES = [
@@ -22,7 +23,8 @@ const PIPES = [
 ];
 
 const COMPONENTS = [
-  ImgHeaderComponent
+  ImgHeaderComponent,
+  PreFooterComponent
 
   // put shared modules here
 ];
