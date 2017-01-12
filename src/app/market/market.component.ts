@@ -19,6 +19,7 @@ export class MarketComponent implements OnInit {
               private router: Router) {
   }
 
+
   changeLanguage(lang: string): void {
     this.translate.use(lang);
     const children: UrlSegmentGroup = this.router.parseUrl(this.router.url).root.children[PRIMARY_OUTLET];
