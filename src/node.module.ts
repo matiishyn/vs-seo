@@ -42,7 +42,7 @@ export const UNIVERSAL_KEY = 'UNIVERSAL_CACHE';
     UniversalModule, // BrowserModule, HttpModule, and JsonpModule are included
 
     FormsModule,
-    UIRouterModule.forRoot({useHash: true}),
+    UIRouterModule.forRoot({useHash: false, otherwise: '/en/'}),
 
     SharedModule.forRoot(),
     AppModule,

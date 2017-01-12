@@ -29,10 +29,10 @@
       <nav id="nav" ng-class="{'open':openmenu}">
         <ul class="nav-list">
           <li class="nav-item" uiSrefActive="active">
-            <a uiSref=".individual-visa" class="nav-link">{{ 'header_individual_visas' | translate }}</a>
+            <a uiSref="app.market.individualVisas" class="nav-link">{{ 'header_individual_visas' | translate }}</a>
           </li>
           <li class="nav-item" uiSrefActive="active">
-            <a uiSref=".business-visa" class="nav-link">{{ 'header_business_visas' | translate }}</a>
+            <a uiSref="app.market.businessVisas" class="nav-link">{{ 'header_business_visas' | translate }}</a>
           </li>
           <li class="nav-item" uiSrefActive="active">
             <a href="#" class="nav-link">{{ 'header_visa_finder' | translate }}</a>
@@ -43,8 +43,8 @@
         </ul>
       </nav>
       <div class="auth-box" ng-if="!$ctrl.twoFactorAuth">
-        <a uiSref=".login" class="btn btn-grey">{{ 'login_login' | translate }}</a>
-        <a uiSref=".signup" class="btn btn-default">{{ 'login_signup' | translate }}</a>
+        <a uiSref="app.market.login" class="btn btn-grey">{{ 'login_login' | translate }}</a>
+        <a uiSref="app.market.signup" class="btn btn-default">{{ 'login_signup' | translate }}</a>
       </div>
     </div>
   </div>

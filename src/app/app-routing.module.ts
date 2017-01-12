@@ -10,7 +10,7 @@ import {MarketComponent} from "./market/market.component";
       states: [
         {
           name: 'app',
-          url: ':lang',
+          url: '/:lang',
           component: MarketComponent,
           abstract: true
         }

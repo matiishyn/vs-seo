@@ -8,4 +8,7 @@ import {Component, ChangeDetectionStrategy, ViewEncapsulation} from '@angular/co
   templateUrl: './app.component.html'
 })
 export class AppComponent {
+  constructor() {
+    console.log('AppComponent');
+  }
 }

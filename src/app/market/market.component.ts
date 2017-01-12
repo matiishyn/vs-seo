@@ -12,5 +12,7 @@ import {isBrowser} from 'angular2-universal';
 })
 
 export class MarketComponent {
-
+  constructor() {
+    console.log('MarketComponent');
+  }
 }
