@@ -1,7 +1,6 @@
 import {NgModule} from '@angular/core';
 import {SharedModule} from '../shared/shared.module';
 import {MarketComponent} from './market.component';
-import {TodoModule} from '../+todo/todo.module';
 import {LandingModule} from './modules/landing/landing.module';
 import {HeaderComponent} from "./components/header/header.component";
 import {FooterComponent} from "./components/footer/footer.component";
@@ -17,8 +16,7 @@ import {SignUpModule} from "./modules/signUp/signUp.module";
     IndividualVisaModule,
     BusinessVisaModule,
     LoginModule,
-    SignUpModule,
-    TodoModule
+    SignUpModule
   ],
   declarations: [
     MarketComponent,

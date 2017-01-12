@@ -14,9 +14,6 @@ import {AppComponent} from './app.component';
   ],
   imports: [
     SharedModule,
-    // HomeModule,
-    // AboutModule,
-    // TodoModule,
     AppRoutingModule,
     FormsModule,
     MarketModule,
