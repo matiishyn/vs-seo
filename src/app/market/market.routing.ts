@@ -5,12 +5,14 @@ import {IndividualVisaComponent} from "./modules/individualVisa/individualVisa.c
 import {BusinessVisaComponent} from "./modules/businessVisa/businessVisa.component";
 import {LoginComponent} from "./modules/login/login.component";
 import {SignUpComponent} from "./modules/signUp/signUp.component";
+import {MarketComponent} from "./market.component";
 
 @NgModule({
   imports: [
     UIRouterModule.forChild({
       states: [
-        {name: 'app.market', url: '/', component: LandingComponent},
+        {name: 'app.market', url: '/market', component: MarketComponent},
+        {name: 'app.market.landing', url: '/landing', component: LandingComponent},
         {name: 'app.market.individualVisas', url: 'individual-visa', component: IndividualVisaComponent},
         {name: 'app.market.individualVisas.list', url: '/list', component: IndividualVisaComponent},
         {name: 'app.market.businessVisas', url: 'business-visa', component: BusinessVisaComponent},

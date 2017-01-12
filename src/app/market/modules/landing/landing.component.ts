@@ -7,5 +7,6 @@ export class LandingComponent {
   activeTab = '1';
 
   constructor() {
+    console.log('LandingComponent');
   }
 }
