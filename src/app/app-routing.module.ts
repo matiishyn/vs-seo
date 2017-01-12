@@ -18,5 +18,6 @@ import {MarketComponent} from "./market/market.component";
     })
   ],
 })
+
 export class AppRoutingModule {
 }
