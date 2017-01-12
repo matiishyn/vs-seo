@@ -24,27 +24,27 @@
         <span></span>
       </span>
       <h1 class="logo">
-        <a [routerLink]="['/']">{{ 'header_company_name' | translate }}</a>
+        <a uiSref="app.market">{{ 'header_company_name' | translate }}</a>
       </h1>
       <nav id="nav" ng-class="{'open':openmenu}">
         <ul class="nav-list">
-          <li class="nav-item" routerLinkActive="active">
-            <a [routerLink]="['individual-visa']" class="nav-link">{{ 'header_individual_visas' | translate }}</a>
+          <li class="nav-item" uiSrefActive="active">
+            <a uiSref=".individual-visa" class="nav-link">{{ 'header_individual_visas' | translate }}</a>
           </li>
-          <li class="nav-item" routerLinkActive="active">
-            <a [routerLink]="['business-visa']" class="nav-link">{{ 'header_business_visas' | translate }}</a>
+          <li class="nav-item" uiSrefActive="active">
+            <a uiSref=".business-visa" class="nav-link">{{ 'header_business_visas' | translate }}</a>
           </li>
-          <li class="nav-item" routerLinkActive="active">
+          <li class="nav-item" uiSrefActive="active">
             <a href="#" class="nav-link">{{ 'header_visa_finder' | translate }}</a>
           </li>
-          <li class="nav-item" routerLinkActive="active">
+          <li class="nav-item">
             <a href="/blog" target="_self" class="nav-link">{{ 'header_blog' | translate }}</a>
           </li>
         </ul>
       </nav>
       <div class="auth-box" ng-if="!$ctrl.twoFactorAuth">
-        <a [routerLink]="['login']" class="btn btn-grey">{{ 'login_login' | translate }}</a>
-        <a [routerLink]="['signup']" class="btn btn-default">{{ 'login_signup' | translate }}</a>
+        <a uiSref=".login" class="btn btn-grey">{{ 'login_login' | translate }}</a>
+        <a uiSref=".signup" class="btn btn-default">{{ 'login_signup' | translate }}</a>
       </div>
     </div>
   </div>

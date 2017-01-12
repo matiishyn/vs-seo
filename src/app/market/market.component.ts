@@ -5,8 +5,8 @@ import {UrlSegmentGroup} from "@angular/router/src/url_tree";
 import {isBrowser} from 'angular2-universal';
 
 @Component({
-  changeDetection: ChangeDetectionStrategy.Default,
-  encapsulation: ViewEncapsulation.Emulated,
+  // changeDetection: ChangeDetectionStrategy.Default,
+  // encapsulation: ViewEncapsulation.Emulated,
   selector: 'main',
   templateUrl: 'market.component.html'
 })
@@ -14,13 +14,11 @@ import {isBrowser} from 'angular2-universal';
 export class MarketComponent implements OnInit {
   private language: string;
 
-  constructor(private translate: TranslateService,
-              private route: ActivatedRoute,
-              private router: Router) {
+  constructor(private translate: TranslateService) {
   }
 
   changeLanguage(lang: string): void {
-    this.translate.use(lang);
+    /*this.translate.use(lang);
     const children: UrlSegmentGroup = this.router.parseUrl(this.router.url).root.children[PRIMARY_OUTLET];
     const s: UrlSegment[] = children.segments;
     const paths = s.map(segment => segment.path);
@@ -29,11 +27,11 @@ export class MarketComponent implements OnInit {
     if (isBrowser) {
       localStorage.setItem('VISALEX_LANG', lang);
     }
-    this.router.navigate(paths, {relativeTo: this.route});
+    this.router.navigate(paths, {relativeTo: this.route});*/
   }
 
   ngOnInit() {
-    if (isBrowser) {
+    /*if (isBrowser) {
       const lang = localStorage.getItem('VISALEX_LANG');
       if (lang) {
         this.language = lang;
@@ -46,6 +44,6 @@ export class MarketComponent implements OnInit {
     this.route.params.subscribe(params => {
       this.language = params['lang'];
       this.translate.use(params['lang']);
-    });
+    });*/
   }
 }

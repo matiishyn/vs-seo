@@ -1,3 +1,4 @@
+<h1>LANDING</h1>
 <section class="content home-page">
   <div class="content-inner">
     <div class="page-wrap home-page">
@@ -8,8 +9,8 @@
           <h1 [innerHTML]="'landing_promo' | translate"></h1>
           <div class="text">{{'landing_spanishPromo' | translate}}</div>
           <div class="btns">
-            <a [routerLink]="['individual-visa']" class="btn btn-default">{{ 'landing_individualClients' | translate }}</a>
-            <a [routerLink]="['business-visa']" class="btn btn-default">{{ 'landing_businessClients' | translate }}</a>
+            <a uiSref="['individual-visa']" class="btn btn-default">{{ 'landing_individualClients' | translate }}</a>
+            <a uiSref="['business-visa']" class="btn btn-default">{{ 'landing_businessClients' | translate }}</a>
           </div>
         </div>
       </div>
@@ -53,8 +54,8 @@
               <div class="benefit" [innerHTML]="'landing_approveRate' | translate"></div>
             </div>
             <div class="btns">
-              <a [routerLink]="['individual-visa']" class="btn btn-default">{{ 'landing_learnMore' | translate }}</a>
-              <a [routerLink]="['signup']" class="create">{{ 'landing_createAccount' | translate }}</a>
+              <a uiSref="['individual-visa']" class="btn btn-default">{{ 'landing_learnMore' | translate }}</a>
+              <a uiSref="['signup']" class="create">{{ 'landing_createAccount' | translate }}</a>
             </div>
           </div>
           <div class="tab-content" [class.active]="activeTab === '2'" id="business">
@@ -65,8 +66,8 @@
               <div class="benefit" [innerHTML]="'landing_approveRate' | translate"></div>
             </div>
             <div class="btns">
-              <a [routerLink]="['business-visa']" class="btn btn-default">{{ 'landing_learnMore' | translate }}</a>
-              <a [routerLink]="['signup']" class="create">{{ 'landing_createAccount' | translate }}</a>
+              <a uiSref="['business-visa']" class="btn btn-default">{{ 'landing_learnMore' | translate }}</a>
+              <a uiSref="['signup']" class="create">{{ 'landing_createAccount' | translate }}</a>
             </div>
           </div>
         </div>

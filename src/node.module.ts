@@ -6,6 +6,7 @@ import { UniversalModule, isBrowser, isNode } from 'angular2-universal/node'; //
 import { AppModule, AppComponent } from './app/app.module';
 import { SharedModule } from './app/shared/shared.module';
 import { CacheService } from './app/shared/cache.service';
+import { UIRouterModule } from 'ui-router-ng2';
 
 import {TranslateModule, TranslateLoader} from 'ng2-translate';
 import {Http} from "@angular/http";
@@ -41,7 +42,7 @@ export const UNIVERSAL_KEY = 'UNIVERSAL_CACHE';
     UniversalModule, // BrowserModule, HttpModule, and JsonpModule are included
 
     FormsModule,
-    RouterModule.forRoot([], { useHash: false }),
+    UIRouterModule.forRoot({useHash: true}),
 
     SharedModule.forRoot(),
     AppModule,

@@ -1,5 +1,8 @@
 <div class="page">
+  <h2>MARKET COMP</h2>
   <my-header></my-header>
+
+  <a uiSref="app.market">Home</a>
 
   <select [(ngModel)]="language" (ngModelChange)="changeLanguage(language)">
     <option value="en">English</option>
@@ -7,7 +10,7 @@
     <option value="pt">Portuguese</option>
   </select>
 
-  <router-outlet></router-outlet>
+  <ui-view></ui-view>
 
   <my-footer></my-footer>
 </div>

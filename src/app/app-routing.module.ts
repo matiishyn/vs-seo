@@ -1,14 +1,22 @@
-import { NgModule } from '@angular/core';
-import { RouterModule } from '@angular/router';
-import { MarketComponent } from './market/market.component';
-import { mainRoutes } from './market/market.routing';
+import {NgModule} from '@angular/core';
+import {UIRouterModule} from 'ui-router-ng2';
+import {AppComponent} from "./app.component";
+import {MarketComponent} from "./market/market.component";
+
 
 @NgModule({
   imports: [
-    RouterModule.forChild([
-      { path: '', redirectTo: '/en', pathMatch: 'full'},
-      { path: ':lang', component: MarketComponent, children: [...mainRoutes]},
-    ])
+    UIRouterModule.forChild({
+      states: [
+        {
+          name: 'app',
+          url: ':lang',
+          component: MarketComponent,
+          abstract: true
+        }
+      ]
+    })
   ],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {
+}

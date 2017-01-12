@@ -7,7 +7,7 @@ import { ModelService } from './model/model.service';
 import { TranslateModule, TranslateService } from "ng2-translate";
 import {ImgHeaderComponent} from "../market/components/imgHeader/imgHeader.component";
 import {PreFooterComponent} from "../market/components/preFooter/preFooter.component";
-
+import { UIRouterModule } from 'ui-router-ng2';
 
 const MODULES = [
   // Do NOT include UniversalModule, HttpModule, or JsonpModule here
@@ -15,7 +15,8 @@ const MODULES = [
   RouterModule,
   FormsModule,
   ReactiveFormsModule,
-  TranslateModule
+  TranslateModule,
+  UIRouterModule
 ];
 
 const PIPES = [

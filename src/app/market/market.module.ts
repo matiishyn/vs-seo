@@ -9,6 +9,7 @@ import {IndividualVisaModule} from "./modules/individualVisa/individualVisa.modu
 import {BusinessVisaModule} from "./modules/businessVisa/businessVisa.module";
 import {LoginModule} from "./modules/login/login.module";
 import {SignUpModule} from "./modules/signUp/signUp.module";
+import {MarketRoutingModule} from "./market.routing";
 
 @NgModule({
   imports: [
@@ -18,7 +19,8 @@ import {SignUpModule} from "./modules/signUp/signUp.module";
     BusinessVisaModule,
     LoginModule,
     SignUpModule,
-    TodoModule
+    // TodoModule,
+    MarketRoutingModule
   ],
   declarations: [
     MarketComponent,
