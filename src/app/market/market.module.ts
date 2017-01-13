@@ -7,6 +7,7 @@ import {FooterComponent} from "./components/footer/footer.component";
 import {IndividualVisaModule} from "./modules/individualVisa/individualVisa.module";
 import {BusinessVisaModule} from "./modules/businessVisa/businessVisa.module";
 import {TermsAndConditionsModule} from "./modules/termsAndConditions/termsAndConditions.module";
+import {PrivacyPolicyModule} from "./modules/privacyPolicy/privacyPolicy.module";
 import {LoginModule} from "./modules/login/login.module";
 import {SignUpModule} from "./modules/signUp/signUp.module";
 
@@ -17,6 +18,7 @@ import {SignUpModule} from "./modules/signUp/signUp.module";
     IndividualVisaModule,
     BusinessVisaModule,
     TermsAndConditionsModule,
+    PrivacyPolicyModule,
     LoginModule,
     SignUpModule
   ],

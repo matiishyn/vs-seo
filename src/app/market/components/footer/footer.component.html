@@ -7,7 +7,7 @@
           <a [routerLink]="['terms-conditions']" class="nav-link">{{'layout_terms' | translate}}</a>
         </li>
         <li class="footer-nav-item">
-          <a ui-sref=".privacyPolicy" ng-click="$ctrl.disable($event)">{{'layout_privacy' | translate}}</a>
+          <a [routerLink]="['privacy-policy']" class="nav-link">{{'layout_privacy' | translate}}</a>
         </li>
       </ul>
     </div>
