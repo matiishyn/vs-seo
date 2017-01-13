@@ -47,7 +47,11 @@ export const UNIVERSAL_KEY = 'UNIVERSAL_CACHE';
     UniversalModule, // BrowserModule, HttpModule, and JsonpModule are included
 
     FormsModule,
-    RouterModule.forRoot([], { useHash: false, preloadingStrategy: IdlePreload }),
+    RouterModule.forRoot([], {
+      useHash: false,
+      preloadingStrategy: IdlePreload,
+      // enableTracing: true      // router debugging
+    }),
 
     IdlePreloadModule.forRoot(),
     SharedModule.forRoot(),

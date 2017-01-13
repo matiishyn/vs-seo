@@ -14,12 +14,12 @@
             <div class="individual-visas-links-nav">
               <ul>
                 <li>
-                  <a ui-sref="app.market.businessVisas" ui-sref-active-eq="active">
+                  <a [routerLink]="['how-it-works']" routerLinkActive="active">
                     {{ 'businessVisas_labels_howItWorks' | translate }}
                   </a>
                 </li>
                 <li>
-                  <a ui-sref="app.market.businessVisas.list" ui-sref-active-eq="active">
+                  <a [routerLink]="['list']" routerLinkActive="active">
                     {{ 'businessVisas_labels_pricing' | translate }}
                   </a>
                 </li>
@@ -27,9 +27,11 @@
             </div>
           </div>
         </div>
-
       </div>
 
+      <div class="page-content container">
+        <router-outlet></router-outlet>
+      </div>
 
     </div>
   </div>
