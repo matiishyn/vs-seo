@@ -6,6 +6,7 @@ import {HeaderComponent} from "./components/header/header.component";
 import {FooterComponent} from "./components/footer/footer.component";
 import {IndividualVisaModule} from "./modules/individualVisa/individualVisa.module";
 import {BusinessVisaModule} from "./modules/businessVisa/businessVisa.module";
+import {TermsAndConditionsModule} from "./modules/termsAndConditions/termsAndConditions.module";
 import {LoginModule} from "./modules/login/login.module";
 import {SignUpModule} from "./modules/signUp/signUp.module";
 
@@ -15,6 +16,7 @@ import {SignUpModule} from "./modules/signUp/signUp.module";
     LandingModule,
     IndividualVisaModule,
     BusinessVisaModule,
+    TermsAndConditionsModule,
     LoginModule,
     SignUpModule
   ],
