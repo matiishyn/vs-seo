@@ -502,7 +502,7 @@
 					margin-bottom: 41px;
 					li {
 						margin-bottom: 4px;
-						img {
+						img[src$=svg] {
 							right: 25px;
 						}
 					}
@@ -956,7 +956,7 @@
 					background: #fff;
 					padding: 35px 36px 30px;
 					margin-bottom: 20px;
-					img {
+					img[src$=svg] {
 						float: left;
 						margin-top: -13px;
 						height: 68px;
@@ -990,7 +990,7 @@
 						&:first-child {
 							border-left-width: 1px;
 						}
-						img {
+						img[src$=svg] {
 							margin: 0 !important;
 							float: none;
 							height: 54px;
@@ -1014,7 +1014,7 @@
 			.step-columns {
 				margin: 0 -35px;
 				line-height: 20px;
-				img {
+				img[src$=svg] {
 					display: block;
 					width: 38px;
 					height: 41px;
@@ -1082,7 +1082,7 @@
 					margin-top: 18px;
 					overflow: hidden;
 				}
-				img {
+				img[src$=svg] {
 					float: left;
 					width: 20px;
 					margin-left: -40px;
@@ -1101,7 +1101,7 @@
 					vertical-align: top;
 					width: 40%;
 				}
-				img {
+				img[src$=svg] {
 					width: 42px;
 					height: 47px;
 					display: block;
