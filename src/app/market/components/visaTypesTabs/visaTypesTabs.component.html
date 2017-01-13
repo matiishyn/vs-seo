@@ -1,0 +1,26 @@
+<div class="visa-types individual-visas-links">
+  <div class="visa-types-nav individual-visas-links-nav">
+    <h2>{{ 'visaDetails_title_visaTypes' | translate }}</h2>
+    <ul>
+      <li *ngFor="let header of tabsHeader; let i = index" (click)="activeTab=i">
+        <a [class.active]="activeTab === i">{{header}}</a>
+      </li>
+    </ul>
+  </div>
+  <div class="visa-types-desc">
+    <div *ngFor="let tab of tabsContent; let j = index" [class.ng-hide]="activeTab != j">
+
+      <h2>{{ tab.title | translate }}</h2>
+      <p>{{ tab.p | translate }}</p>
+      <h3 *ngIf="tab.price">
+        <span>{{ 'qualifying_processingFee' | translate }}</span>:
+        <span class="price">{{ tab.price | translate }}</span>
+      </h3>
+      <div class="visa-types-desc-btns">
+        <a [routerLink]="" class="btn btn-grey">{{ 'visaDetails_button_learnMore' | translate }}</a>
+        <a class="btn btn-default start-app-btn">{{ 'landing_visaDetail_startApplication' | translate }}</a>
+      </div>
+
+    </div>
+  </div>
+</div>
