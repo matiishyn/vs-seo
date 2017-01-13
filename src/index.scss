@@ -1,5 +1,24 @@
-/* SCSS folder */
-@import "./assets/scss/style";
+/* Reset */
+@import "./assets/scss/reset/all";
+
+/* Utilities */
+@import "./assets/scss/utilities/all";
+
+/* Settings */
+@import "./assets/scss/settings/all";
+
+/* Base */
+@import "./assets/scss/base/all";
+
+/* Patterns */
+@import "./assets/scss/patterns/all";
+
+/* Blocks */
+@import "./assets/scss/blocks/all";
+
+/* Layouts */
+@import "./assets/scss/layouts/all";
+
 
 /* Image cropper styles */
 img-crop {
