@@ -1,0 +1,35 @@
+<section id="content" class="content">
+  <div class="content-inner">
+    <div class="page-wrap">
+      <img-header
+        [subHeader]="'contact_pageTitle'"
+        [header]="'contact_subtitle'"
+        [p]="'contact_hint1'"
+      ></img-header>
+      <div class="page-content container">
+        <h2>{{'contact_labels_weAreLocated' | translate}}</h2>
+        <div class="details-box">
+          <div class="address">
+            <div class="logo"></div>
+            <h3>{{'contact_labels_address' | translate}}</h3>
+            <div class="address-details" [innerHTML]="'contact_address' | translate"></div>
+            <a href="https://goo.gl/maps/xBS9DGP9HHG2" target="_blank" class="btn btn-default">
+              {{'contact_btns_getDirections' | translate}}
+            </a>
+          </div>
+          <div class="map-box">
+            <div class="map"></div>
+          </div>
+          <div class="contacts-box">
+            <div class="contacts">
+              <div class="contact" [innerHTML]="'contact_contacts_phone01' | translate"></div>
+              <div class="contact" [innerHTML]="'contact_contacts_phone02' | translate"></div>
+              <div class="contact" [innerHTML]="'contact_contacts_fax' | translate"></div>
+              <div class="contact" [innerHTML]="'contact_contacts_email' | translate"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
