@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-    template: 'individualVisaMain.component.html'
+    templateUrl: 'individualVisaHowItWorks.component.html'
 })
 export class IndividualVisaMainComponent {
     constructor() {}

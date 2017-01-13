@@ -1,6 +1,6 @@
 import {Routes} from '@angular/router';
-import {IndividualVisaMainComponent} from "./individualVisaHowItWorks.component";
-import {IndividualVisaListComponent} from "./individualVisaList.component";
+import {IndividualVisaMainComponent} from "./components/howItWorks/individualVisaHowItWorks.component";
+import {IndividualVisaListComponent} from "./components/list/individualVisaList.component";
 
 export const individualVisaRoutes: Routes = [
   {path: '', redirectTo: 'how-it-works', pathMatch: 'full'},
