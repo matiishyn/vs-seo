@@ -2,7 +2,7 @@
   <div class="content-inner">
     <div class="page-wrap individual-visas">
 
-      <div>
+      <div *ngIf="isHeaderVisible">
         <img-header
           [subHeader]="'businessVisas_pageTitle'"
           [header]="'businessVisas_subtitle'"
