@@ -22,7 +22,6 @@ export class StickyHeaderDirective implements AfterViewInit {
   checkStickyHeader(event) {
     const win = event.path.pop();
     const pageYOffset = win.pageYOffset;
-    console.log(pageYOffset + '>=' + this.headerTop);
     if (pageYOffset >= this.headerTop) {
       this.renderer.setElementClass(this.element.nativeElement, "fixed", true);
     } else {
