@@ -1,8 +1,20 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {Router} from '@angular/router';
+
 
 @Component({
-    templateUrl: 'individualVisa.component.html'
+  templateUrl: 'individualVisa.component.html'
 })
-export class IndividualVisaComponent {
-    constructor() {}
+export class IndividualVisaComponent implements OnInit{
+  private headerVisibleRoutes: Array<string> = ['/individual-visa/how-it-works', '/individual-visa/list', '/individual-visa'];
+  private isHeaderVisible: boolean;
+
+  constructor(private router: Router) {
+  }
+
+  ngOnInit() {
+    this.router.events.subscribe(state => {
+      this.isHeaderVisible = Boolean(this.headerVisibleRoutes.find(path => state.url.endsWith(path)));
+    });
+  }
 }
