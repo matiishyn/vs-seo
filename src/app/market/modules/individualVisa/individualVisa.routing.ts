@@ -7,5 +7,5 @@ export const individualVisaRoutes: Routes = [
   {path: '', redirectTo: 'how-it-works', pathMatch: 'full'},
   {path: 'how-it-works', component: IndividualVisaMainComponent},
   {path: 'list', component: IndividualVisaListComponent},
-  {path: ':id', component: IndividualVisaDetailsComponent},
+  {path: ':visaId', component: IndividualVisaDetailsComponent},
 ];
