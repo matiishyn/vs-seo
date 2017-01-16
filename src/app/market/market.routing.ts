@@ -12,8 +12,8 @@ import {businessVisaRoutes} from "./modules/businessVisa/businessVisa.routing";
 
 export const mainRoutes: Routes = [
   {path: '', component: LandingComponent},
-  {path: 'individual-visa', component: IndividualVisaComponent, children: [...individualVisaRoutes]},
-  {path: 'business-visa', component: BusinessVisaComponent, children: [...businessVisaRoutes]},
+  {path: 'individual-visas', component: IndividualVisaComponent, children: [...individualVisaRoutes]},
+  {path: 'business-visas', component: BusinessVisaComponent, children: [...businessVisaRoutes]},
   {path: 'terms-conditions', component: TermsAndConditionsComponent},
   {path: 'contact-us', component: ContactUsComponent},
   {path: 'privacy-policy', component: PrivacyPolicyComponent},
