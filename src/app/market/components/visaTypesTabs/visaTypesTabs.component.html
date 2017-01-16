@@ -17,7 +17,7 @@
         <span class="price">{{ tab.price | translate }}</span>
       </h3>
       <div class="visa-types-desc-btns">
-        <a [routerLink]="" class="btn btn-grey">{{ 'visaDetails_button_learnMore' | translate }}</a>
+        <a [routerLink]="tab.link" class="btn btn-grey">{{ 'visaDetails_button_learnMore' | translate }}</a>
         <a class="btn btn-default start-app-btn">{{ 'landing_visaDetail_startApplication' | translate }}</a>
       </div>
 
