@@ -20,7 +20,7 @@
       <div class="nav">
         <h3>{{ 'prefooter_headings_getInTouch' | translate }}</h3>
         <ul>
-          <li><a ui-sref="app.market.contactUs">{{ 'prefooter_links_contactUs' | translate }}</a></li>
+          <li><a [routerLink]="['../contact-us']" class="nav-link">{{ 'prefooter_links_contactUs' | translate }}</a></li>
           <li><a class="phone" href="tel:+18448472537">{{ 'prefooter_phone01' | translate }}</a></li>
           <li><a class="phone" href="tel:+12123020235">{{ 'prefooter_phone02' | translate }}</a></li>
           <li><a class="phone" href="mailto:advisor@visalex.com">{{ 'prefooter_email' | translate }}</a></li>
