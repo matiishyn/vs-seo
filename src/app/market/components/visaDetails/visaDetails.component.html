@@ -1,0 +1,57 @@
+<div class="visa-details-page">
+  <div class="content-header-holder">
+    <div>
+      <div class="breadcrumb">
+        <span>
+          <a [routerLink]="['../../']">{{"visaDetails_breadcrumb_home" | translate}}</a>
+          <span>&nbsp;&nbsp;>&nbsp;&nbsp;</span>
+        </span>
+        <span *ngIf="type === 'individual'">
+          <a [routerLink]="['../../individual-visas']">{{"visaDetails_breadcrumb_individualVisas" | translate}}</a>
+          <span>&nbsp;&nbsp;>&nbsp;&nbsp;</span>
+        </span>
+        <span *ngIf="type === 'business'">
+          <a [routerLink]="['../../business-visas']">{{"visaDetails_breadcrumb_businessVisas" | translate}}</a>
+          <span>&nbsp;&nbsp;>&nbsp;&nbsp;</span>
+        </span>
+        <span class="active">
+          <span>active</span>
+        </span>
+      </div>
+
+    </div>
+    back
+    <div class="page-header">
+      {{'visaDetails_individualVisas_b1-b2-visa_title' | translate}}
+    </div>
+  </div>
+  <section class="main">
+    <div class="visa-logo">
+      <img src="/assets/images/png/visa-detail-3.png" alt="visa-detail-logo"/>
+    </div>
+    <div class="visa-details-text">
+      {{'visaDetails_individualVisas_b1-b2-visa_description' | translate}}
+    </div>
+  </section>
+  <aside class="aside">
+    <div class="visa-details">
+      <h3>{{'qualifying_processingFee' | translate}}</h3>
+      <div class="details">{{'qualifying_visaDetails' | translate}}</div>
+      <div class="price-box">
+        <span [innerHTML]="'qualifying_processingFee_b1-b2-visa_priceAnnouncement' | translate"></span>
+        <div class="price">
+          {{'qualifying_processingFee_b1-b2-visa_price' | translate}}
+        </div>
+      </div>
+      <div class="additional-box">
+        <span>{{'qualifying_additionalPrice' | translate}}</span>
+        <div class="additional">{{'qualifying_processingFee_b1-b2-visa_additionalPrice' | translate}}</div>
+      </div>
+    </div>
+  </aside>
+  <div class="visa-details-control">
+    <a href="#" class="btn btn-default start-app-btn" ng-click="$ctrl.startApp()">
+      {{'landing_visaDetail_startApplication' | translate}}
+    </a>
+  </div>
+</div>
