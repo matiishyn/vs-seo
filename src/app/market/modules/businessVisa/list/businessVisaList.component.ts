@@ -6,19 +6,34 @@ import {Component} from '@angular/core';
 export class BusinessVisaListComponent {
   tabsContent = [
     {
-      title: 'visaDetails_individualVisas_b1-b2-visa_title',
-      p: 'visaDetails_individualVisas_b1-b2-visa_short_description',
-      price: 'qualifying_processingFee_b1-b2-visa_price',
+      id: 'visa.l1a',
+      title: 'visaDetails_businessVisas_l-1a-visa_title',
+      p: 'visaDetails_businessVisas_l-1a-visa_short_description',
+      price: null,
       link: []
-    },{
-      title: 'visaDetails_individualVisas_f-1-visa_title',
-      p: 'visaDetails_individualVisas_f-1-visa_short_description',
-      price: 'qualifying_processingFee_f-1-visa_price',
+    }, {
+      id: 'visa.o1',
+      title: 'visaDetails_businessVisas_o-1-visa_title',
+      p: 'visaDetails_businessVisas_o-1-visa_short_description',
+      price: null,
       link: []
-    },{
-      title: 'visaDetails_individualVisas_f-2-visa_title',
-      p: 'visaDetails_individualVisas_f-2-visa_short_description',
-      price: 'qualifying_processingFee_f-2-visa_price',
+    }, {
+      id: 'visa.p1a',
+      title: 'visaDetails_businessVisas_p-1a-visa_title',
+      p: 'visaDetails_businessVisas_p-1a-visa_short_description',
+      price: null,
+      link: []
+    }, {
+      id: 'visa.h1b',
+      title: 'visaDetails_businessVisas_h-1b-visa_title',
+      p: 'visaDetails_businessVisas_h-1b-visa_short_description',
+      price: null,
+      link: []
+    }, {
+      id: 'visa.e2',
+      title: 'visaDetails_businessVisas_e-2-visa_title',
+      p: 'visaDetails_businessVisas_e-2-visa_short_description',
+      price: null,
       link: []
     },
   ];
