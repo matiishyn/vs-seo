@@ -1,11 +1,13 @@
 import {NgModule} from '@angular/core';
 
-import {LoginComponent} from './login.component';
+import {LoginComponent} from './components/login.component';
 import {SharedModule} from '../../../shared/shared.module';
+import { GoogleAuthService } from "./services/google.auth.service";
 
 @NgModule({
   imports: [SharedModule],
   declarations: [LoginComponent],
+  providers: [GoogleAuthService]
 })
 export class LoginModule {
 }

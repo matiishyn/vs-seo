@@ -1,0 +1,6 @@
+{
+  "globalDependencies": {
+    "gapi": "registry:dt/gapi#0.0.0+20161128184045",
+    "gapi.auth2": "registry:dt/gapi.auth2#0.0.0+20161130005133"
+  }
+}

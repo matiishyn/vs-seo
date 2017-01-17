@@ -15,6 +15,7 @@ import {StickyHeaderDirective} from "./components/stickyHeader/stickyHeader.dire
 import {AppSettingsService} from "./services/appSettings.service";
 import {ChatDirective} from "./components/chat/chat.directive";
 import {AccountService} from "./services/account.service";
+import { UserService } from "./services/user.service";
 
 @NgModule({
   imports: [
@@ -36,6 +37,7 @@ import {AccountService} from "./services/account.service";
     FooterComponent
   ],
   providers: [
+    UserService,
     AppSettingsService,
     AccountService
   ]

@@ -5,9 +5,9 @@
         <div class="login-form-box">
           <form
             class="form login-form form-validation"
-            name="loginForm"
-            ng-submit="$ctrl.submit($event, loginForm)"
-            novalidate>
+            #loginForm="ngForm"
+            (ngSubmit)="submit()"
+            novalidate autocomplete="off">
             <fieldset>
               <h2>{{'login_welcome_back' | translate}}</h2>
               <div class="form-row">
@@ -18,7 +18,7 @@
                     ng-click="$ctrl.authenticateViaFacebook()">{{'login_facebook' | translate}}</a>
                 </div>
                 <div class="form-col col-half-width" style="padding: 0;">
-                  <a href="" class="btn-google">{{'login_google' | translate}}</a>
+                  <a #googleBtn class="btn-google">{{'login_google' | translate}}</a>
                 </div>
               </div>
               <h4 class="subheading">{{'login_with_text' | translate}}</h4>
@@ -29,22 +29,15 @@
                   name="email"
                   class="email"
                   placeholder="{{'profile_email' | translate}}"
-                  ng-model="$ctrl.login"
-                  ng-change="$ctrl.wrongEmailOrPassword = false"
-                  ng-class="{error: $ctrl.wrongEmailOrPassword}"
+                  [(ngModel)]="credentials.login"
                   required>
                 <div class="message error-required">{{'user_registration_missing_email' | translate}}</div>
               </div>
               <div class="form-row">
                 <div class="password-holder">
-                  <!--<password-display
-                    ng-attr-placeholder="{{'profile_password' | translate}}"
-                    password="$ctrl.password"
-                    on-change="$ctrl.wrongEmailOrPassword = false"
-                    custom-class="{error: $ctrl.wrongEmailOrPassword}"
-                    required></password-display>-->
+                  <password-display name="password" [(ngModel)]="credentials.password" required=""></password-display>
                   <div
-                    ng-if="$ctrl.wrongEmailOrPassword"
+                    *ngIf="wrongEmailOrPassword"
                     class="message show">{{'login_incorrect_details' | translate}}
                   </div>
                 </div>

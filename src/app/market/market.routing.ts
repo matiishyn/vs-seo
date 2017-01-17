@@ -5,7 +5,7 @@ import {BusinessVisaComponent} from "./modules/businessVisa/businessVisa.compone
 import {TermsAndConditionsComponent} from "./modules/termsAndConditions/termsAndConditions.component";
 import {PrivacyPolicyComponent} from "./modules/privacyPolicy/privacyPolicy.component";
 import {ContactUsComponent} from "./modules/contactUs/contactUs.component";
-import {LoginComponent} from "./modules/login/login.component";
+import {LoginComponent} from "./modules/login/components/login.component";
 import {SignUpComponent} from "./modules/signUp/signUp.component";
 import {individualVisaRoutes} from "./modules/individualVisa/individualVisa.routing";
 import {businessVisaRoutes} from "./modules/businessVisa/businessVisa.routing";

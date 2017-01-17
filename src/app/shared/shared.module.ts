@@ -9,6 +9,7 @@ import {ImgHeaderComponent} from "../market/components/imgHeader/imgHeader.compo
 import {PreFooterComponent} from "../market/components/preFooter/preFooter.component";
 import {VisaTypesComponent} from "../market/components/visaTypesTabs/visaTypesTabs.component";
 import {VisaDetailsComponent} from "../market/components/visaDetails/visaDetails.component";
+import { PasswordDisplayComponent } from '../market/components/passwordDisplay/passwordDisplay.component';
 import {BackBtnComponent} from "../market/components/backBtn/backBtn.component";
 
 
@@ -30,7 +31,8 @@ const COMPONENTS = [
   PreFooterComponent,
   VisaTypesComponent,
   VisaDetailsComponent,
-  BackBtnComponent
+  BackBtnComponent,
+  PasswordDisplayComponent
 
   // put shared modules here
 ];
