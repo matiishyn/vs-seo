@@ -6,7 +6,6 @@ import {TermsAndConditionsComponent} from "./modules/termsAndConditions/termsAnd
 import {PrivacyPolicyComponent} from "./modules/privacyPolicy/privacyPolicy.component";
 import {ContactUsComponent} from "./modules/contactUs/contactUs.component";
 import {FaqComponent} from "./modules/faq/faq.component";
-import {LoginComponent} from "./modules/login/login.component";
 import {LoginComponent} from "./modules/login/components/login.component";
 import {SignUpComponent} from "./modules/signUp/signUp.component";
 import {individualVisaRoutes} from "./modules/individualVisa/individualVisa.routing";
