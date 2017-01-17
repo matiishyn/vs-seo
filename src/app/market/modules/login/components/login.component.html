@@ -12,10 +12,7 @@
               <h2>{{'login_welcome_back' | translate}}</h2>
               <div class="form-row">
                 <div class="form-col col-half-width" style="padding: 0;">
-                  <a
-                    href=""
-                    class="btn-facebook"
-                    ng-click="$ctrl.authenticateViaFacebook()">{{'login_facebook' | translate}}</a>
+                  <a class="btn-facebook" (click)="fbAuth()">{{'login_facebook' | translate}}</a>
                 </div>
                 <div class="form-col col-half-width" style="padding: 0;">
                   <a #googleBtn class="btn-google">{{'login_google' | translate}}</a>
