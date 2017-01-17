@@ -9,6 +9,7 @@ import {ImgHeaderComponent} from "../market/components/imgHeader/imgHeader.compo
 import {PreFooterComponent} from "../market/components/preFooter/preFooter.component";
 import {VisaTypesComponent} from "../market/components/visaTypesTabs/visaTypesTabs.component";
 import {VisaDetailsComponent} from "../market/components/visaDetails/visaDetails.component";
+import {BackBtnComponent} from "../market/components/backBtn/backBtn.component";
 
 
 const MODULES = [
@@ -28,7 +29,8 @@ const COMPONENTS = [
   ImgHeaderComponent,
   PreFooterComponent,
   VisaTypesComponent,
-  VisaDetailsComponent
+  VisaDetailsComponent,
+  BackBtnComponent
 
   // put shared modules here
 ];

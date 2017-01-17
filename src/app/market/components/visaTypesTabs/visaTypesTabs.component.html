@@ -18,7 +18,9 @@
       </h3>
       <div class="visa-types-desc-btns">
         <a [routerLink]="tab.link" class="btn btn-grey">{{ 'visaDetails_button_learnMore' | translate }}</a>
-        <a [routerLink]="['../../login', {startWith: tab.id}]" class="btn btn-default start-app-btn">
+        <a [routerLink]="['../../login']"
+           [queryParams]="{startWith: tab.id}"
+           class="btn btn-default start-app-btn">
           {{ 'landing_visaDetail_startApplication' | translate }}
         </a>
       </div>

@@ -20,7 +20,9 @@
       </div>
 
     </div>
-    back
+
+    <back-btn></back-btn>
+
     <div class="page-header">
       {{visas[visaId].title | translate}}
     </div>
@@ -65,7 +67,9 @@
   </aside>
 
   <div class="visa-details-control">
-    <a class="btn btn-default start-app-btn" [routerLink]="['../../login', {startWith: visas[visaId].id}]">
+    <a class="btn btn-default start-app-btn"
+       [routerLink]="['../../login']"
+       [queryParams]="{startWith: visas[visaId].id}">
       {{'landing_visaDetail_startApplication' | translate}}
     </a>
   </div>
