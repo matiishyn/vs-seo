@@ -8,6 +8,7 @@ import {IndividualVisaModule} from "./modules/individualVisa/individualVisa.modu
 import {BusinessVisaModule} from "./modules/businessVisa/businessVisa.module";
 import {TermsAndConditionsModule} from "./modules/termsAndConditions/termsAndConditions.module";
 import {ContactUsModule} from "./modules/contactUs/contactUs.module";
+import {FaqModule} from "./modules/faq/faq.module";
 import {PrivacyPolicyModule} from "./modules/privacyPolicy/privacyPolicy.module";
 import {LoginModule} from "./modules/login/login.module";
 import {SignUpModule} from "./modules/signUp/signUp.module";
@@ -26,6 +27,7 @@ import { UserService } from "./services/user.service";
     TermsAndConditionsModule,
     PrivacyPolicyModule,
     ContactUsModule,
+    FaqModule,
     LoginModule,
     SignUpModule
   ],

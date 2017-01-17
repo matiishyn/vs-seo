@@ -3,6 +3,23 @@
 	text-align: left;
 	overflow: hidden;
 	padding: 3px;
+
+  .panel-body {
+    .text-wrap {
+      max-height: 0;
+      box-sizing: border-box;
+      @include transition($property: max-height, $duration: .25s, $animation: 'linear');
+      .text {
+        padding: 30px;
+        font-size: 15px;
+        line-height: 30px;
+        @include respond-to(mobileLG){
+
+        }
+      }
+    }
+  }
+
 	.title {
 		background-color: $accordion_title_fill;
 		border: 1px solid $accordion_title_border;
@@ -46,7 +63,7 @@
 			font-size: 15px;
 			line-height: 30px;
 			@include respond-to(mobileLG){
-				
+
 			}
 		}
 	}
@@ -54,7 +71,7 @@
 		.title {
 			font-family: $PNSemibold;
 			icon {
-				svg {	
+				svg {
 					@include transform(rotate(90deg));
 				}
 			}

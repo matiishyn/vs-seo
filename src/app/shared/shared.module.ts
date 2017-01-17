@@ -8,6 +8,7 @@ import { TranslateModule, TranslateService } from "ng2-translate";
 import {ImgHeaderComponent} from "../market/components/imgHeader/imgHeader.component";
 import {PreFooterComponent} from "../market/components/preFooter/preFooter.component";
 import {VisaTypesComponent} from "../market/components/visaTypesTabs/visaTypesTabs.component";
+import {Accordion, AccordionGroup} from "../market/components/accordion/accordion.component";
 import {VisaDetailsComponent} from "../market/components/visaDetails/visaDetails.component";
 import { PasswordDisplayComponent } from '../market/components/passwordDisplay/passwordDisplay.component';
 import {BackBtnComponent} from "../market/components/backBtn/backBtn.component";
@@ -31,6 +32,8 @@ const COMPONENTS = [
   PreFooterComponent,
   VisaTypesComponent,
   VisaDetailsComponent,
+  Accordion,
+  AccordionGroup,
   BackBtnComponent,
   PasswordDisplayComponent
 

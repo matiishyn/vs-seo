@@ -1,0 +1,250 @@
+<section id="content" class="content">
+  <div class="content-inner">
+    <div class="page-wrap faq">
+      <img-header
+        [subHeader]="'faq_pageTitle'"
+        [header]="'faq_subtitle'"
+        [p]="'faq_hint1'">
+      </img-header>
+      <div class="page-content container">
+        <div class="scrollable-content goTo">
+          <div class="scrollable-parent faq-sections">
+            <div class="scrollable">
+              <h2>{{'faq_sections_label' | translate}}</h2>
+              <div class="faq-nav">
+                <ul class="goTo-links">
+                  <li>
+                    <h3>
+                      <a
+                        href="#"
+                        class="goTo-link"
+                        ng-click="goTo($event, 'generalQuestions')"
+                        ng-class="{'active': activeLink == 'generalQuestions'}">
+                        {{'faq_general_label' | translate}}
+                      </a>
+                    </h3>
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                      class="goTo-link"
+                      ng-click="goTo($event, 'gettingStarted')"
+                      ng-class="{'active': activeLink == 'gettingStarted'}">
+                      {{'faq_gettingStarted_label' | translate}}
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                      class="goTo-link"
+                      ng-click="goTo($event, 'otherTopics')"
+                      ng-class="{'active': activeLink == 'otherTopics'}">
+                      {{'faq_otherTopics_label' | translate}}
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <div class="faq-nav">
+                <ul class="goTo-links">
+                  <li>
+                    <h3>
+                      <a
+                        href="#"
+                        class="goTo-link"
+                        ng-click="goTo($event, 'individualVisas')"
+                        ng-class="{'active': activeLink == 'individualVisas'}">
+                        {{'faq_individualVisas_sectionsLabel' | translate}}
+                      </a>
+                    </h3>
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                      class="goTo-link"
+                      ng-click="goTo($event, 'b1')"
+                      ng-class="{'active': activeLink == 'b1'}">
+                      {{'faq_b1b2_label' | translate}}
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                      class="goTo-link"
+                      ng-click="goTo($event, 'j1')"
+                      ng-class="{'active': activeLink == 'j1'}">
+                      {{'faq_j1j2_label' | translate}}
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                      class="goTo-link"
+                      ng-click="goTo($event, 'f1')"
+                      ng-class="{'active': activeLink == 'f1'}">
+                      {{'faq_f1f2_label' | translate}}
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <div class="faq-nav">
+                <ul class="goTo-links">
+                  <li>
+                    <h3>
+                      <a
+                        href="#"
+                        class="goTo-link"
+                        ng-click="goTo($event, 'businessVisas')"
+                        ng-class="{'active': activeLink == 'businessVisas'}">
+                        {{'faq_businessVisas_sectionLabel' | translate}}
+                      </a>
+                    </h3>
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                      class="goTo-link"
+                      ng-click="goTo($event, 'h1b')"
+                      ng-class="{'active': activeLink == 'h1b'}">
+                      {{'faq_h1bh4_label' | translate}}
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                      class="goTo-link"
+                      ng-click="goTo($event, 'e1')"
+                      ng-class="{'active': activeLink == 'e1'}">
+                      {{'faq_e1e2_label' | translate}}
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                      class="goTo-link"
+                      ng-click="goTo($event, 'l1')"
+                      ng-class="{'active': activeLink == 'l1'}">
+                      {{'faq_l1l2_label' | translate}}
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="faq-content-holder accordion scrollable-side">
+            <accordion>
+              <div class="faq-content">
+                <h2 id="generalQuestions" class="goTo-content">{{'faq_general_label' | translate}}</h2>
+                <p>{{'faq_general_text' | translate}}</p>
+                <ul class="accordion-list">
+                  <li *ngFor="let group of generalQuestions">
+                    <accordion-group [heading]="group.heading | translate">
+                      {{group.content | translate}}
+                    </accordion-group>
+                  </li>
+                </ul>
+                <h3 id="gettingStarted" class="goTo-content">
+                  {{'faq_gettingStarted_label' | translate}}
+                </h3>
+                <ul class="accordion-list">
+                  <li *ngFor="let group of gettingStarted">
+                    <accordion-group [heading]="group.heading | translate">
+                      {{group.content | translate}}
+                    </accordion-group>
+                  </li>
+                </ul>
+                <h3 id="otherTopics" class="goTo-content">
+                  {{'faq_otherTopics_label' | translate}}
+                </h3>
+                <ul class="accordion-list">
+                  <li *ngFor="let group of otherTopics">
+                    <accordion-group [heading]="group.heading | translate">
+                      {{group.content | translate}}
+                    </accordion-group>
+                  </li>
+                </ul>
+              </div>
+              <div class="faq-content">
+                <h2 id="individualVisas" class="goTo-content">
+                  {{'faq_individualVisas_label' | translate}}
+                </h2>
+                <p>{{'faq_individualVisas_text' | translate}}</p>
+                <ul class="accordion-list">
+                  <li *ngFor="let group of individualVisas">
+                    <accordion-group [heading]="group.heading | translate">
+                      {{group.content | translate}}
+                    </accordion-group>
+                  </li>
+                </ul>
+                <h3 class="goTo-content" id="b1">
+                  {{'faq_b1b2_label' | translate}}
+                </h3>
+                <ul class="accordion-list">
+                  <li *ngFor="let group of faq_b1b2">
+                    <accordion-group [heading]="group.heading | translate">
+                      {{group.content | translate}}
+                    </accordion-group>
+                  </li>
+                </ul>
+                <h3 class="goTo-content" id="j1">
+                  {{'faq_j1j2_label' | translate}}
+                </h3>
+                <ul class="accordion-list">
+                  <li *ngFor="let group of faq_j1j2">
+                    <accordion-group [heading]="group.heading | translate">
+                      {{group.content | translate}}
+                    </accordion-group>
+                  </li>
+                </ul>
+                <h3 class="goTo-content" id="f1">
+                  {{'faq_f1f2_label' | translate}}
+                </h3>
+                <ul class="accordion-list">
+                  <li *ngFor="let group of faq_f1f2">
+                    <accordion-group [heading]="group.heading | translate">
+                      {{group.content | translate}}
+                    </accordion-group>
+                  </li>
+                </ul>
+              </div>
+              <div class="faq-content">
+                <h2 id="businessVisas" class="goTo-content">{{'faq_businessVisas_label' | translate}}</h2>
+                <p>{{'faq_businessVisas_text' | translate}}</p>
+                <ul class="accordion-list">
+                  <li *ngFor="let group of faq_businessVisas">
+                    <accordion-group [heading]="group.heading | translate">
+                      {{group.content | translate}}
+                    </accordion-group>
+                  </li>
+                </ul>
+                <h3 class="goTo-content" id="h1b">{{'faq_h1bh4_label' | translate}}</h3>
+                <ul class="accordion-list">
+                  <li *ngFor="let group of faq_h1bh4">
+                    <accordion-group [heading]="group.heading | translate">
+                      {{group.content | translate}}
+                    </accordion-group>
+                  </li>
+                </ul>
+                <h3 class="goTo-content" id="e1">{{'faq_e1e2_label' | translate}}</h3>
+                <ul class="accordion-list">
+                  <li *ngFor="let group of faq_e1e2">
+                    <accordion-group [heading]="group.heading | translate">
+                      {{group.content | translate}}
+                    </accordion-group>
+                  </li>
+                </ul>
+                <h3 class="goTo-content" id="l1">{{'faq_l1l2_label' | translate}}</h3>
+                <ul class="accordion-list" style="margin-bottom: 0;">
+                  <li *ngFor="let group of faq_l1l2">
+                    <accordion-group [heading]="group.heading | translate">
+                      {{group.content | translate}}
+                    </accordion-group>
+                  </li>
+                </ul>
+              </div>
+            </accordion>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

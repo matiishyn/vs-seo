@@ -5,6 +5,8 @@ import {BusinessVisaComponent} from "./modules/businessVisa/businessVisa.compone
 import {TermsAndConditionsComponent} from "./modules/termsAndConditions/termsAndConditions.component";
 import {PrivacyPolicyComponent} from "./modules/privacyPolicy/privacyPolicy.component";
 import {ContactUsComponent} from "./modules/contactUs/contactUs.component";
+import {FaqComponent} from "./modules/faq/faq.component";
+import {LoginComponent} from "./modules/login/login.component";
 import {LoginComponent} from "./modules/login/components/login.component";
 import {SignUpComponent} from "./modules/signUp/signUp.component";
 import {individualVisaRoutes} from "./modules/individualVisa/individualVisa.routing";
@@ -16,6 +18,7 @@ export const mainRoutes: Routes = [
   {path: 'business-visas', component: BusinessVisaComponent, children: [...businessVisaRoutes]},
   {path: 'terms-conditions', component: TermsAndConditionsComponent},
   {path: 'contact-us', component: ContactUsComponent},
+  {path: 'faq', component: FaqComponent},
   {path: 'privacy-policy', component: PrivacyPolicyComponent},
   {path: 'login', component: LoginComponent},
   {path: 'signup', component: SignUpComponent},
