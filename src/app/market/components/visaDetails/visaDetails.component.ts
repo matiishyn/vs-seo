@@ -20,7 +20,6 @@ export class VisaDetailsComponent implements OnInit {
   }
 
   ngOnInit() {
-    console.log('INIT');
     this.visas = visaDetailsData;
     this.route.params.subscribe(params => {
       this.visaId = params['visaId'];

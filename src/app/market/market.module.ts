@@ -12,6 +12,7 @@ import {PrivacyPolicyModule} from "./modules/privacyPolicy/privacyPolicy.module"
 import {LoginModule} from "./modules/login/login.module";
 import {SignUpModule} from "./modules/signUp/signUp.module";
 import {StickyHeaderDirective} from "./components/stickyHeader/stickyHeader.directive";
+import {AppSettingsService} from "./services/appSettings.service";
 
 @NgModule({
   imports: [
@@ -30,7 +31,8 @@ import {StickyHeaderDirective} from "./components/stickyHeader/stickyHeader.dire
     HeaderComponent,
     StickyHeaderDirective,
     FooterComponent
-  ]
+  ],
+  providers: [AppSettingsService]
 })
 export class MarketModule {
 }
