@@ -13,6 +13,8 @@ import {LoginModule} from "./modules/login/login.module";
 import {SignUpModule} from "./modules/signUp/signUp.module";
 import {StickyHeaderDirective} from "./components/stickyHeader/stickyHeader.directive";
 import {AppSettingsService} from "./services/appSettings.service";
+import {ChatDirective} from "./components/chat/chat.directive";
+import {AccountService} from "./services/account.service";
 
 @NgModule({
   imports: [
@@ -30,9 +32,13 @@ import {AppSettingsService} from "./services/appSettings.service";
     MarketComponent,
     HeaderComponent,
     StickyHeaderDirective,
+    ChatDirective,
     FooterComponent
   ],
-  providers: [AppSettingsService]
+  providers: [
+    AppSettingsService,
+    AccountService
+  ]
 })
 export class MarketModule {
 }
