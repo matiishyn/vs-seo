@@ -10,19 +10,19 @@ export class IndividualVisaListComponent {
       title: 'visaDetails_individualVisas_b1-b2-visa_title',
       p: 'visaDetails_individualVisas_b1-b2-visa_short_description',
       price: 'qualifying_processingFee_b1-b2-visa_price',
-      link: ['../visa.b1.b2']
+      link: ['../b1-b2-visa']
     }, {
       id: 'visa.f1',
       title: 'visaDetails_individualVisas_f-1-visa_title',
       p: 'visaDetails_individualVisas_f-1-visa_short_description',
       price: 'qualifying_processingFee_f-1-visa_price',
-      link: ['../visa.f1']
+      link: ['../f-1-visa']
     }, {
       id: 'visa.f2',
       title: 'visaDetails_individualVisas_f-2-visa_title',
       p: 'visaDetails_individualVisas_f-2-visa_short_description',
       price: 'qualifying_processingFee_f-2-visa_price',
-      link: ['../visa.f2']
+      link: ['../f-2-visa']
     },
   ];
 

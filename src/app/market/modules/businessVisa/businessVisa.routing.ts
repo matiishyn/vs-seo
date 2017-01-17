@@ -7,5 +7,5 @@ export const businessVisaRoutes: Routes = [
   {path: '', redirectTo: 'how-it-works', pathMatch: 'full'},
   {path: 'how-it-works', component: BusinessVisaMainComponent},
   {path: 'list', component: BusinessVisaListComponent},
-  {path: ':id', component: BusinessVisaDetailsComponent},
+  {path: ':visaId', component: BusinessVisaDetailsComponent},
 ];
