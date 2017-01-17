@@ -31,6 +31,13 @@ enableProdMode();
 const app = express();
 const ROOT = path.join(path.resolve(__dirname, '..'));
 
+
+app.use(proxy('/api', {
+  target: 'https://dev.visalex.com/',
+  changeOrigin: true,
+  auth: 'visalex:e57h495YowZn'
+}));
+
 // Express View
 app.engine('.html', createEngine({
   ngModule: MainModule,
@@ -69,12 +76,6 @@ import { serverApi, createTodoApi } from './backend/api';
 // Our API for demos only
 // app.get('/data.json', serverApi);
 // app.use('/api', createTodoApi());
-
-app.use(proxy('/api', {
-  target: 'https://dev.visalex.com/',
-  changeOrigin: true,
-  auth: 'visalex:e57h495YowZn'
-}));
 
 process.on('uncaughtException', function (err) {
   console.error('Catching uncaught errors to avoid process crash', err);
