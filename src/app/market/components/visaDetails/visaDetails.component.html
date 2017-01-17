@@ -65,7 +65,7 @@
   </aside>
 
   <div class="visa-details-control">
-    <a href="#" class="btn btn-default start-app-btn" ng-click="$ctrl.startApp()">
+    <a class="btn btn-default start-app-btn" [routerLink]="['../../login', {startWith: visas[visaId].id}]">
       {{'landing_visaDetail_startApplication' | translate}}
     </a>
   </div>
