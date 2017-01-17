@@ -22,15 +22,15 @@
     </div>
     back
     <div class="page-header">
-      {{'visaDetails_individualVisas_b1-b2-visa_title' | translate}}
+      {{visas[visaId].title | translate}}
     </div>
   </div>
   <section class="main">
     <div class="visa-logo">
-      <img src="/assets/images/png/visa-detail-3.png" alt="visa-detail-logo"/>
+      <img [src]="visas[visaId].img" alt="visa-detail-logo"/>
     </div>
     <div class="visa-details-text">
-      {{'visaDetails_individualVisas_b1-b2-visa_description' | translate}}
+      {{visas[visaId].description | translate}}
     </div>
   </section>
   <aside class="aside">
@@ -38,14 +38,14 @@
       <h3>{{'qualifying_processingFee' | translate}}</h3>
       <div class="details">{{'qualifying_visaDetails' | translate}}</div>
       <div class="price-box">
-        <span [innerHTML]="'qualifying_processingFee_b1-b2-visa_priceAnnouncement' | translate"></span>
+        <span [innerHTML]="visas[visaId].priceAnnouncement | translate"></span>
         <div class="price">
-          {{'qualifying_processingFee_b1-b2-visa_price' | translate}}
+          {{visas[visaId].price | translate}}
         </div>
       </div>
       <div class="additional-box">
         <span>{{'qualifying_additionalPrice' | translate}}</span>
-        <div class="additional">{{'qualifying_processingFee_b1-b2-visa_additionalPrice' | translate}}</div>
+        <div class="additional">{{visas[visaId].additionalPrice | translate}}</div>
       </div>
     </div>
   </aside>
