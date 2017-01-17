@@ -1,7 +1,6 @@
 import {Directive, AfterViewInit} from '@angular/core';
 import {isBrowser} from 'angular2-universal';
 import {AppSettingsService} from "../../services/appSettings.service";
-import {AccountService} from "../../services/account.service";
 
 
 @Directive({
