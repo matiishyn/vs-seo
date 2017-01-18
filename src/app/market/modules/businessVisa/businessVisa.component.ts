@@ -12,8 +12,8 @@ export class BusinessVisaComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.router.events.subscribe(state => {
+    /*this.router.events.subscribe(state => {
       // this.isHeaderVisible = Boolean(this.headerVisibleRoutes.find(path => state.url.endsWith(path)));
-    });
+    });*/
   }
 }
