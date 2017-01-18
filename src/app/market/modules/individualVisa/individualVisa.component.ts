@@ -14,7 +14,7 @@ export class IndividualVisaComponent implements OnInit{
 
   ngOnInit() {
     this.router.events.subscribe(state => {
-      this.isHeaderVisible = Boolean(this.headerVisibleRoutes.find(path => state.url.endsWith(path)));
+      // this.isHeaderVisible = Boolean(this.headerVisibleRoutes.find(path => state.url.endsWith(path)));
     });
   }
 }
