@@ -30,11 +30,11 @@ export const mainRoutes: Routes = [
   },
   {
     path: 'terms-conditions', component: TermsAndConditionsComponent,
-    data: {title: 'termsConditions_title'}
+    data: {title: 'tos_title'}
   },
   {
     path: 'contact-us', component: ContactUsComponent,
-    data: {title: 'contactUs_title'}
+    data: {title: 'contact_title'}
   },
   {
     path: 'faq', component: FaqComponent,
@@ -42,7 +42,7 @@ export const mainRoutes: Routes = [
   },
   {
     path: 'privacy-policy', component: PrivacyPolicyComponent,
-    data: {title: 'privacyPolicy_title'}
+    data: {title: 'privacypolicy_title'}
   },
   {
     path: 'login', component: LoginComponent,
@@ -50,6 +50,6 @@ export const mainRoutes: Routes = [
   },
   {
     path: 'signup', component: SignUpComponent,
-    data: {title: 'signUp_title'}
+    data: {title: 'registration_title'}
   },
 ];

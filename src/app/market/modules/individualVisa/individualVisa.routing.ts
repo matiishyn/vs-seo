@@ -15,6 +15,6 @@ export const individualVisaRoutes: Routes = [
   },
   {
     path: ':visaId', component: IndividualVisaDetailsComponent,
-    data: {title: 'individualVisas_title'}
+    data: {title: '_title'}   // will be append to visaId
   },
 ];
