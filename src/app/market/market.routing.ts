@@ -19,19 +19,37 @@ export const mainRoutes: Routes = [
   {
     path: 'individual-visas',
     component: IndividualVisaComponent,
-    data: {title: 'IndividualVisaComponent'},
+    data: {title: 'individualVisas_title'},
     children: [...individualVisaRoutes]
   },
   {
     path: 'business-visas',
     component: BusinessVisaComponent,
-    data: {title: 'BusinessVisaComponent'},
+    data: {title: 'businessVisas_title'},
     children: [...businessVisaRoutes]
   },
-  {path: 'terms-conditions', component: TermsAndConditionsComponent, data: {title: 'TermsAndConditionsComponent'}},
-  {path: 'contact-us', component: ContactUsComponent, data: {title: 'ContactUsComponent'}},
-  {path: 'faq', component: FaqComponent, data: {title: 'FaqComponent'}},
-  {path: 'privacy-policy', component: PrivacyPolicyComponent, data: {title: 'PrivacyPolicyComponent'}},
-  {path: 'login', component: LoginComponent, data: {title: 'LoginComponent'}},
-  {path: 'signup', component: SignUpComponent, data: {title: 'SignUpComponent'}},
+  {
+    path: 'terms-conditions', component: TermsAndConditionsComponent,
+    data: {title: 'termsConditions_title'}
+  },
+  {
+    path: 'contact-us', component: ContactUsComponent,
+    data: {title: 'contactUs_title'}
+  },
+  {
+    path: 'faq', component: FaqComponent,
+    data: {title: 'faqs_title'}
+  },
+  {
+    path: 'privacy-policy', component: PrivacyPolicyComponent,
+    data: {title: 'privacyPolicy_title'}
+  },
+  {
+    path: 'login', component: LoginComponent,
+    data: {title: 'login_title'}
+  },
+  {
+    path: 'signup', component: SignUpComponent,
+    data: {title: 'signUp_title'}
+  },
 ];

@@ -5,7 +5,16 @@ import {BusinessVisaDetailsComponent} from "./visaDetails/businessVisaDetails.co
 
 export const businessVisaRoutes: Routes = [
   {path: '', redirectTo: 'how-it-works', pathMatch: 'full'},
-  {path: 'how-it-works', component: BusinessVisaMainComponent},
-  {path: 'list', component: BusinessVisaListComponent},
-  {path: ':visaId', component: BusinessVisaDetailsComponent},
+  {
+    path: 'how-it-works', component: BusinessVisaMainComponent,
+    data: {title: 'businessVisas_title'}
+  },
+  {
+    path: 'list', component: BusinessVisaListComponent,
+    data: {title: 'businessVisas_title'}
+  },
+  {
+    path: ':visaId', component: BusinessVisaDetailsComponent,
+    data: {title: 'businessVisas_title'}
+  },
 ];
