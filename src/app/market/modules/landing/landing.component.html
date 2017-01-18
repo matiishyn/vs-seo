@@ -8,8 +8,8 @@
           <h1 [innerHTML]="'landing_promo' | translate"></h1>
           <div class="text">{{'landing_spanishPromo' | translate}}</div>
           <div class="btns">
-            <a [routerLink]="['individual-visas']" class="btn btn-default">{{ 'landing_individualClients' | translate }}</a>
-            <a [routerLink]="['business-visas']" class="btn btn-default">{{ 'landing_businessClients' | translate }}</a>
+            <a [routerLink]="['individual-visas/how-it-works']" class="btn btn-default">{{ 'landing_individualClients' | translate }}</a>
+            <a [routerLink]="['business-visas/how-it-works']" class="btn btn-default">{{ 'landing_businessClients' | translate }}</a>
           </div>
         </div>
       </div>
@@ -53,7 +53,7 @@
               <div class="benefit" [innerHTML]="'landing_approveRate' | translate"></div>
             </div>
             <div class="btns">
-              <a [routerLink]="['individual-visas']" class="btn btn-default">{{ 'landing_learnMore' | translate }}</a>
+              <a [routerLink]="['individual-visas/how-it-works']" class="btn btn-default">{{ 'landing_learnMore' | translate }}</a>
               <a [routerLink]="['signup']" class="create">{{ 'landing_createAccount' | translate }}</a>
             </div>
           </div>
@@ -65,7 +65,7 @@
               <div class="benefit" [innerHTML]="'landing_approveRate' | translate"></div>
             </div>
             <div class="btns">
-              <a [routerLink]="['business-visas']" class="btn btn-default">{{ 'landing_learnMore' | translate }}</a>
+              <a [routerLink]="['business-visas/how-it-works']" class="btn btn-default">{{ 'landing_learnMore' | translate }}</a>
               <a [routerLink]="['signup']" class="create">{{ 'landing_createAccount' | translate }}</a>
             </div>
           </div>

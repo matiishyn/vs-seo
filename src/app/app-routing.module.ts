@@ -14,8 +14,8 @@ import {Meta} from "../angular2-meta";
 })
 export class AppRoutingModule {
   public constructor(public router: Router, public meta: Meta) {
-    /*router.events.subscribe(state => {
-      // this.meta.setTitle('U.S. Immigration Online, Individual & Business Visas with VisaLex');
-    })*/
+    router.events.subscribe(state => {
+      this.meta.setTitle('U.S. Immigration Online, Individual & Business Visas with VisaLex');
+    })
   }
 }
