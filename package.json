@@ -68,9 +68,7 @@
     "rxjs": "5.0.0-beta.12",
     "typings": "^2.1.0",
     "webfontloader": "^1.6.26",
-    "zone.js": "~0.6.26"
-  },
-  "devDependencies": {
+    "zone.js": "~0.6.26",
     "@ngtools/webpack": "~1.1.7",
     "@types/body-parser": "0.0.29",
     "@types/compression": "0.0.29",
