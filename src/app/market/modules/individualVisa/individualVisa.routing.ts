@@ -5,7 +5,7 @@ import {IndividualVisaDetailsComponent} from "./components/visaDetails/individua
 
 export const individualVisaRoutes: Routes = [
   {path: '', redirectTo: 'how-it-works', pathMatch: 'full'},
-  {path: 'how-it-works', component: IndividualVisaMainComponent},
-  {path: 'list', component: IndividualVisaListComponent},
-  {path: ':visaId', component: IndividualVisaDetailsComponent},
+  {path: 'how-it-works', component: IndividualVisaMainComponent, data: {title: 'IndividualVisaMainComponent'}},
+  {path: 'list', component: IndividualVisaListComponent, data: {title: 'IndividualVisaListComponent'}},
+  {path: ':visaId', component: IndividualVisaDetailsComponent, data: {title: 'IndividualVisaDetailsComponent'}},
 ];

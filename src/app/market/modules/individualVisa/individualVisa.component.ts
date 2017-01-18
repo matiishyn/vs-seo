@@ -1,11 +1,11 @@
 import {Component, OnInit} from '@angular/core';
-import {Router} from '@angular/router';
+import {Router, NavigationEnd, Event} from '@angular/router';
 
 
 @Component({
   templateUrl: 'individualVisa.component.html'
 })
-export class IndividualVisaComponent implements OnInit{
+export class IndividualVisaComponent implements OnInit {
   private headerVisibleRoutes: Array<string> = ['/individual-visas/how-it-works', '/individual-visas/list', '/individual-visas'];
   private isHeaderVisible: boolean;
 
@@ -13,8 +13,10 @@ export class IndividualVisaComponent implements OnInit{
   }
 
   ngOnInit() {
-    this.router.events.subscribe(state => {
-      this.isHeaderVisible = Boolean(this.headerVisibleRoutes.find(path => state.url.endsWith(path)));
+    this.router.events.subscribe((event: Event) => {
+      if (event instanceof NavigationEnd) {
+        this.isHeaderVisible = Boolean(this.headerVisibleRoutes.find(path => event.url.endsWith(path)));
+      }
     });
   }
 }

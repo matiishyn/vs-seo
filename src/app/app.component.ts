@@ -1,4 +1,7 @@
-import {Component, ChangeDetectionStrategy, ViewEncapsulation} from '@angular/core';
+import {Component, ChangeDetectionStrategy, ViewEncapsulation, OnInit} from '@angular/core';
+import {NavigationEnd, Router, ActivatedRoute} from "@angular/router";
+import {Meta} from "../angular2-meta";
+import {TranslateService} from "ng2-translate";
 
 @Component({
   changeDetection: ChangeDetectionStrategy.Default,
@@ -7,5 +10,33 @@ import {Component, ChangeDetectionStrategy, ViewEncapsulation} from '@angular/co
   styleUrls: ['../index.scss'],
   templateUrl: './app.component.html'
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
+  public constructor(public router: Router,
+                     public meta: Meta,
+                     public translate: TranslateService) {
+  }
+
+  ngOnInit() {
+    this.router.events.subscribe(event => {
+      if (event instanceof NavigationEnd) {
+        const title = this.getTitle(this.router.routerState, this.router.routerState.root).pop();
+        // translate title
+        this.translate.get(title).subscribe((res: string) => {
+          this.meta.setTitle(res);
+        });
+      }
+    })
+  }
+
+  public getTitle(state, parent): string[] {
+    let data = [];
+    if (parent && parent.snapshot.data && parent.snapshot.data.title) {
+      data.push(parent.snapshot.data.title);
+    }
+
+    if (state && parent) {
+      data.push(... this.getTitle(state, state.firstChild(parent)));
+    }
+    return data;
+  }
 }

@@ -12,15 +12,26 @@ import {individualVisaRoutes} from "./modules/individualVisa/individualVisa.rout
 import {businessVisaRoutes} from "./modules/businessVisa/businessVisa.routing";
 
 export const mainRoutes: Routes = [
-  {path: '', component: LandingComponent},
-  {path: 'individual-visas', component: IndividualVisaComponent, children: [...individualVisaRoutes]},
-  {path: 'business-visas', component: BusinessVisaComponent, children: [...businessVisaRoutes]},
-  {path: 'terms-conditions', component: TermsAndConditionsComponent},
-  {path: 'contact-us', component: ContactUsComponent},
-  {path: 'faq', component: FaqComponent},
-  {path: 'privacy-policy', component: PrivacyPolicyComponent},
-  {path: 'login', component: LoginComponent},
-  {path: 'signup', component: SignUpComponent},
-  // {path: 'todo', component: TodoComponent},
-  // {path: 'lazy', loadChildren: getLazyModule}
+  {
+    path: '', component: LandingComponent,
+    data: {title: 'site_title'}
+  },
+  {
+    path: 'individual-visas',
+    component: IndividualVisaComponent,
+    data: {title: 'IndividualVisaComponent'},
+    children: [...individualVisaRoutes]
+  },
+  {
+    path: 'business-visas',
+    component: BusinessVisaComponent,
+    data: {title: 'BusinessVisaComponent'},
+    children: [...businessVisaRoutes]
+  },
+  {path: 'terms-conditions', component: TermsAndConditionsComponent, data: {title: 'TermsAndConditionsComponent'}},
+  {path: 'contact-us', component: ContactUsComponent, data: {title: 'ContactUsComponent'}},
+  {path: 'faq', component: FaqComponent, data: {title: 'FaqComponent'}},
+  {path: 'privacy-policy', component: PrivacyPolicyComponent, data: {title: 'PrivacyPolicyComponent'}},
+  {path: 'login', component: LoginComponent, data: {title: 'LoginComponent'}},
+  {path: 'signup', component: SignUpComponent, data: {title: 'SignUpComponent'}},
 ];
