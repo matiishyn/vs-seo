@@ -22,7 +22,7 @@
   </div>
   <div class="header-inner" stickyHeader>
     <div class="header-content">
-      <span class="menuBtn" ng-class="{'open':openmenu}" ng-click="openmenu=!openmenu">
+      <span class="menuBtn" [class.open]="openmenu" (click)="openmenu=!openmenu">
         <span></span>
         <span></span>
         <span></span>
@@ -31,7 +31,7 @@
       <h1 class="logo">
         <a [routerLink]="['/']">{{ 'header_company_name' | translate }}</a>
       </h1>
-      <nav id="nav" ng-class="{'open':openmenu}">
+      <nav id="nav" [class.open]="openmenu">
         <ul class="nav-list">
           <li class="nav-item" routerLinkActive="active">
             <a [routerLink]="['individual-visas']" class="nav-link">{{ 'header_individual_visas' | translate }}</a>
