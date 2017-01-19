@@ -2,6 +2,7 @@ var webpack = require('webpack');
 var path = require('path');
 var clone = require('js.clone');
 var webpackMerge = require('webpack-merge');
+const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
 
 export var commonPlugins = [
   new webpack.ContextReplacementPlugin(
@@ -49,7 +50,11 @@ export var commonConfig = {
 
 // Client.
 export var clientPlugins = [
-
+  new BrowserSyncPlugin({
+    host: 'localhost',
+    port: 3100,
+    proxy: 'http://localhost:3000/'
+  })
 ];
 export var clientConfig = {
   target: 'web',
