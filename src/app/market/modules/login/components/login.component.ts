@@ -48,9 +48,7 @@ export class LoginComponent implements AfterViewInit {
 
   private onLoggedIn({logged, twoFactorAuth}) {
     if (logged && !twoFactorAuth) {
-      if (isBrowser) {
         window.location.href = 'http://localhost:5555';
-      }
     } else if (twoFactorAuth) {
       this.Router.navigate(['/']);
       // this.$state.go('app.market.twoFa', {direct: true});
