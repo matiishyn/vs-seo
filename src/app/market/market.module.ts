@@ -17,6 +17,7 @@ import {AppSettingsService} from "./services/appSettings.service";
 import {ChatDirective} from "./components/chat/chat.directive";
 import {AccountService} from "./services/account.service";
 import { UserService } from "./services/user.service";
+import { LangService } from "./services/lang.service";
 
 @NgModule({
   imports: [
@@ -41,7 +42,8 @@ import { UserService } from "./services/user.service";
   providers: [
     UserService,
     AppSettingsService,
-    AccountService
+    AccountService,
+    LangService
   ]
 })
 export class MarketModule {

@@ -1,8 +1,9 @@
-import {Component, OnInit} from '@angular/core';
-import {ActivatedRoute, Router, Params, UrlSegment, PRIMARY_OUTLET} from '@angular/router';
-import {TranslateService} from 'ng2-translate';
-import {UrlSegmentGroup} from "@angular/router/src/url_tree";
-import {isBrowser} from 'angular2-universal';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router, Params, UrlSegment, PRIMARY_OUTLET } from '@angular/router';
+import { TranslateService } from 'ng2-translate';
+import { UrlSegmentGroup } from "@angular/router/src/url_tree";
+import { isBrowser } from 'angular2-universal';
+import { LangService } from "../../services/lang.service";
 
 
 @Component({
@@ -14,11 +15,13 @@ export class HeaderComponent implements OnInit {
 
   constructor(private translate: TranslateService,
               private route: ActivatedRoute,
-              private router: Router) {
+              private router: Router,
+              private Lang: LangService) {
   }
 
   changeLanguage(lang: string): void {
     this.translate.use(lang);
+    this.Lang.currentLang = lang;
     const children: UrlSegmentGroup = this.router.parseUrl(this.router.url).root.children[PRIMARY_OUTLET];
     const s: UrlSegment[] = children.segments;
     const paths = s.map(segment => segment.path);
@@ -36,13 +39,16 @@ export class HeaderComponent implements OnInit {
       if (lang) {
         this.language = lang;
         this.translate.use(lang);
+        this.Lang.currentLang = lang;
         this.changeLanguage(lang);
         return;
       }
     }
     this.translate.setDefaultLang('en');
+    this.Lang.currentLang = 'en';
     this.route.params.subscribe(params => {
       this.language = params['lang'];
+      this.Lang.currentLang = params['lang'];
       this.translate.use(params['lang']);
     });
   }
