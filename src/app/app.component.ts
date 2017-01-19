@@ -23,6 +23,10 @@ export class AppComponent implements OnInit {
         // translate title
         this.translate.get(title).subscribe((res: string) => {
           this.meta.setTitle(res);
+          /*this.meta.updateTag('name=description', {
+            name: 'description',
+            content: 'New description'
+          });*/
         });
       }
     })

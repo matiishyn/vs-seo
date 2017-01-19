@@ -14,7 +14,11 @@ import {businessVisaRoutes} from "./modules/businessVisa/businessVisa.routing";
 export const mainRoutes: Routes = [
   {
     path: '', component: LandingComponent,
-    data: {title: 'site_title'}
+    data: {
+      title: 'site_title',
+      keywords: 'keywords_main',
+      description: 'description_main'
+    }
   },
   {
     path: 'individual-visas',
