@@ -64,6 +64,13 @@ export class Meta {
     this._document.title = title
   }
 
+  updateMeta(name, content) {
+    const head = this._document.head;
+    let childNodesAsList = this._dom.childNodesAsList(head);
+    let metaEl = childNodesAsList.find(el => el['attribs'] ? el['attribs'].name == name : false);
+    if (metaEl) metaEl['attribs'].content = content;
+  }
+
   /**
    * Adds a new meta tag to the dom.
    *
