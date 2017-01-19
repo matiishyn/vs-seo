@@ -19,26 +19,35 @@ export class AppComponent implements OnInit {
   ngOnInit() {
     this.router.events.subscribe(event => {
       if (event instanceof NavigationEnd) {
-        const title = this.getTitle(this.router.routerState, this.router.routerState.root).pop();
+        const title = this.getRouterData('title', this.router.routerState, this.router.routerState.root).pop();
+        const description = this.getRouterData('description', this.router.routerState, this.router.routerState.root).pop();
+        const keywords = this.getRouterData('keywords', this.router.routerState, this.router.routerState.root).pop();
         // translate title
         this.translate.get(title).subscribe((res: string) => {
           this.meta.setTitle(res);
-          this.meta.updateMeta('description', 'some description');
-          this.meta.updateMeta('keywords', 't1,t2,t3');
+        });
+        // translate description
+        this.translate.get(description).subscribe((res: string) => {
+          this.meta.updateMeta('description', res);
+        });
+        // translate keywords
+        this.translate.get(keywords).subscribe((res: string) => {
+          this.meta.updateMeta('keywords', res);
         });
       }
     });
   }
 
-  public getTitle(state, parent): string[] {
+  // todo refactor this, can be performance leak here
+  public getRouterData(prop, state, parent): string[] {
     let data = [];
-    if (parent && parent.snapshot.data && parent.snapshot.data.title) {
+    if (parent && parent.snapshot.data && parent.snapshot.data[prop]) {
       const visaId = (parent.snapshot.params && parent.snapshot.params.visaId) || '';
-      data.push(visaId + parent.snapshot.data.title);
+      data.push(visaId + parent.snapshot.data[prop]);
     }
 
     if (state && parent) {
-      data.push(... this.getTitle(state, state.firstChild(parent)));
+      data.push(... this.getRouterData(prop, state, state.firstChild(parent)));
     }
     return data;
   }

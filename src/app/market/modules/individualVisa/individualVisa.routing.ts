@@ -7,14 +7,26 @@ export const individualVisaRoutes: Routes = [
   {path: '', redirectTo: 'how-it-works', pathMatch: 'full'},
   {
     path: 'how-it-works', component: IndividualVisaMainComponent,
-    data: {title: 'individualVisas_title'}
+    data: {
+      keywords: 'keywords_individualVisas',
+      description: 'description_individualVisas',
+      title: 'individualVisas_title'
+    }
   },
   {
     path: 'list', component: IndividualVisaListComponent,
-    data: {title: 'individualVisas_title'}
+    data: {
+      keywords: 'keywords_individualVisas',
+      description: 'description_individualVisas',
+      title: 'individualVisas_title'
+    }
   },
   {
     path: ':visaId', component: IndividualVisaDetailsComponent,
-    data: {title: '_title'}   // will be append to visaId
+    data: {
+      keywords: '_keywords',
+      description: '_description',
+      title: '_title'
+    }   // will be append to visaId
   },
 ];

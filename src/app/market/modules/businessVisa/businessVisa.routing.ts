@@ -7,14 +7,26 @@ export const businessVisaRoutes: Routes = [
   {path: '', redirectTo: 'how-it-works', pathMatch: 'full'},
   {
     path: 'how-it-works', component: BusinessVisaMainComponent,
-    data: {title: 'businessVisas_title'}
+    data: {
+      keywords: 'keywords_businessVisas',
+      description: 'description_businessVisas',
+      title: 'businessVisas_title'
+    }
   },
   {
     path: 'list', component: BusinessVisaListComponent,
-    data: {title: 'businessVisas_title'}
+    data: {
+      keywords: 'keywords_businessVisas',
+      description: 'description_businessVisas',
+      title: 'businessVisas_title'
+    }
   },
   {
     path: ':visaId', component: BusinessVisaDetailsComponent,
-    data: {title: '_title'}   // will be append to visaId
+    data: {
+      keywords: '_keywords',
+      description: '_description',
+      title: '_title'
+    }   // will be append to visaId
   },
 ];

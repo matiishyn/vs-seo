@@ -10,7 +10,11 @@ import {mainRoutes} from './market/market.routing';
       {
         path: ':lang',
         component: MarketComponent,
-        data: {title: 'site_title'},
+        data: {
+          keywords: 'keywords_main',
+          description: 'description_main',
+          title: 'site_title'
+        },
         children: [...mainRoutes]
       },
     ])

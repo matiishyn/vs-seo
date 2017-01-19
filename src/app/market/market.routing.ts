@@ -23,37 +23,69 @@ export const mainRoutes: Routes = [
   {
     path: 'individual-visas',
     component: IndividualVisaComponent,
-    data: {title: 'individualVisas_title'},
+    data: {
+      keywords: 'keywords_individualVisas',
+      description: 'description_individualVisas',
+      title: 'individualVisas_title'
+    },
     children: [...individualVisaRoutes]
   },
   {
     path: 'business-visas',
     component: BusinessVisaComponent,
-    data: {title: 'businessVisas_title'},
+    data: {
+      keywords: 'keywords_businessVisas',
+      description: 'description_businessVisas',
+      title: 'businessVisas_title'
+    },
     children: [...businessVisaRoutes]
   },
   {
     path: 'terms-conditions', component: TermsAndConditionsComponent,
-    data: {title: 'tos_title'}
+    data: {
+      keywords: 'keywords_terms',
+      description: 'description_terms',
+      title: 'tos_title'
+    }
   },
   {
     path: 'contact-us', component: ContactUsComponent,
-    data: {title: 'contact_title'}
+    data: {
+      keywords: 'keywords_contactUs',
+      description: 'description_contactUs',
+      title: 'contact_title'
+    }
   },
   {
     path: 'faq', component: FaqComponent,
-    data: {title: 'faqs_title'}
+    data: {
+      keywords: 'keywords_faqs',
+      description: 'description_faqs',
+      title: 'faqs_title'
+    }
   },
   {
     path: 'privacy-policy', component: PrivacyPolicyComponent,
-    data: {title: 'privacypolicy_title'}
+    data: {
+      keywords: 'keywords_privacyPolicy',
+      description: 'description_privacyPolicy',
+      title: 'privacypolicy_title'
+    }
   },
   {
     path: 'login', component: LoginComponent,
-    data: {title: 'login_title'}
+    data: {
+      keywords: 'keywords_login',
+      description: 'description_login',
+      title: 'login_title'
+    }
   },
   {
     path: 'signup', component: SignUpComponent,
-    data: {title: 'registration_title'}
+    data: {
+      keywords: 'keywords_signUp',
+      description: 'description_signUp',
+      title: 'registration_title'
+    }
   },
 ];
