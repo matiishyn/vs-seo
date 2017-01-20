@@ -1,1 +1,37 @@
-about us
+<section id="content" class="content">
+  <div class="content-inner">
+    <div class="page-wrap about-us">
+      <img-header
+        [subHeader]="'about_pageTitle'"
+        [header]="'about_subtitle'"
+        [p]="'about_hint'"
+      ></img-header>
+      <div class="page-content container">
+        <h2>{{'about_labels_ourLeadership' | translate}}</h2>
+        <div class="heading-text">{{'about_labels_headingText' | translate}}</div>
+        <div class="persons">
+          <div class="person">
+            <img src="/assets/images/jpg/person01.png" alt="FirstName LastName"/>
+            <h3>{{'about_person01_name' | translate}}</h3>
+            <div class="role-title">{{'about_person01_title' | translate}}</div>
+            <div class="description">{{'about_person01_description' | translate}}</div>
+          </div>
+          <div class="person">
+            <img src="/assets/images/jpg/person02.png" alt="FirstName LastName"/>
+            <h3>{{'about_person02_name' | translate}}</h3>
+            <div class="role-title">{{'about_person02_title' | translate}}</div>
+            <div class="description">{{'about_person02_description' | translate}}</div>
+          </div>
+          <div class="person">
+            <img src="/assets/images/jpg/person03.png" alt="FirstName LastName"/>
+            <h3>{{'about_person03_name' | translate}}</h3>
+            <div class="role-title">{{'about_person02_title' | translate}}</div>
+            <div class="description">{{'about_person02_description' | translate}}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<my-pre-footer></my-pre-footer>
