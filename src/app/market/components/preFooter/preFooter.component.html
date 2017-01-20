@@ -4,8 +4,8 @@
       <div class="nav">
         <h3>{{ 'prefooter_headings_product' | translate }}</h3>
         <ul>
-          <li><a ui-sref="app.market.individualVisas">{{ 'prefooter_links_individualVisas' | translate }}</a></li>
-          <li><a ui-sref="app.market.businessVisas">{{ 'prefooter_links_businessVisas' | translate }}</a></li>
+          <li><a [routerLink]="[currentLang, 'individual-visas']">{{ 'prefooter_links_individualVisas' | translate }}</a></li>
+          <li><a [routerLink]="[currentLang, 'business-visas']">{{ 'prefooter_links_businessVisas' | translate }}</a></li>
           <li><a href="#">{{ 'prefooter_links_visaFinder' | translate }}</a></li>
         </ul>
       </div>
