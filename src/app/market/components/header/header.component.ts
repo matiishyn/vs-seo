@@ -1,9 +1,9 @@
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router, Params, UrlSegment, PRIMARY_OUTLET } from '@angular/router';
-import { TranslateService } from 'ng2-translate';
-import { UrlSegmentGroup } from "@angular/router/src/url_tree";
-import { isBrowser } from 'angular2-universal';
-import { LangService } from "../../services/lang.service";
+import {Component, OnInit} from '@angular/core';
+import {ActivatedRoute, Router, Params, UrlSegment, PRIMARY_OUTLET} from '@angular/router';
+import {TranslateService} from 'ng2-translate';
+import {UrlSegmentGroup} from "@angular/router/src/url_tree";
+import {isBrowser} from 'angular2-universal';
+import {LangService} from "../../services/lang.service";
 
 
 @Component({
@@ -51,5 +51,9 @@ export class HeaderComponent implements OnInit {
       this.Lang.currentLang = params['lang'];
       this.translate.use(params['lang']);
     });
+  }
+
+  get currentLang(): string {
+    return `/${this.translate.currentLang}`;
   }
 }

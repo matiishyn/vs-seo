@@ -16,8 +16,9 @@ import {StickyHeaderDirective} from "./components/stickyHeader/stickyHeader.dire
 import {AppSettingsService} from "./services/appSettings.service";
 import {ChatDirective} from "./components/chat/chat.directive";
 import {AccountService} from "./services/account.service";
-import { UserService } from "./services/user.service";
-import { LangService } from "./services/lang.service";
+import {UserService} from "./services/user.service";
+import {LangService} from "./services/lang.service";
+import {AboutUsModule} from "./modules/aboutUs/aboutUs.module";
 
 @NgModule({
   imports: [
@@ -30,7 +31,8 @@ import { LangService } from "./services/lang.service";
     ContactUsModule,
     FaqModule,
     LoginModule,
-    SignUpModule
+    SignUpModule,
+    AboutUsModule
   ],
   declarations: [
     MarketComponent,

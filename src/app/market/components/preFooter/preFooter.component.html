@@ -12,7 +12,7 @@
       <div class="nav">
         <h3>{{ 'prefooter_headings_company' | translate }}</h3>
         <ul>
-          <li><a ui-sref="app.market.aboutUs">{{ 'prefooter_links_aboutUs' | translate }}</a></li>
+          <li><a [routerLink]="[currentLang, 'about-us']">{{ 'prefooter_links_aboutUs' | translate }}</a></li>
           <li><a href="/blog" target="_self">{{ 'prefooter_links_blog' | translate }}</a></li>
           <li><a [routerLink]="[currentLang, 'faq']" class="nav-link">{{ 'prefooter_links_faq' | translate }}</a></li>
         </ul>

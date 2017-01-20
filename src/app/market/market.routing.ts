@@ -10,6 +10,7 @@ import {LoginComponent} from "./modules/login/components/login.component";
 import {SignUpComponent} from "./modules/signUp/signUp.component";
 import {individualVisaRoutes} from "./modules/individualVisa/individualVisa.routing";
 import {businessVisaRoutes} from "./modules/businessVisa/businessVisa.routing";
+import {AboutUsComponent} from "./modules/aboutUs/aboutUs.component";
 
 export const mainRoutes: Routes = [
   {
@@ -86,6 +87,14 @@ export const mainRoutes: Routes = [
       keywords: 'keywords_signUp',
       description: 'description_signUp',
       title: 'registration_title'
+    }
+  },
+  {
+    path: 'about-us', component: AboutUsComponent,
+    data: {
+      keywords: 'keywords_aboutUs',
+      description: 'description_aboutUs',
+      title: 'about_title'
     }
   },
 ];
