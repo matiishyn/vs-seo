@@ -1,7 +1,9 @@
-import {Component, ChangeDetectionStrategy, ViewEncapsulation, OnInit} from '@angular/core';
+import {Component, ChangeDetectionStrategy, ViewEncapsulation, OnInit, Inject} from '@angular/core';
 import {NavigationEnd, Router} from "@angular/router";
 import {Meta} from "../angular2-meta";
 import {TranslateService} from "ng2-translate";
+import {DOCUMENT} from '@angular/platform-browser';
+import {isBrowser} from "angular2-universal";
 
 @Component({
   changeDetection: ChangeDetectionStrategy.Default,
@@ -13,6 +15,7 @@ import {TranslateService} from "ng2-translate";
 export class AppComponent implements OnInit {
   public constructor(public router: Router,
                      public meta: Meta,
+                     @Inject(DOCUMENT) private document: any,
                      public translate: TranslateService) {
   }
 
@@ -34,6 +37,11 @@ export class AppComponent implements OnInit {
         this.translate.get(keywords).subscribe((res: string) => {
           this.meta.updateMeta('keywords', res);
         });
+
+        // scroll top on every page transition
+        if (isBrowser) {
+          this.document.body.scrollTop = 0;
+        }
       }
     });
   }
