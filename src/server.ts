@@ -14,6 +14,11 @@ import * as cookieParser from 'cookie-parser';
 import * as morgan from 'morgan';
 import * as compression from 'compression';
 
+// import * as request from 'request';
+const request = require("request");
+const fs = require("fs");
+const config = require('../config.json');
+
 // Angular 2
 import { enableProdMode } from '@angular/core';
 // Angular 2 Universal
@@ -34,7 +39,7 @@ const ROOT = path.join(path.resolve(__dirname, '..'));
 
 
 app.use(proxy('/api', {
-  target: 'https://dev.visalex.com/',
+  target: config.server,
   changeOrigin: true,
   auth: 'visalex:e57h495YowZn'
 }));
@@ -125,3 +130,8 @@ let server = app.listen(app.get('port'), () => {
   console.log(`Listening on: http://localhost:${server.address().port}`);
 });
 
+
+// Get translations and create files
+request(config.server + "/api/translation?lang=en").pipe(fs.createWriteStream(path.join(__dirname, 'assets/lang/') + "en.json"));
+request(config.server + "/api/translation?lang=pt").pipe(fs.createWriteStream(path.join(__dirname, 'assets/lang/') + "pt.json"));
+request(config.server + "/api/translation?lang=es").pipe(fs.createWriteStream(path.join(__dirname, 'assets/lang/') + "es.json"));

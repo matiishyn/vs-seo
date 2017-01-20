@@ -7,9 +7,8 @@ import { AppModule, AppComponent } from './app/app.module';
 import { SharedModule } from './app/shared/shared.module';
 import { CacheService } from './app/shared/cache.service';
 
-import {TranslateModule, TranslateLoader} from 'ng2-translate';
+import {TranslateModule, TranslateLoader, TranslateStaticLoader} from 'ng2-translate';
 import {Http} from "@angular/http";
-import {TranslateUniversalLoader} from "./universal-loader";
 
 
 // Will be merged into @angular/platform-browser in a later release
@@ -34,7 +33,7 @@ export const UNIVERSAL_KEY = 'UNIVERSAL_CACHE';
   imports: [
     TranslateModule.forRoot({
       provide: TranslateLoader,
-      useClass: TranslateUniversalLoader,
+      useFactory: (http: Http) => new TranslateStaticLoader(http, '/assets/lang', '.json'),
       deps: [Http]
     }),
     // MaterialModule.forRoot() should be included first

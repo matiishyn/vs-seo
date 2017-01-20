@@ -13,7 +13,7 @@ import { CacheService } from './app/shared/cache.service';
 // see https://github.com/angular/angular/pull/12322
 import { Meta } from './angular2-meta';
 import {Http} from "@angular/http";
-import {TranslateLoader, TranslateModule} from "ng2-translate";
+import {TranslateLoader, TranslateModule, TranslateStaticLoader} from "ng2-translate";
 
 // import * as LRU from 'modern-lru';
 
@@ -40,7 +40,7 @@ export const UNIVERSAL_KEY = 'UNIVERSAL_CACHE';
   imports: [
     TranslateModule.forRoot({
       provide: TranslateLoader,
-      useClass: TranslateUniversalLoader,
+      useFactory: (http: Http) => new TranslateStaticLoader(http, '/assets/lang', '.json'),
       deps: [Http]
     }),
     // MaterialModule.forRoot() should be included first
