@@ -40,7 +40,8 @@ export const UNIVERSAL_KEY = 'UNIVERSAL_CACHE';
   imports: [
     TranslateModule.forRoot({
       provide: TranslateLoader,
-      useFactory: (http: Http) => new TranslateStaticLoader(http, '/assets/lang', '.json'),
+      // useFactory: (http: Http) => new TranslateStaticLoader(http, '/assets/lang', '.json'),
+      useClass: TranslateUniversalLoader,
       deps: [Http]
     }),
     // MaterialModule.forRoot() should be included first

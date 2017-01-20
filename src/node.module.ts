@@ -14,6 +14,7 @@ import {Http} from "@angular/http";
 // Will be merged into @angular/platform-browser in a later release
 // see https://github.com/angular/angular/pull/12322
 import { Meta } from './angular2-meta';
+import {TranslateUniversalLoader} from "./universal-loader";
 
 export function getLRU() {
   return new Map();
@@ -33,7 +34,8 @@ export const UNIVERSAL_KEY = 'UNIVERSAL_CACHE';
   imports: [
     TranslateModule.forRoot({
       provide: TranslateLoader,
-      useFactory: (http: Http) => new TranslateStaticLoader(http, '/assets/lang', '.json'),
+      // useFactory: (http: Http) => new TranslateStaticLoader(http, '/assets/lang', '.json'),
+      useClass: TranslateUniversalLoader,
       deps: [Http]
     }),
     // MaterialModule.forRoot() should be included first

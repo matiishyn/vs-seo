@@ -39,7 +39,7 @@ const ROOT = path.join(path.resolve(__dirname, '..'));
 
 
 app.use(proxy('/api', {
-  target: config.server,
+  target: config.api,
   changeOrigin: true,
   auth: 'visalex:e57h495YowZn'
 }));
@@ -132,6 +132,6 @@ let server = app.listen(app.get('port'), () => {
 
 
 // Get translations and create files
-request(config.server + "/api/translation?lang=en").pipe(fs.createWriteStream(path.join(__dirname, 'assets/lang/') + "en.json"));
-request(config.server + "/api/translation?lang=pt").pipe(fs.createWriteStream(path.join(__dirname, 'assets/lang/') + "pt.json"));
-request(config.server + "/api/translation?lang=es").pipe(fs.createWriteStream(path.join(__dirname, 'assets/lang/') + "es.json"));
+// request(config.api + "/api/translation?lang=en").pipe(fs.createWriteStream(path.join(__dirname, 'assets/lang/') + "en.json"));
+// request(config.api + "/api/translation?lang=pt").pipe(fs.createWriteStream(path.join(__dirname, 'assets/lang/') + "pt.json"));
+// request(config.api + "/api/translation?lang=es").pipe(fs.createWriteStream(path.join(__dirname, 'assets/lang/') + "es.json"));
