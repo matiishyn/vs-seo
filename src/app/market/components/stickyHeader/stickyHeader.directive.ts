@@ -6,10 +6,10 @@ import {isBrowser} from 'angular2-universal';
   selector: '[stickyHeader]',
 })
 export class StickyHeaderDirective implements AfterViewInit {
-  private nativeElement: Node;
-  private headerTop: number;
+  public nativeElement: Node;
+  public headerTop: number;
 
-  constructor(private renderer: Renderer, private element: ElementRef) {
+  constructor(public renderer: Renderer, public element: ElementRef) {
     this.nativeElement = element.nativeElement;
   }
 

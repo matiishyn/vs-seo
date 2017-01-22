@@ -4,10 +4,10 @@ import { Observable } from "rxjs";
 
 @Injectable()
 export class AppSettingsService {
-  private apiUrl: string = '/api';
-  private appSettingsUrl: string = `${this.apiUrl}/tenant/public-app-settings`;
+  public apiUrl: string = '/api';
+  public appSettingsUrl: string = `${this.apiUrl}/tenant/public-app-settings`;
 
-  constructor(private http: Http) {
+  constructor(public http: Http) {
   }
 
   getIntercomAppId(): Observable<any> {
@@ -16,7 +16,7 @@ export class AppSettingsService {
       .catch(this.handleError)
   }
 
-  private handleError(err: Response): Observable<any> {
+  public handleError(err: Response): Observable<any> {
     console.error(err);
     return Observable.throw(err);
   }

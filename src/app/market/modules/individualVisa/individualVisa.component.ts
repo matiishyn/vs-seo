@@ -6,10 +6,10 @@ import {Router, NavigationEnd, Event} from '@angular/router';
   templateUrl: 'individualVisa.component.html'
 })
 export class IndividualVisaComponent implements OnInit {
-  private headerVisibleRoutes: Array<string> = ['/individual-visas/how-it-works', '/individual-visas/list', '/individual-visas'];
-  private isHeaderVisible: boolean;
+  public headerVisibleRoutes: Array<string> = ['/individual-visas/how-it-works', '/individual-visas/list', '/individual-visas'];
+  public isHeaderVisible: boolean;
 
-  constructor(private router: Router) {
+  constructor(public router: Router) {
   }
 
   ngOnInit() {

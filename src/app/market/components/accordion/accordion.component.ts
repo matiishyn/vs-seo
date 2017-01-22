@@ -64,7 +64,7 @@ export class Accordion {
 })
 
 export class AccordionGroup implements OnDestroy {
-  private _isOpen:boolean = false;
+  public _isOpen:boolean = false;
 
   @Input() heading: string;
 
@@ -80,7 +80,7 @@ export class AccordionGroup implements OnDestroy {
     return this._isOpen;
   }
 
-  constructor(private accordion: Accordion) {
+  constructor(public accordion: Accordion) {
     this.accordion.addGroup(this);
   }
 

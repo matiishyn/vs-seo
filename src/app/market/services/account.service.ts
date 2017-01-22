@@ -4,10 +4,10 @@ import { Observable } from "rxjs";
 
 @Injectable()
 export class AccountService {
-  private apiUrl: string = '/api';
-  private appSettingsUrl: string = `${this.apiUrl}/account/settings`;
+  public apiUrl: string = '/api';
+  public appSettingsUrl: string = `${this.apiUrl}/account/settings`;
 
-  constructor(private http: Http) {
+  constructor(public http: Http) {
   }
 
   getAccountSettings(): Observable<any> {
@@ -16,7 +16,7 @@ export class AccountService {
       .catch(this.handleError)
   }
 
-  private handleError(err: Response): Observable<any> {
+  public handleError(err: Response): Observable<any> {
     console.error(err);
     return Observable.throw(err);
   }

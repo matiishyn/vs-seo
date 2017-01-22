@@ -54,9 +54,9 @@ export interface MetaDefinition {
  */
 @Injectable()
 export class Meta {
-  private _dom: DomAdapter = getDOM();
+  public _dom: DomAdapter = getDOM();
 
-  constructor( @Inject(DOCUMENT) private _document: any) { }
+  constructor( @Inject(DOCUMENT) public _document: any) { }
   /**
    * Sets the title of the page
    */
@@ -168,33 +168,33 @@ export class Meta {
     }
   }
 
-  private _addInternal(tag: MetaDefinition): HTMLMetaElement {
+  public _addInternal(tag: MetaDefinition): HTMLMetaElement {
     const meta: HTMLMetaElement = this._createMetaElement();
     this._prepareMetaElement(tag, meta);
     this._appendMetaElement(meta);
     return meta;
   }
 
-  private _createMetaElement(): HTMLMetaElement {
+  public _createMetaElement(): HTMLMetaElement {
     return this._dom.createElement('meta') as HTMLMetaElement;
   }
 
-  private _prepareMetaElement(tag: MetaDefinition, el: HTMLMetaElement): HTMLMetaElement {
+  public _prepareMetaElement(tag: MetaDefinition, el: HTMLMetaElement): HTMLMetaElement {
     Object.keys(tag).forEach((prop: string) => this._dom.setAttribute(el, prop, tag[prop]));
     return el;
   }
 
-  private _appendMetaElement(meta: HTMLMetaElement): void {
+  public _appendMetaElement(meta: HTMLMetaElement): void {
     const head = this._dom.getElementsByTagName(this._dom.defaultDoc(), 'head')[0];
     this._dom.appendChild(head, meta);
   }
 
-  private _removeMetaElement(meta: HTMLMetaElement): void {
+  public _removeMetaElement(meta: HTMLMetaElement): void {
     const head = this._dom.parentElement(meta);
     this._dom.removeChild(head, meta);
   }
 
-  private _flattenArray(input: any[], out: any[] = []): any[] {
+  public _flattenArray(input: any[], out: any[] = []): any[] {
     if (input) {
       for (let i = 0; i < input.length; i++) {
         const item: any = input[i];

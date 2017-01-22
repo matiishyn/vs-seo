@@ -6,7 +6,7 @@ import {TranslateService} from "ng2-translate";
   templateUrl: 'preFooter.component.html'
 })
 export class PreFooterComponent {
-  constructor(private translate: TranslateService) {
+  constructor(public translate: TranslateService) {
   }
 
   get currentLang(): string {

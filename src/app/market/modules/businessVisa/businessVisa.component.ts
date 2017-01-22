@@ -5,10 +5,10 @@ import {Router, NavigationEnd, Event} from '@angular/router';
   templateUrl: 'businessVisa.component.html'
 })
 export class BusinessVisaComponent implements OnInit {
-  private headerVisibleRoutes: Array<string> = ['/business-visas/how-it-works', '/business-visas/list', '/business-visas'];
-  private isHeaderVisible: boolean;
+  public headerVisibleRoutes: Array<string> = ['/business-visas/how-it-works', '/business-visas/list', '/business-visas'];
+  public isHeaderVisible: boolean;
 
-  constructor(private router: Router) {
+  constructor(public router: Router) {
   }
 
   ngOnInit() {

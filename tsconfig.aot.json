@@ -13,7 +13,7 @@
     "typeRoots": [
       "node_modules/@types"
     ],
-    "lib": ["es6", "dom"]
+    "lib": ["es7", "dom"]
   },
   "include": [
     "./src/**/*.module.ts",

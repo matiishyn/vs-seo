@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 
 @Injectable()
 export class LangService {
-  private _currentLang: string;
+  public _currentLang: string;
 
     constructor() { }
 

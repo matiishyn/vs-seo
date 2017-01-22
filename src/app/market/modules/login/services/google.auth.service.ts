@@ -5,10 +5,10 @@ import { isBrowser } from "angular2-universal";
 
 @Injectable()
 export class GoogleAuthService {
-  private auth2: gapi.auth2.GoogleAuth;
-  private isApiInitialized: ReplaySubject<any> = new ReplaySubject(1);
+  public auth2: gapi.auth2.GoogleAuth;
+  public isApiInitialized: ReplaySubject<any> = new ReplaySubject(1);
 
-  constructor(private http: Http) {
+  constructor(public http: Http) {
     if (isBrowser) {
       http.get('/api/app-social-creds/GOOGLE')
         .map(res => {

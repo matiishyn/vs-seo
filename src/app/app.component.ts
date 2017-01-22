@@ -15,7 +15,7 @@ import {isBrowser} from "angular2-universal";
 export class AppComponent implements OnInit {
   public constructor(public router: Router,
                      public meta: Meta,
-                     @Inject(DOCUMENT) private document: any,
+                     @Inject(DOCUMENT) public document: any,
                      public translate: TranslateService) {
   }
 

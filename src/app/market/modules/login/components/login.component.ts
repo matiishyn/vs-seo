@@ -9,18 +9,18 @@ import { FacebookAuthService } from "../services/facebook.auth.service";
   templateUrl: 'login.component.html'
 })
 export class LoginComponent implements AfterViewInit {
-  private wrongEmailOrPassword: boolean;
-  private credentials: any = {
+  public wrongEmailOrPassword: boolean;
+  public credentials: any = {
     login: '',
     password: ''
   };
 
   @ViewChild('googleBtn') el: ElementRef;
 
-  constructor(private User: UserService,
-              private Router: Router,
-              private GoogleAuth: GoogleAuthService,
-              private FacebookAuth: FacebookAuthService) {
+  constructor(public User: UserService,
+              public Router: Router,
+              public GoogleAuth: GoogleAuthService,
+              public FacebookAuth: FacebookAuthService) {
   }
 
   ngAfterViewInit() {
@@ -46,7 +46,7 @@ export class LoginComponent implements AfterViewInit {
       .subscribe(this.onLoggedIn.bind(this));
   }
 
-  private onLoggedIn({logged, twoFactorAuth}) {
+  public onLoggedIn({logged, twoFactorAuth}) {
     if (logged && !twoFactorAuth) {
         window.location.href = 'http://localhost:5555';
     } else if (twoFactorAuth) {

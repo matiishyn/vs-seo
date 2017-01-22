@@ -7,14 +7,14 @@ import { AppModule, AppComponent } from './app/app.module';
 import { SharedModule } from './app/shared/shared.module';
 import { CacheService } from './app/shared/cache.service';
 
-import {TranslateModule, TranslateLoader, TranslateStaticLoader} from 'ng2-translate';
-import {Http} from "@angular/http";
+import {TranslateModule, TranslateService} from 'ng2-translate';
+// import {Http} from "@angular/http";
 
 
 // Will be merged into @angular/platform-browser in a later release
 // see https://github.com/angular/angular/pull/12322
 import { Meta } from './angular2-meta';
-import {TranslateUniversalLoader} from "./universal-loader";
+// import {TranslateUniversalLoader} from "./universal-loader";
 
 export function getLRU() {
   return new Map();
@@ -32,12 +32,15 @@ export const UNIVERSAL_KEY = 'UNIVERSAL_CACHE';
 @NgModule({
   bootstrap: [ AppComponent ],
   imports: [
-    TranslateModule.forRoot({
-      provide: TranslateLoader,
-      // useFactory: (http: Http) => new TranslateStaticLoader(http, '/assets/lang', '.json'),
-      useClass: TranslateUniversalLoader,
-      deps: [Http]
-    }),
+    TranslateModule.forRoot(),
+    /*
+     {
+     provide: TranslateLoader,
+     // useFactory: (http: Http) => new TranslateStaticLoader(http, '/assets/lang', '.json'),
+     useClass: TranslateUniversalLoader,
+     deps: [Http]
+     }
+     */
     // MaterialModule.forRoot() should be included first
     UniversalModule, // BrowserModule, HttpModule, and JsonpModule are included
 

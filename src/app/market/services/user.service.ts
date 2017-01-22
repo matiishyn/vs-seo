@@ -6,11 +6,11 @@ const jstz = require('jstz');
 
 @Injectable()
 export class UserService {
-  private apiUrl: string = '/api';
-  private loginUrl: string = `${this.apiUrl}/login`;
-  private socialLoginUrl: string = `${this.apiUrl}/login-social`;
+  public apiUrl: string = '/api';
+  public loginUrl: string = `${this.apiUrl}/login`;
+  public socialLoginUrl: string = `${this.apiUrl}/login-social`;
 
-  constructor(private http: Http, private Lang: LangService) {
+  constructor(public http: Http, public Lang: LangService) {
   }
 
   login(credentials): Observable<any> {
@@ -25,13 +25,13 @@ export class UserService {
       .catch(this.handleError)
   }
 
-  private getGlobalSettings(data) {
+  public getGlobalSettings(data) {
     data.preferredLanguage = this.Lang.currentLang;
     data.timezone = jstz.determine().name();
     return data;
   }
 
-  private handleError(err: Response): Observable<any> {
+  public handleError(err: Response): Observable<any> {
     console.error(err);
     return Observable.throw(err);
   }

@@ -8,7 +8,7 @@ import {AppSettingsService} from "../../services/appSettings.service";
 })
 export class ChatDirective implements AfterViewInit {
 
-  constructor(private AppSettings: AppSettingsService) {
+  constructor(public AppSettings: AppSettingsService) {
 
   }
 

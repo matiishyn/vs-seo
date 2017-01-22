@@ -19,11 +19,11 @@ export class PasswordDisplayComponent implements ControlValueAccessor {
   @Input() required: boolean;
   @Input() withTooltip: boolean;
 
-  private visiblePassword: boolean;
-  private innerValue: any;
+  public visiblePassword: boolean;
+  public innerValue: any;
 
-  private onTouchedCallback: () => void = noop;
-  private onChangeCallback: (_: any) => void = noop;
+  public onTouchedCallback: () => void = noop;
+  public onChangeCallback: (_: any) => void = noop;
 
   showPassword() {
     this.visiblePassword = true;

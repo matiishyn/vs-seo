@@ -13,10 +13,10 @@ export class VisaDetailsComponent implements OnInit {
   @Input()
   type: VisaType;
 
-  private visaId: string;
+  public visaId: string;
   visas: IVisasDetails;
 
-  constructor(private route: ActivatedRoute, private router: Router) {
+  constructor(public route: ActivatedRoute, public router: Router) {
   }
 
   ngOnInit() {

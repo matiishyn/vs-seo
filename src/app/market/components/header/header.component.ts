@@ -11,12 +11,13 @@ import {LangService} from "../../services/lang.service";
   templateUrl: 'header.component.html'
 })
 export class HeaderComponent implements OnInit {
-  private language: string;
+  public language: string;
+  public openmenu: any;
 
-  constructor(private translate: TranslateService,
-              private route: ActivatedRoute,
-              private router: Router,
-              private Lang: LangService) {
+  constructor(public translate: TranslateService,
+              public route: ActivatedRoute,
+              public router: Router,
+              public Lang: LangService) {
   }
 
   changeLanguage(lang: string): void {
