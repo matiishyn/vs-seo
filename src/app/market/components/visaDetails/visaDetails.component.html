@@ -31,8 +31,8 @@
     <div class="visa-logo">
       <img [src]="visas[visaId].img" alt="Visa logo image"/>
     </div>
-    <div class="visa-details-text">
-      {{visas[visaId].description | translate}}
+    <div class="visa-details-text"
+       [innerHTML]="visas[visaId].description | translate">
     </div>
   </section>
 
