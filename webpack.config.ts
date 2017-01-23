@@ -16,7 +16,8 @@ export var commonPlugins = [
 
   // Loader options
   new webpack.LoaderOptionsPlugin({
-
+    // minimize: true,
+    // debug: false
   }),
 
 ];
@@ -50,11 +51,32 @@ export var commonConfig = {
 
 // Client.
 export var clientPlugins = [
-  new BrowserSyncPlugin({
+  /*new BrowserSyncPlugin({
     host: 'localhost',
     port: 3100,
     proxy: 'http://localhost:3000/'
-  })
+  })*/
+  // MINIFY
+  /*new webpack.optimize.UglifyJsPlugin({
+    // beautify: true,
+    // mangle: false,
+    output: {
+      comments: false
+    },
+    compress: {
+      warnings: false,
+      conditionals: true,
+      unused: true,
+      comparisons: true,
+      sequences: true,
+      dead_code: true,
+      evaluate: true,
+      if_return: true,
+      join_vars: true,
+      negate_iife: false // we need this for lazy v8
+    },
+    sourceMap: true
+  }),*/
 ];
 export var clientConfig = {
   target: 'web',
