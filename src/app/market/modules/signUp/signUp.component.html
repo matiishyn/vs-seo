@@ -18,6 +18,8 @@
                   <a #googleBtn class="btn-google">{{'login_google' | translate}}</a>
                 </div>
               </div>
+              <h4 class="subheading" *ngIf="!socialProvider">{{'registration_signupWith' | translate}}</h4>
+              <h4 class="subheading" *ngIf="socialProvider">{{'registration_signUpWith' | translate}} {{socialProvider}}</h4>
               <div class="form-row text-left">
                 <div class="form-col col-half-width">
                   <input
@@ -77,7 +79,7 @@
                   {{'user_registration_incorrect_email' | translate}}
                 </div>
               </div>
-              <div class="form-row" *ngIf="!nameRequired && !emailRequired">
+              <div class="form-row" *ngIf="!nameRequired && !emailRequired && !socialProvider">
                 <div class="password-holder password-show">
                   <password-display name="password" [(ngModel)]="user.password" required="" [withTooltip]="true"
                                     [pattern]="passwordPattern"></password-display>

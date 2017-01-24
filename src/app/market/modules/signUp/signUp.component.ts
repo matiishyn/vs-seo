@@ -40,7 +40,7 @@ export class SignUpComponent {
         .subscribe(data => {
           if (data.firstName && data.lastName) {
             this.User.socialSignUp(data)
-              .subscribe(this.redirectToClient.bind(this), this.onSocialError.bind(this, data))
+              .subscribe(this.redirectToClient.bind(this), this.onSocialError.bind(this, data, 'GOOGLE'))
           } else {
             this.user = data;
             this.nameRequired = true;
@@ -54,7 +54,7 @@ export class SignUpComponent {
       .subscribe(data => {
         if (data.email) {
           this.User.socialSignUp(data)
-            .subscribe(this.redirectToClient.bind(this), this.onSocialError.bind(this, data))
+            .subscribe(this.redirectToClient.bind(this), this.onSocialError.bind(this, data, 'FACEBOOK'))
         } else {
           this.user = data;
           this.emailRequired = true;
@@ -83,7 +83,8 @@ export class SignUpComponent {
     this.Env.redirectToClient(['/'], {});
   }
 
-  private onSocialError(data, err) {
+  private onSocialError(data, provider, err) {
+    this.socialProvider = provider;
     this.errors = err.json();
     this.user = data;
     this.zone.run(() => {});
