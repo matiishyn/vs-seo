@@ -23,7 +23,8 @@ export class HeaderComponent implements OnInit {
   }
 
   changeLanguage(lang: string): void {
-    this.translate.use(lang);
+    const observ = this.translate.use(lang);
+    this.Spinner.onObservable(observ);
     this.Lang.currentLang = lang;
     const children: UrlSegmentGroup = this.router.parseUrl(this.router.url).root.children[PRIMARY_OUTLET];
     const s: UrlSegment[] = children.segments;
@@ -41,7 +42,8 @@ export class HeaderComponent implements OnInit {
       const lang = localStorage.getItem('VISALEX_LANG');
       if (lang) {
         this.language = lang;
-        this.translate.use(lang);
+        const observ = this.translate.use(lang);
+        this.Spinner.onObservable(observ);
         this.Lang.currentLang = lang;
         this.changeLanguage(lang);
         return;

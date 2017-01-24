@@ -67,7 +67,7 @@
                   'ng-invalid-pattern': email.errors && email.errors.pattern,
                   'ng-invalid ng-invalid-duplicate': isEmailDuplicate()}"
                 />
-                <div class="message error-duplicate">
+                <div class="message error-duplicate show" *ngIf="isEmailDuplicate()">
                   {{'user_registration_duplicate_email' | translate}}
                 </div>
                 <div class="message error-required">

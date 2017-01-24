@@ -40,7 +40,7 @@ export class SignUpComponent {
         .subscribe(data => {
           if (data.firstName && data.lastName) {
             this.User.socialSignUp(data)
-              .subscribe(this.redirectToClient, this.onSocialError)
+              .subscribe(this.redirectToClient.bind(this), this.onSocialError.bind(this, data))
           } else {
             this.user = data;
             this.nameRequired = true;
@@ -54,7 +54,7 @@ export class SignUpComponent {
       .subscribe(data => {
         if (data.email) {
           this.User.socialSignUp(data)
-            .subscribe(this.redirectToClient, this.onSocialError)
+            .subscribe(this.redirectToClient.bind(this), this.onSocialError.bind(this, data))
         } else {
           this.user = data;
           this.emailRequired = true;
@@ -71,7 +71,7 @@ export class SignUpComponent {
       } else {
         promise = this.User.signUp(this.user);
       }
-      promise.subscribe(this.redirectToClient, err => this.errors = err.json());
+      promise.subscribe(this.redirectToClient.bind(this), err => this.errors = err.json());
     }
   }
 
@@ -83,8 +83,10 @@ export class SignUpComponent {
     this.Env.redirectToClient(['/'], {});
   }
 
-  private onSocialError() {
-
+  private onSocialError(data, err) {
+    this.errors = err.json();
+    this.user = data;
+    this.zone.run(() => {});
   }
 
   private isEmailDuplicate() {
