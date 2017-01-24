@@ -58,11 +58,7 @@
   <aside class="aside" *ngIf="type === 'business'">
     <div class="visa-details">
       <h3>Visa Facts</h3>
-      <div class="details">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-        aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-        fugiat nulla pariatur.
-      </div>
+      <div class="details"> {{visas[visaId].facts | translate}}   </div>
     </div>
   </aside>
 
