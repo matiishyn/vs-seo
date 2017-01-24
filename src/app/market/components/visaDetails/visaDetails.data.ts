@@ -9,6 +9,7 @@ export interface IVisaDetails {
   priceAnnouncement?: string;
   price?: string;
   additionalPrice?: string;
+  facts?: string;
 }
 
 export const visaDetailsData: IVisasDetails = {
