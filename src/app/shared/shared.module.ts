@@ -13,6 +13,8 @@ import { VisaDetailsComponent } from "../market/components/visaDetails/visaDetai
 import { PasswordDisplayComponent } from '../market/components/passwordDisplay/passwordDisplay.component';
 import { BackBtnComponent } from "../market/components/backBtn/backBtn.component";
 import { RecaptchaComponent } from "../market/components/recaptcha/recaptcha.component";
+import { SpinnerComponent } from "../market/components/spinner/spinner.component";
+import { SpinnerService } from "../market/services/spinner.service";
 
 const MODULES = [
   // Do NOT include UniversalModule, HttpModule, or JsonpModule here
@@ -36,7 +38,8 @@ const COMPONENTS = [
   AccordionGroup,
   BackBtnComponent,
   PasswordDisplayComponent,
-  RecaptchaComponent
+  RecaptchaComponent,
+  SpinnerComponent
 
   // put shared modules here
 ];
@@ -44,7 +47,8 @@ const COMPONENTS = [
 const PROVIDERS = [
   ModelService,
   ApiService,
-  TranslateService
+  TranslateService,
+  SpinnerService
 ];
 
 @NgModule({

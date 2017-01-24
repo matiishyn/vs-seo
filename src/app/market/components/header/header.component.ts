@@ -4,6 +4,7 @@ import {TranslateService} from 'ng2-translate';
 import {UrlSegmentGroup} from "@angular/router/src/url_tree";
 import {isBrowser} from 'angular2-universal';
 import {LangService} from "../../services/lang.service";
+import { SpinnerService } from "../../services/spinner.service";
 
 
 @Component({
@@ -16,7 +17,9 @@ export class HeaderComponent implements OnInit {
   constructor(private translate: TranslateService,
               private route: ActivatedRoute,
               private router: Router,
-              private Lang: LangService) {
+              private Lang: LangService,
+              private Spinner: SpinnerService
+  ) {
   }
 
   changeLanguage(lang: string): void {
@@ -49,7 +52,8 @@ export class HeaderComponent implements OnInit {
     this.route.params.subscribe(params => {
       this.language = params['lang'];
       this.Lang.currentLang = params['lang'];
-      this.translate.use(params['lang']);
+      const observ = this.translate.use(params['lang']);
+      this.Spinner.onObservable(observ);
     });
   }
 

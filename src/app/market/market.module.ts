@@ -22,6 +22,8 @@ import { AboutUsModule } from "./modules/aboutUs/aboutUs.module";
 import { FacebookAuthService } from "./services/facebook.auth.service";
 import { GoogleAuthService } from "./services/google.auth.service";
 import { EnvService } from "./services/env.service";
+import { SpinnerService } from "./services/spinner.service";
+import { SpinnerComponent } from "./components/spinner/spinner.component";
 
 @NgModule({
   imports: [
@@ -42,7 +44,7 @@ import { EnvService } from "./services/env.service";
     HeaderComponent,
     StickyHeaderDirective,
     ChatDirective,
-    FooterComponent
+    FooterComponent,
   ],
   providers: [
     UserService,
