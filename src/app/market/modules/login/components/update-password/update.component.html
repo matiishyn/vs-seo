@@ -1,0 +1,46 @@
+<div class="content-inner">
+  <section class="content" id="content">
+    <div class="container">
+      <div class="login-form-wrapper">
+        <div class="login-form-holder">
+          <form class="form login-form form-validation" *ngIf="passwordWasChanged" novalidate>
+            <fieldset>
+              <h2>{{'password_setnew_passwordChanged1' | translate}}</h2>
+              <h2>{{'password_setnew_passwordChanged2' | translate}}</h2>
+              <div class="form-row">{{'common_goBackToLogin' | translate}} <a [routerLink]="['/', lang, 'login']">{{'login_login'
+                | translate}}</a></div>
+            </fieldset>
+          </form>
+          <form class="form login-form form-validation"
+                *ngIf="!passwordWasChanged"
+                #form="ngForm"
+                (ngSubmit)="submit(form)"
+                [ngClass]="{'ng-submitted': form.submitted}"
+                novalidate>
+            <fieldset>
+              <h2>{{'password_setnew_updatePassword1' | translate}}</h2>
+              <h4>{{'password_setnew_updatePassword2' | translate}}</h4>
+              <div class="form-row">
+                <div class="password-holder password-show">
+                  <password-display
+                    name="password"
+                    [(ngModel)]="password"
+                    [withTooltip]="true"
+                    [pattern]="passwordPattern"
+                    required=""></password-display>
+                </div>
+              </div>
+              <div class="form-row submit-row">
+                <button type="submit" class="btn btn-default">
+                  {{'password_setnew_updatebtn' | translate}}
+                </button>
+              </div>
+              <div class="form-row form-footer text-center">{{'common_goBackToLogin' | translate}} <a
+                [routerLink]="['/', lang, 'login']">{{'login_login' | translate}}</a></div>
+            </fieldset>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

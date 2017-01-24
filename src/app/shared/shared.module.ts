@@ -5,14 +5,14 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ApiService } from './api.service';
 import { ModelService } from './model/model.service';
 import { TranslateModule, TranslateService } from "ng2-translate";
-import {ImgHeaderComponent} from "../market/components/imgHeader/imgHeader.component";
-import {PreFooterComponent} from "../market/components/preFooter/preFooter.component";
-import {VisaTypesComponent} from "../market/components/visaTypesTabs/visaTypesTabs.component";
-import {Accordion, AccordionGroup} from "../market/components/accordion/accordion.component";
-import {VisaDetailsComponent} from "../market/components/visaDetails/visaDetails.component";
+import { ImgHeaderComponent } from "../market/components/imgHeader/imgHeader.component";
+import { PreFooterComponent } from "../market/components/preFooter/preFooter.component";
+import { VisaTypesComponent } from "../market/components/visaTypesTabs/visaTypesTabs.component";
+import { Accordion, AccordionGroup } from "../market/components/accordion/accordion.component";
+import { VisaDetailsComponent } from "../market/components/visaDetails/visaDetails.component";
 import { PasswordDisplayComponent } from '../market/components/passwordDisplay/passwordDisplay.component';
-import {BackBtnComponent} from "../market/components/backBtn/backBtn.component";
-
+import { BackBtnComponent } from "../market/components/backBtn/backBtn.component";
+import { RecaptchaComponent } from "../market/components/recaptcha/recaptcha.component";
 
 const MODULES = [
   // Do NOT include UniversalModule, HttpModule, or JsonpModule here
@@ -20,7 +20,7 @@ const MODULES = [
   RouterModule,
   FormsModule,
   ReactiveFormsModule,
-  TranslateModule
+  TranslateModule,
 ];
 
 const PIPES = [
@@ -35,7 +35,8 @@ const COMPONENTS = [
   Accordion,
   AccordionGroup,
   BackBtnComponent,
-  PasswordDisplayComponent
+  PasswordDisplayComponent,
+  RecaptchaComponent
 
   // put shared modules here
 ];

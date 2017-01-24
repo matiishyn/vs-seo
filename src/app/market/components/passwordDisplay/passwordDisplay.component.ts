@@ -18,6 +18,7 @@ export const CUSTOM_INPUT_CONTROL_VALUE_ACCESSOR: any = {
 export class PasswordDisplayComponent implements ControlValueAccessor {
   @Input() required: boolean;
   @Input() withTooltip: boolean;
+  @Input() pattern: string;
 
   private visiblePassword: boolean;
   private innerValue: any;

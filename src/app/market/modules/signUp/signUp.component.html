@@ -4,58 +4,69 @@
       <div class="login-form-wrapper">
         <div class="login-form-holder">
           <form
-            name="$ctrl.form"
+            #form="ngForm"
             class="form login-form form-validation"
-            ng-submit="$ctrl.submit($event, $ctrl.form)" novalidate>
+            [ngClass]="{'ng-submitted': form.submitted}"
+            (ngSubmit)="submit(form)" novalidate>
             <fieldset>
               <h2>{{'registration_getStarted' | translate}}</h2>
               <div class="form-row text-left">
                 <div class="form-col col-half-width" style="padding: 0;">
-                  <a class="btn-facebook" ng-click="$ctrl.authenticateViaFacebook()">{{'login_facebook' |
-                    translate}}</a>
+                  <a class="btn-facebook" (click)="fbAuth()">{{'login_facebook' | translate}}</a>
                 </div>
                 <div class="form-col col-half-width" style="padding: 0;">
-                  <a href="" class="btn-google">{{'login_google' | translate}}</a>
+                  <a #googleBtn class="btn-google">{{'login_google' | translate}}</a>
                 </div>
               </div>
-              <!--<h4 class="subheading">{{$ctrl.getSubHeading()}}</h4>-->
               <div class="form-row text-left">
                 <div class="form-col col-half-width">
                   <input
                     type="text"
                     name="firstName"
+                    #firstName="ngModel"
                     placeholder="{{'profile_firstName' | translate}}"
                     maxlength="100"
-                    ng-model="$ctrl.firstName"
+                    [(ngModel)]="user.firstName"
                     required
-                    ng-disabled="$ctrl.emailRequired"/>
-                  <div class="message error-required">{{'user_registration_missing_firstName' | translate}}</div>
+                    [disabled]="emailRequired"
+                    [ngClass]="{'ng-invalid-required': firstName.errors && firstName.errors.required}"
+                  />
+                  <div class="message error-required">
+                    {{'user_registration_missing_firstName' | translate}}
+                  </div>
                 </div>
                 <div class="form-col col-half-width">
                   <input
                     type="text" id="lastName"
                     name="lastName"
+                    #lastName="ngModel"
                     placeholder="{{'profile_lastName' | translate}}"
                     maxlength="100"
-                    ng-model="$ctrl.lastName"
+                    [(ngModel)]="user.lastName"
                     required
-                    ng-disabled="$ctrl.emailRequired"/>
-                  <div class="message error-required">{{'user_registration_missing_lastName' | translate}}</div>
+                    [disabled]="emailRequired"
+                    [ngClass]="{'ng-invalid-required': lastName.errors && lastName.errors.required}"/>
+                  <div class="message error-required">
+                    {{'user_registration_missing_lastName' | translate}}
+                  </div>
                 </div>
               </div>
               <div class="form-row">
                 <input
                   type="email"
                   name="email"
-                  />
-                <!--ng-attr-placeholder="{{'profile_email' | translate}}"
+                  #email="ngModel"
                   maxlength="100"
-                  ng-model="$ctrl.email"
+                  [(ngModel)]="user.email"
+                  [placeholder]="'profile_email' | translate"
+                  [pattern]="emailPattern"
+                  [disabled]="isEmailDisabled(email)"
+                  (ngModelChange)="errors = []"
                   required
-                  ng-disabled="$ctrl.isEmailDisabled()"
-                  ng-pattern="$ctrl.emailPattern"
-                  unique-email="$ctrl.failureMessages"
-                  ng-model-options="{ allowInvalid: true, updateOnDefault: true }"-->
+                  [ngClass]="{'ng-invalid-required': email.errors && email.errors.required,
+                  'ng-invalid-pattern': email.errors && email.errors.pattern,
+                  'ng-invalid ng-invalid-duplicate': isEmailDuplicate()}"
+                />
                 <div class="message error-duplicate">
                   {{'user_registration_duplicate_email' | translate}}
                 </div>
@@ -66,29 +77,22 @@
                   {{'user_registration_incorrect_email' | translate}}
                 </div>
               </div>
-              <div class="form-row" ng-if="!$ctrl.nameRequired && !$ctrl.socialProvider">
+              <div class="form-row" *ngIf="!nameRequired && !emailRequired">
                 <div class="password-holder password-show">
-                  <!--<password-display
-                    password="$ctrl.password"
-                    required
-                    ng-attr-placeholder="{{'profile_password' | translate}}"
-                    with-tooltip="true"
-                    pattern="$ctrl.passwordPattern"
-                  ></password-display>-->
+                  <password-display name="password" [(ngModel)]="user.password" required="" [withTooltip]="true"
+                                    [pattern]="passwordPattern"></password-display>
                 </div>
               </div>
               <div
                 class="form-row"
                 style="min-height: 78px;"
-                ng-if="!$ctrl.nameRequired && !$ctrl.emailRequired && !$ctrl.socialProvider">
-                <!--<div
-                  vc-recaptcha
-                  ng-model="$ctrl.reCaptchaResponse"
-                  key="'6LdbhgoUAAAAAP4ldiltcNrE-NEiatPMBh3gsPtZ'"></div>-->
+                *ngIf="!nameRequired && !emailRequired && !socialProvider">
+                <recaptcha name="reCaptchaResponse" [(ngModel)]="user.reCaptchaResponse"
+                           sitekey="6LdbhgoUAAAAAP4ldiltcNrE-NEiatPMBh3gsPtZ" required></recaptcha>
               </div>
               <div
                 class="message server-message captcha-message"
-                ng-if="$ctrl.form.$submitted && !$ctrl.reCaptchaResponse && !$ctrl.nameRequired && !$ctrl.emailRequired && !$ctrl.socialProvider">
+                *ngIf="form.submitted && !user.reCaptchaResponse && !nameRequired && !emailRequired && !socialProvider">
                 {{'recaptcha_error_invalid' | translate}}
               </div>
               <div class="form-row submit-row">

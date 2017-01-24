@@ -5,8 +5,9 @@
         <div class="login-form-box">
           <form
             class="form login-form form-validation"
-            #loginForm="ngForm"
-            (ngSubmit)="submit()"
+            #form="ngForm"
+            (ngSubmit)="submit(form)"
+            [ngClass]="{'ng-submitted': form.submitted}"
             novalidate autocomplete="off">
             <fieldset>
               <h2>{{'login_welcome_back' | translate}}</h2>
@@ -25,8 +26,10 @@
                   id="email"
                   name="email"
                   class="email"
-                  placeholder="{{'profile_email' | translate}}"
+                  #email="ngModel"
+                  [placeholder]="'profile_email' | translate"
                   [(ngModel)]="credentials.login"
+                  [ngClass]="{'ng-invalid-required': email.errors && email.errors.required}"
                   required>
                 <div class="message error-required">{{'user_registration_missing_email' | translate}}</div>
               </div>
@@ -45,7 +48,7 @@
               <div class="form-row form-footer">
                 <div class="form-col col-7" [innerHTML]="'login_dont_have_account1' | translate"></div>
                 <div class="form-col col-5 pull-right">
-                  <a ui-sref="^.forgotPassword">{{'login_forgot_password' | translate}}</a>
+                  <a [routerLink]="['/', lang, 'forgot-password']">{{'login_forgot_password' | translate}}</a>
                 </div>
               </div>
               <div class="form-row agreement" [innerHTML]="'login_agreement1' | translate"></div>

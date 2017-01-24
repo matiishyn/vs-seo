@@ -1,0 +1,60 @@
+<section class="content" id="content">
+  <div class="container">
+    <div class="content-inner">
+      <div class="login-form-wrapper">
+        <div class="login-form-holder">
+          <form
+            class="form login-form form-validation"
+            #form="ngForm"
+            (ngSubmit)="submit(form)"
+            [ngClass]="{'ng-submitted': form.submitted}"
+            novalidate>
+            <fieldset>
+              <h2 *ngIf="passwordWasSent">{{'password_reset_emailSent1' | translate}}</h2>
+              <h4 *ngIf="passwordWasSent">{{'password_reset_emailSent2' | translate}}</h4>
+
+              <h2 *ngIf="!passwordWasSent">{{'password_reset_resetPassword' | translate}}</h2>
+              <div *ngIf="!passwordWasSent">
+                <h4>{{'password_reset_specifyEmail' | translate}}</h4>
+                <div class="form-row">
+                  <input
+                    type="text"
+                    class="email"
+                    [placeholder]="'profile_email' | translate"
+                    id="email"
+                    name="email"
+                    #email="ngModel"
+                    maxlength="100"
+                    required
+                    [(ngModel)]="data.email"
+                    [ngClass]="{'ng-invalid-required': email.errors && email.errors.required, 'error': noAccountFound}"
+                    (ngModelChange)="noAccountFound = false"
+                    />
+                  <div class="message error-required">
+                    {{'user_registration_missing_email' | translate}}
+                  </div>
+                </div>
+                <div
+                  class="message show"
+                  *ngIf="noAccountFound">
+                  {{'password_reset_noUserAccountAssociated' | translate}}
+                </div>
+                <div class="form-row submit-row">
+                  <button
+                    class="btn btn-block btn-default"
+                    type="submit">
+                    {{'password_reset_resetbtn' | translate}}
+                  </button>
+                </div>
+              </div>
+              <div class="form-row form-footer text-center">
+                <span>{{'login_go_back_to' | translate}} </span>
+                <a [routerLink]="['/', lang, 'login']">{{'login_login' | translate}}</a>
+              </div>
+            </fieldset>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

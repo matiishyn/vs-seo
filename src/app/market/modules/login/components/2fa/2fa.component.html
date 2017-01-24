@@ -1,0 +1,49 @@
+<section class="content" id="content" style="min-height: 500px;">
+  <div class="container">
+    <div class="content-inner">
+      <div class="login-form-wrapper">
+        <div class="login-form-holder">
+          <div class="login-form-box">
+            <form
+              class="form code-form login-form form-validation"
+              name="twoFaForm"
+              #form="ngForm"
+              novalidate
+              [ngClass]="{'ng-submitted': form.submitted}"
+              (submit)="submit(form)">
+              <fieldset>
+                <h4>{{'login_2fa_enterCode' | translate}}</h4>
+                <div class="form-row">
+                  <input
+                    type="text"
+                    class="email"
+                    placeholder="{{'login_2fa_code' | translate}}"
+                    name="token"
+                    #tokenModel="ngModel"
+                    [(ngModel)]="token"
+                    required
+                    [ngClass]="{'ng-invalid-required': tokenModel.errors && tokenModel.errors.required, 'error': incorrectToken}"
+                    (ngModelChange)="incorrectToken = false"/>
+                  <div class="message error-required">
+                    {{'user_registration_missing_code' | translate}}
+                  </div>
+                </div>
+                <div class="message show" *ngIf="incorrectToken">
+                  {{'login_error_tokenIncorrect' | translate}}
+                </div>
+                <div class="form-row submit-row">
+                  <button type="submit" class="btn btn-default">
+                    {{'login_2fa_login' | translate}}
+                  </button>
+                </div>
+                <div class="form-row form-footer text-center">
+                  <div class="form-col" [innerHTML]="'login_2fa_goBack' | translate"></div>
+                </div>
+              </fieldset>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

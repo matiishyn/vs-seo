@@ -1,16 +1,19 @@
-import {Routes} from '@angular/router';
-import {LandingComponent} from './modules/landing/landing.component';
-import {IndividualVisaComponent} from "./modules/individualVisa/individualVisa.component";
-import {BusinessVisaComponent} from "./modules/businessVisa/businessVisa.component";
-import {TermsAndConditionsComponent} from "./modules/termsAndConditions/termsAndConditions.component";
-import {PrivacyPolicyComponent} from "./modules/privacyPolicy/privacyPolicy.component";
-import {ContactUsComponent} from "./modules/contactUs/contactUs.component";
-import {FaqComponent} from "./modules/faq/faq.component";
-import {LoginComponent} from "./modules/login/components/login.component";
-import {SignUpComponent} from "./modules/signUp/signUp.component";
-import {individualVisaRoutes} from "./modules/individualVisa/individualVisa.routing";
-import {businessVisaRoutes} from "./modules/businessVisa/businessVisa.routing";
-import {AboutUsComponent} from "./modules/aboutUs/aboutUs.component";
+import { Routes } from '@angular/router';
+import { LandingComponent } from './modules/landing/landing.component';
+import { IndividualVisaComponent } from "./modules/individualVisa/individualVisa.component";
+import { BusinessVisaComponent } from "./modules/businessVisa/businessVisa.component";
+import { TermsAndConditionsComponent } from "./modules/termsAndConditions/termsAndConditions.component";
+import { PrivacyPolicyComponent } from "./modules/privacyPolicy/privacyPolicy.component";
+import { ContactUsComponent } from "./modules/contactUs/contactUs.component";
+import { FaqComponent } from "./modules/faq/faq.component";
+import { LoginComponent } from "./modules/login/components/login/login.component";
+import { SignUpComponent } from "./modules/signUp/signUp.component";
+import { individualVisaRoutes } from "./modules/individualVisa/individualVisa.routing";
+import { businessVisaRoutes } from "./modules/businessVisa/businessVisa.routing";
+import { AboutUsComponent } from "./modules/aboutUs/aboutUs.component";
+import { twoFAComponent } from "./modules/login/components/2fa/2fa.component";
+import { ForgotComponent } from "./modules/login/components/forgot-password/forgot.components";
+import { UpdateComponent } from "./modules/login/components/update-password/update.component";
 
 export const mainRoutes: Routes = [
   {
@@ -80,6 +83,15 @@ export const mainRoutes: Routes = [
       description: 'description_login',
       title: 'login_title'
     }
+  },
+  {
+    path: '2fa', component: twoFAComponent,
+  },
+  {
+    path: 'forgot-password', component: ForgotComponent
+  },
+  {
+    path: 'update-password', component: UpdateComponent
   },
   {
     path: 'signup', component: SignUpComponent,
