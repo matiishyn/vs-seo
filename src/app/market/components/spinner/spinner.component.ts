@@ -1,5 +1,6 @@
-import { Component, ElementRef, ViewChild, AfterViewInit } from '@angular/core';
-import { SpinnerService } from "../../services/spinner.service";
+import {Component, ElementRef, ViewChild, AfterViewInit} from '@angular/core';
+import {isBrowser} from 'angular2-universal';
+import {SpinnerService} from "../../services/spinner.service";
 
 @Component({
   selector: 'spinner',
@@ -10,6 +11,7 @@ export class SpinnerComponent implements AfterViewInit {
   private isVisible: boolean;
 
   constructor(private Spinner: SpinnerService) {
+    this.isVisible = true;
   }
 
   ngAfterViewInit() {
@@ -18,7 +20,11 @@ export class SpinnerComponent implements AfterViewInit {
 
 
     this.Spinner.end
-      .subscribe(() => this.isVisible = false);
+      .subscribe(() => {
+        if (isBrowser) {
+          this.isVisible = false
+        }
+      });
   }
 
 }

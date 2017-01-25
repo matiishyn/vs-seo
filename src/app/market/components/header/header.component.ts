@@ -40,14 +40,14 @@ export class HeaderComponent implements OnInit {
   ngOnInit() {
     if (isBrowser) {
       const lang = localStorage.getItem('VISALEX_LANG');
-      if (lang) {
+      /*if (lang) {
         this.language = lang;
         const observ = this.translate.use(lang);
         this.Spinner.onObservable(observ);
         this.Lang.currentLang = lang;
         this.changeLanguage(lang);
         return;
-      }
+      }*/
     }
     this.translate.setDefaultLang('en');
     this.Lang.currentLang = 'en';
