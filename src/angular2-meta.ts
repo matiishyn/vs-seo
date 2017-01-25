@@ -64,6 +64,9 @@ export class Meta {
     this._document.title = title
   }
 
+  /**
+   * this.meta.updateMeta('description', 'test'); will  set <meta name="description" content="test">
+   */
   updateMeta(name, content) {
     const head = this._document.head;
     let childNodesAsList = this._dom.childNodesAsList(head);
