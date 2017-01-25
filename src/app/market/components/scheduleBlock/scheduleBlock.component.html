@@ -1,0 +1,10 @@
+<div class="schedule-block">
+  <h3>{{ 'applications_description_marketing_h' | translate }}</h3>
+  <p>
+    <span [innerHTML]="'applications_description_marketing_p1' | translate"></span>
+    <a [routerLink]="['../../login']" [queryParams]="{scheduling: true}">
+      {{ 'applications_description_marketing_p2' | translate }}
+    </a>
+    <span>{{ 'applications_description_marketing_p3' | translate }}</span>
+  </p>
+</div>

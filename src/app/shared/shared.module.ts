@@ -15,6 +15,7 @@ import { BackBtnComponent } from "../market/components/backBtn/backBtn.component
 import { RecaptchaComponent } from "../market/components/recaptcha/recaptcha.component";
 import { SpinnerComponent } from "../market/components/spinner/spinner.component";
 import { SpinnerService } from "../market/services/spinner.service";
+import {ScheduleBlockComponent} from "../market/components/scheduleBlock/scheduleBlock.component";
 
 const MODULES = [
   // Do NOT include UniversalModule, HttpModule, or JsonpModule here
@@ -39,7 +40,8 @@ const COMPONENTS = [
   BackBtnComponent,
   PasswordDisplayComponent,
   RecaptchaComponent,
-  SpinnerComponent
+  SpinnerComponent,
+  ScheduleBlockComponent
 
   // put shared modules here
 ];
