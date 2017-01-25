@@ -26,12 +26,14 @@
             <p>{{ 'businessVisas_step2_col1_descr' | translate }}</p>
           </li>
           <li>
-            <img style="width: 48px; margin-left: -5px; margin-right: 42px;" src="/assets/images/student.svg" alt="student-icon">
+            <img style="width: 48px; margin-left: -5px; margin-right: 42px;" src="/assets/images/student.svg"
+                 alt="student-icon">
             <h3>{{ 'businessVisas_step2_col2_title' | translate }}</h3>
             <p>{{ 'businessVisas_step2_col2_descr' | translate }}</p>
           </li>
           <li>
-            <img style="width: 50px; margin-left: -5px; margin-right: 40px;" src="/assets/images/business.svg" alt="business-icon">
+            <img style="width: 50px; margin-left: -5px; margin-right: 40px;" src="/assets/images/business.svg"
+                 alt="business-icon">
             <h3>{{ 'businessVisas_step2_col3_title' | translate }}</h3>
             <p>{{ 'businessVisas_step2_col3_descr' | translate }}</p>
           </li>
@@ -238,7 +240,7 @@
   <h3>{{ 'businessVisas_help_title' | translate }}</h3>
   <h2>{{ 'businessVisas_help_subtitle' | translate }}</h2>
   <p>
-    <span [innerHTML]="'businessVisas_help_descr' | translate"></span>
+    <span>{{'businessVisas_help_descr' | translate}}</span>
     <a [routerLink]="['../../faq']">{{ 'prefooter_links_faq' | translate }}</a>
   </p>
   <a [routerLink]="['../../login']" [queryParams]="{scheduling: true}" class="btn btn-default">
