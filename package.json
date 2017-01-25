@@ -22,7 +22,7 @@
     "ngc": "ngc -p tsconfig.aot.json",
     "server": "nodemon dist/server/index.js",
     "debug:server": "node-nightly --inspect --debug-brk dist/server/index.js",
-    "prestart": "npm run build",
+    "prestart": "npm run build:prod:jit",
     "start": "npm run server",
     "prestart:dev": "npm run build:prod:jit",
     "start:dev": "npm run server",
