@@ -2,7 +2,6 @@ var webpack = require('webpack');
 var path = require('path');
 var clone = require('js.clone');
 var webpackMerge = require('webpack-merge');
-const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
 
 export var commonPlugins = [
   new webpack.ContextReplacementPlugin(
@@ -16,8 +15,8 @@ export var commonPlugins = [
 
   // Loader options
   new webpack.LoaderOptionsPlugin({
-    // minimize: true,
-    // debug: false
+    minimize: true,
+    debug: false
   }),
 
 ];
@@ -26,7 +25,7 @@ export var commonConfig = {
   devtool: 'source-map',
   resolve: {
     extensions: ['.ts', '.js', '.json'],
-    modules: [ root('node_modules') ]
+    modules: [root('node_modules')]
   },
   context: __dirname,
   output: {
@@ -36,11 +35,11 @@ export var commonConfig = {
   module: {
     rules: [
       // TypeScript
-      { test: /\.ts$/,   use: ['awesome-typescript-loader', 'angular2-template-loader'] },
-      { test: /\.html$/, use: 'raw-loader' },
-      { test: /\.css$/,  use: 'raw-loader' },
-      { test: /\.json$/, use: 'json-loader' },
-      { test: /\.scss$/, loaders: ['raw-loader', 'sass-loader']}
+      {test: /\.ts$/, use: ['awesome-typescript-loader', 'angular2-template-loader']},
+      {test: /\.html$/, use: 'raw-loader'},
+      {test: /\.css$/, use: 'raw-loader'},
+      {test: /\.json$/, use: 'json-loader'},
+      {test: /\.scss$/, loaders: ['raw-loader', 'sass-loader']}
     ],
   },
   plugins: [
@@ -51,11 +50,27 @@ export var commonConfig = {
 
 // Client.
 export var clientPlugins = [
-  /*new BrowserSyncPlugin({
-    host: 'localhost',
-    port: 3100,
-    proxy: 'http://localhost:3000/'
-  })*/
+  // MINIFY
+  new webpack.optimize.UglifyJsPlugin({
+    // beautify: true,
+    // mangle: false,
+    output: {
+      comments: false
+    },
+    compress: {
+      warnings: false,
+      conditionals: true,
+      unused: true,
+      comparisons: true,
+      sequences: true,
+      dead_code: true,
+      evaluate: true,
+      if_return: true,
+      join_vars: true,
+      negate_iife: false // we need this for lazy v8
+    },
+    sourceMap: false
+  }),
 ];
 export var clientConfig = {
   target: 'web',
@@ -76,6 +91,26 @@ export var clientConfig = {
 
 // Server.
 export var serverPlugins = [
+  new webpack.optimize.UglifyJsPlugin({
+    // beautify: true,
+    mangle: false, // to ensure process.env still works
+    output: {
+      comments: false
+    },
+    compress: {
+      warnings: false,
+      conditionals: true,
+      unused: true,
+      comparisons: true,
+      sequences: true,
+      dead_code: true,
+      evaluate: true,
+      if_return: true,
+      join_vars: true,
+      negate_iife: false // we need this for lazy v8
+    },
+    sourceMap: false
+  }),
 
 ];
 export var serverConfig = {
@@ -88,7 +123,7 @@ export var serverConfig = {
   },
   module: {
     rules: [
-      { test: /@angular(\\|\/)material/, use: "imports-loader?window=>global" }
+      {test: /@angular(\\|\/)material/, use: "imports-loader?window=>global"}
     ],
   },
   externals: includeClientPackages(
@@ -106,18 +141,16 @@ export var serverConfig = {
 
 export default [
   // Client
-  webpackMerge(clone(commonConfig), clientConfig, { plugins: clientPlugins.concat(commonPlugins) }),
+  webpackMerge(clone(commonConfig), clientConfig, {plugins: clientPlugins.concat(commonPlugins)}),
 
   // Server
-  webpackMerge(clone(commonConfig), serverConfig, { plugins: serverPlugins.concat(commonPlugins) })
+  webpackMerge(clone(commonConfig), serverConfig, {plugins: serverPlugins.concat(commonPlugins)})
 ];
-
-
 
 
 // Helpers
 export function includeClientPackages(packages, localModule?: string[]) {
-  return function(context, request, cb) {
+  return function (context, request, cb) {
     if (localModule instanceof RegExp && localModule.test(request)) {
       return cb();
     }
