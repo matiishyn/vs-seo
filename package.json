@@ -23,7 +23,7 @@
     "server": "nodemon dist/server/index.js",
     "debug:server": "node-nightly --inspect --debug-brk dist/server/index.js",
     "prestart": "npm run build",
-    "start": "npm run server",
+    "start": "npm run server:prod:jit",
     "prestart:dev": "npm run build:prod:jit",
     "start:dev": "npm run server",
     "debug:start": "npm run build && npm run debug:server",

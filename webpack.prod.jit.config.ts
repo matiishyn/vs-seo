@@ -15,8 +15,8 @@ export var commonPlugins = [
 
   // Loader options
   new webpack.LoaderOptionsPlugin({
-    minimize: true,
-    debug: false
+    // minimize: true,
+    // debug: false
   }),
 
 ];
