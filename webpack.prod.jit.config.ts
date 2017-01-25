@@ -91,7 +91,7 @@ export var clientConfig = {
 
 // Server.
 export var serverPlugins = [
-  /*new webpack.optimize.UglifyJsPlugin({
+  new webpack.optimize.UglifyJsPlugin({
     // beautify: true,
     mangle: false, // to ensure process.env still works
     output: {
@@ -110,7 +110,7 @@ export var serverPlugins = [
       negate_iife: false // we need this for lazy v8
     },
     sourceMap: false
-  }),*/
+  }),
 
 ];
 export var serverConfig = {
