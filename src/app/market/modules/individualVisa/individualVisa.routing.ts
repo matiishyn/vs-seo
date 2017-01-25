@@ -4,9 +4,8 @@ import {IndividualVisaListComponent} from "./components/list/individualVisaList.
 import {IndividualVisaDetailsComponent} from "./components/visaDetails/individualVisaDetails.component";
 
 export const individualVisaRoutes: Routes = [
-  {path: '', redirectTo: 'how-it-works', pathMatch: 'full'},
   {
-    path: 'how-it-works', component: IndividualVisaMainComponent,
+    path: '', component: IndividualVisaMainComponent,
     data: {
       keywords: 'keywords_individualVisas',
       description: 'description_individualVisas',

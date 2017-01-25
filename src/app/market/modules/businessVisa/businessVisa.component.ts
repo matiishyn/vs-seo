@@ -5,7 +5,7 @@ import {Router, NavigationEnd, Event} from '@angular/router';
   templateUrl: 'businessVisa.component.html'
 })
 export class BusinessVisaComponent implements OnInit {
-  private headerVisibleRoutes: Array<string> = ['/business-visas/how-it-works', '/business-visas/list', '/business-visas'];
+  private headerVisibleRoutes: Array<string> = ['/business-visas', '/business-visas/list', '/business-visas'];
   private isHeaderVisible: boolean;
 
   constructor(private router: Router) {

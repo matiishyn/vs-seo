@@ -4,9 +4,8 @@ import {BusinessVisaListComponent} from "./list/businessVisaList.component";
 import {BusinessVisaDetailsComponent} from "./visaDetails/businessVisaDetails.component";
 
 export const businessVisaRoutes: Routes = [
-  {path: '', redirectTo: 'how-it-works', pathMatch: 'full'},
   {
-    path: 'how-it-works', component: BusinessVisaMainComponent,
+    path: '', component: BusinessVisaMainComponent,
     data: {
       keywords: 'keywords_businessVisas',
       description: 'description_businessVisas',
