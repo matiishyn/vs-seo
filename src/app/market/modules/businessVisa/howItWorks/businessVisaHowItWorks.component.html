@@ -237,5 +237,11 @@
 <div class="help-block">
   <h3>{{ 'businessVisas_help_title' | translate }}</h3>
   <h2>{{ 'businessVisas_help_subtitle' | translate }}</h2>
-  <div [innerHTML]="'businessVisas_help_descr' | translate"></div>
+  <p>
+    <span [innerHTML]="'businessVisas_help_descr' | translate"></span>
+    <a [routerLink]="['../../faq']">{{ 'prefooter_links_faq' | translate }}</a>
+  </p>
+  <a [routerLink]="['../../login']" [queryParams]="{scheduling: true}" class="btn btn-default">
+    {{ 'businessVisas_help_schedule' | translate }}
+  </a>
 </div>
