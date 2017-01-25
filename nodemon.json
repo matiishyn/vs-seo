@@ -3,8 +3,5 @@
     "dist",
     "src/index.html"
   ],
-  "ext" : "js ts json html",
-  "events": {
-    "start": "browser-sync reload"
-  }
+  "ext" : "js ts json html"
 }
