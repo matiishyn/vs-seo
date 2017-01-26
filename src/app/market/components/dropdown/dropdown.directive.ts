@@ -9,7 +9,7 @@ import { dropdownService, NONINPUT } from './dropdown.service';
   exportAs: 'bs-dropdown'
 })
 export class DropdownDirective implements OnInit, OnDestroy {
-  @HostBinding('class.open')
+  @HostBinding('class.active')      // was .open
   @Input()
   public get isOpen():boolean {
     return this._isOpen;

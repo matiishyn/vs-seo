@@ -24,6 +24,7 @@ import { GoogleAuthService } from "./services/google.auth.service";
 import { EnvService } from "./services/env.service";
 import { SpinnerService } from "./services/spinner.service";
 import { SpinnerComponent } from "./components/spinner/spinner.component";
+import {DropdownModule} from "./components/dropdown/dropdown.module";
 
 @NgModule({
   imports: [
@@ -37,7 +38,8 @@ import { SpinnerComponent } from "./components/spinner/spinner.component";
     FaqModule,
     LoginModule,
     SignUpModule,
-    AboutUsModule
+    AboutUsModule,
+    DropdownModule
   ],
   declarations: [
     MarketComponent,

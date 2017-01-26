@@ -4,7 +4,7 @@ import {TranslateService} from 'ng2-translate';
 import {UrlSegmentGroup} from "@angular/router/src/url_tree";
 import {isBrowser} from 'angular2-universal';
 import {LangService} from "../../services/lang.service";
-import { SpinnerService } from "../../services/spinner.service";
+import {SpinnerService} from "../../services/spinner.service";
 
 
 @Component({
@@ -13,13 +13,14 @@ import { SpinnerService } from "../../services/spinner.service";
 })
 export class HeaderComponent implements OnInit {
   private language: string;
+  private status: {isOpen: boolean};
 
   constructor(private translate: TranslateService,
               private route: ActivatedRoute,
               private router: Router,
               private Lang: LangService,
-              private Spinner: SpinnerService
-  ) {
+              private Spinner: SpinnerService) {
+    this.status = {isOpen: false};
   }
 
   changeLanguage(lang: string): void {
@@ -41,13 +42,13 @@ export class HeaderComponent implements OnInit {
     if (isBrowser) {
       const lang = localStorage.getItem('VISALEX_LANG');
       /*if (lang) {
-        this.language = lang;
-        const observ = this.translate.use(lang);
-        this.Spinner.onObservable(observ);
-        this.Lang.currentLang = lang;
-        this.changeLanguage(lang);
-        return;
-      }*/
+       this.language = lang;
+       const observ = this.translate.use(lang);
+       this.Spinner.onObservable(observ);
+       this.Lang.currentLang = lang;
+       this.changeLanguage(lang);
+       return;
+       }*/
     }
     this.translate.setDefaultLang('en');
     this.Lang.currentLang = 'en';
