@@ -17,11 +17,7 @@ export class AppComponent implements OnInit {
   public constructor(public router: Router,
                      public meta: Meta,
                      @Inject(DOCUMENT) private document: any,
-                     public translate: TranslateService,
-                     public model: ModelService) {
-    // this will cache data
-    this.model.get('/api/translation?lang=en');
-  }
+                     public translate: TranslateService) {}
 
   ngOnInit() {
     this.router.events.subscribe(event => {
