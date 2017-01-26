@@ -71,6 +71,11 @@
   font-size: 16px;
   transform: translateX(50%);
   margin-right: -560px;
+  @include transition(background, .15s, ease-in-out);
+  &:hover {
+    color: $white;
+    background: #536a8c;
+  }
   @include respond-to(desktopSM) {
     margin-right: 0;
     transform: none;
