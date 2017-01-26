@@ -4,6 +4,7 @@ import {Meta} from "../angular2-meta";
 import {TranslateService} from "ng2-translate";
 import {DOCUMENT} from '@angular/platform-browser';
 import {isBrowser} from "angular2-universal";
+import {ModelService} from "./shared/model/model.service";
 
 @Component({
   changeDetection: ChangeDetectionStrategy.Default,
@@ -16,7 +17,10 @@ export class AppComponent implements OnInit {
   public constructor(public router: Router,
                      public meta: Meta,
                      @Inject(DOCUMENT) private document: any,
-                     public translate: TranslateService) {
+                     public translate: TranslateService,
+                     public model: ModelService) {
+    // this will cache data
+    this.model.get('/api/translation?lang=en');
   }
 
   ngOnInit() {
