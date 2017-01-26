@@ -10,13 +10,13 @@
             <option value="pt">Portuguese</option>
           </select>
 
-          <div class="acc-nav" dropdown [class.active]="status.isOpen" [(isOpen)]="status.isopen">
-            <div class="selected" dropdownToggle>language</div>
+          <div class="acc-nav" dropdown [class.active]="status.isOpen" [(isOpen)]="status.isOpen">
+            <div class="selected" dropdownToggle>{{language}}</div>
             <div class="options" dropdownMenu>
               <ul>
-                <li >{{'language_english' | translate}}</li>
-                <li >{{'language_spanish' | translate}}</li>
-                <li >{{'language_portuguese' | translate}}</li>
+                <li (click)="selectLanguage('en')">{{'language_english' | translate}}</li>
+                <li (click)="selectLanguage('es')">{{'language_spanish' | translate}}</li>
+                <li (click)="selectLanguage('pt')">{{'language_portuguese' | translate}}</li>
               </ul>
             </div>
           </div>

@@ -23,7 +23,7 @@ export class HeaderComponent implements OnInit {
     this.status = {isOpen: false};
   }
 
-  changeLanguage(lang: string): void {
+  selectLanguage(lang: string): void {
     const observ = this.translate.use(lang);
     this.Spinner.onObservable(observ);
     this.Lang.currentLang = lang;
