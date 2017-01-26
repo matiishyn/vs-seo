@@ -3,15 +3,9 @@
     <div class="header-content">
       <div class="language-phone">
         <form class="form language-form">
-          <!--<lang-select></lang-select>-->
-          <select [(ngModel)]="language" (ngModelChange)="changeLanguage(language)" name="lang">
-            <option value="en">English</option>
-            <option value="es">Espagnol</option>
-            <option value="pt">Portuguese</option>
-          </select>
 
           <div class="acc-nav" dropdown [class.active]="status.isOpen" [(isOpen)]="status.isOpen">
-            <div class="selected" dropdownToggle>{{language}}</div>
+            <div class="selected" dropdownToggle>{{langTranslated}}</div>
             <div class="options" dropdownMenu>
               <ul>
                 <li (click)="selectLanguage('en')">{{'language_english' | translate}}</li>

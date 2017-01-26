@@ -14,6 +14,7 @@ import {SpinnerService} from "../../services/spinner.service";
 export class HeaderComponent implements OnInit {
   private language: string;
   private status: {isOpen: boolean};
+  public langTranslated: string;
 
   constructor(private translate: TranslateService,
               private route: ActivatedRoute,
@@ -36,6 +37,7 @@ export class HeaderComponent implements OnInit {
       localStorage.setItem('VISALEX_LANG', lang);
     }
     this.router.navigate(paths, {relativeTo: this.route});
+    this.getLabel(lang);
   }
 
   ngOnInit() {
@@ -57,10 +59,22 @@ export class HeaderComponent implements OnInit {
       this.Lang.currentLang = params['lang'];
       const observ = this.translate.use(params['lang']);
       this.Spinner.onObservable(observ);
+      this.getLabel(this.language);
     });
   }
 
   get currentLang(): string {
     return `/${this.translate.currentLang}`;
+  }
+
+  getLabel(lang: string): void {
+    const mapping = {
+      en: 'language_english',
+      es: 'language_spanish',
+      pt: 'language_portuguese'
+    };
+    this.translate.get(mapping[lang]).subscribe((res: string) => {
+      this.langTranslated = res;
+    });
   }
 }
