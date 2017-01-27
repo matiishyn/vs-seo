@@ -3,6 +3,11 @@
   <div class="container">
     <div class="page">{{ subHeader | translate }}</div>
     <h2 [innerHTML]="header | translate"></h2>
-    <div class="hint" [innerHTML]="p | translate"></div> <!--bind-html-compile-->
+    <div class="hint">
+      <span [innerHTML]="p | translate"></span>
+      <a *ngIf="link==='contactUs'" [routerLink]="['../contact-us']">
+        {{'prefooter_links_contactus'|translate}}
+      </a>
+    </div> <!--bind-html-compile-->
   </div>
 </div>

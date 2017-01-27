@@ -8,6 +8,7 @@ export class ImgHeaderComponent {
   @Input() subHeader: string;
   @Input() header: string;
   @Input() p: string;
+  @Input() link: string;
 
   constructor() {
   }
