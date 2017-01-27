@@ -8,7 +8,7 @@
         [p]="'faq_hint1'">
       </img-header>
       <div class="page-content container">
-        <div class="scrollable-content goTo">
+        <div class="scrollable-content goTo" scrollable>
           <div class="scrollable-parent faq-sections">
             <div class="scrollable">
               <h2>{{'faq_sections_label' | translate}}</h2>
@@ -16,30 +16,27 @@
                 <ul class="goTo-links">
                   <li>
                     <h3>
-                      <a
-                        href="#"
-                        class="goTo-link"
-                        ng-click="goTo($event, 'generalQuestions')"
-                        ng-class="{'active': activeLink == 'generalQuestions'}">
+                      <a goTo="generalQuestions"
+                         href=""
+                         class="goTo-link"
+                         ng-class="{'active': activeLink == 'generalQuestions'}">
                         {{'faq_general_label' | translate}}
                       </a>
                     </h3>
                   </li>
                   <li>
-                    <a
-                      href="#"
-                      class="goTo-link"
-                      ng-click="goTo($event, 'gettingStarted')"
-                      ng-class="{'active': activeLink == 'gettingStarted'}">
+                    <a goTo="gettingStarted"
+                       href=""
+                       class="goTo-link"
+                       ng-class="{'active': activeLink == 'gettingStarted'}">
                       {{'faq_gettingStarted_label' | translate}}
                     </a>
                   </li>
                   <li>
-                    <a
-                      href="#"
-                      class="goTo-link"
-                      ng-click="goTo($event, 'otherTopics')"
-                      ng-class="{'active': activeLink == 'otherTopics'}">
+                    <a goTo="otherTopics"
+                       href=""
+                       class="goTo-link"
+                       ng-class="{'active': activeLink == 'otherTopics'}">
                       {{'faq_otherTopics_label' | translate}}
                     </a>
                   </li>
@@ -50,9 +47,9 @@
                   <li>
                     <h3>
                       <a
-                        href="#"
+                        goTo="individualVisas"
+                        href=""
                         class="goTo-link"
-                        ng-click="goTo($event, 'individualVisas')"
                         ng-class="{'active': activeLink == 'individualVisas'}">
                         {{'faq_individualVisas_sectionsLabel' | translate}}
                       </a>
@@ -60,27 +57,27 @@
                   </li>
                   <li>
                     <a
-                      href="#"
+                      goTo="b1"
+                      href=""
                       class="goTo-link"
-                      ng-click="goTo($event, 'b1')"
                       ng-class="{'active': activeLink == 'b1'}">
                       {{'faq_b1b2_label' | translate}}
                     </a>
                   </li>
                   <li>
                     <a
-                      href="#"
+                      goTo="j1"
+                      href=""
                       class="goTo-link"
-                      ng-click="goTo($event, 'j1')"
                       ng-class="{'active': activeLink == 'j1'}">
                       {{'faq_j1j2_label' | translate}}
                     </a>
                   </li>
                   <li>
                     <a
-                      href="#"
+                      goTo="f1"
+                      href=""
                       class="goTo-link"
-                      ng-click="goTo($event, 'f1')"
                       ng-class="{'active': activeLink == 'f1'}">
                       {{'faq_f1f2_label' | translate}}
                     </a>
@@ -92,9 +89,9 @@
                   <li>
                     <h3>
                       <a
-                        href="#"
+                        goTo="businessVisas"
+                        href=""
                         class="goTo-link"
-                        ng-click="goTo($event, 'businessVisas')"
                         ng-class="{'active': activeLink == 'businessVisas'}">
                         {{'faq_businessVisas_sectionLabel' | translate}}
                       </a>
@@ -102,27 +99,27 @@
                   </li>
                   <li>
                     <a
-                      href="#"
+                      goTo="h1b"
+                      href=""
                       class="goTo-link"
-                      ng-click="goTo($event, 'h1b')"
                       ng-class="{'active': activeLink == 'h1b'}">
                       {{'faq_h1bh4_label' | translate}}
                     </a>
                   </li>
                   <li>
                     <a
-                      href="#"
+                      goTo="e1"
+                      href=""
                       class="goTo-link"
-                      ng-click="goTo($event, 'e1')"
                       ng-class="{'active': activeLink == 'e1'}">
                       {{'faq_e1e2_label' | translate}}
                     </a>
                   </li>
                   <li>
                     <a
-                      href="#"
+                      goTo="l1"
+                      href=""
                       class="goTo-link"
-                      ng-click="goTo($event, 'l1')"
                       ng-class="{'active': activeLink == 'l1'}">
                       {{'faq_l1l2_label' | translate}}
                     </a>

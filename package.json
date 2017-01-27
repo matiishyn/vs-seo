@@ -2,8 +2,8 @@
   "name": "visalex-market",
   "version": "1.0.0",
   "scripts": {
-    "watch": "webpack --watch",
-    "watch:dev": "npm run server & npm run watch",
+    "watch": "webpack --watch --progress",
+    "watch:dev": "npm run server & npm run browsersync & npm run watch",
     "clean:dist": "rimraf dist",
     "clean:ngc": "rimraf **/*.ngfactory.ts **/*.css.shim.ts",
     "postinstall": "typings install",
@@ -25,7 +25,8 @@
     "predebug": "npm run build",
     "debug:build": "node-nightly --inspect --debug-brk node_modules/webpack/bin/webpack.js",
     "debug:build:prod": "node-nightly --inspect --debug-brk node_modules/webpack/bin/webpack.js  --config webpack.prod.config.ts",
-    "debug": "node --debug-brk dist/server/index.js"
+    "debug": "node --debug-brk dist/server/index.js",
+    "browsersync": "browser-sync start --p 'localhost:3000' --port 3100 --reload-delay 3000 --no-open"
   },
   "contributors": [
     "Ivan Matiishyn <matiyishyn.ivan@gmail.com>"

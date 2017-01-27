@@ -3,14 +3,23 @@
 		padding: 0 50px;
 	}
 	.img-header {
-		background: none;
-		padding: 85px 0 140px;
+    background: url('/assets/images/jpg/home-background.jpg') no-repeat 50% 50%;
+    background-size: cover;
+    padding: 250px 0 140px;
 		h1 {
+      position: relative;
+      top:-80px;
 			font-size: 50px;
 			line-height: 60px;
 			margin-bottom: 45px;
 		}
+    .btns {
+      position: relative;
+      top:-40px;
+    }
 		.text {
+      position: relative;
+      top:-60px;
 			width: 50%;
 			margin: auto;
 			font-size: 20px;

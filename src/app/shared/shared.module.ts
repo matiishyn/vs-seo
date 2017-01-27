@@ -16,6 +16,9 @@ import { RecaptchaComponent } from "../market/components/recaptcha/recaptcha.com
 import { SpinnerComponent } from "../market/components/spinner/spinner.component";
 import { SpinnerService } from "../market/services/spinner.service";
 import {ScheduleBlockComponent} from "../market/components/scheduleBlock/scheduleBlock.component";
+import {GoToDirective} from "../market/components/goTo/goTo.directive";
+import { ScrollableDirective } from "../market/components/scrollable/scrollable.directive";
+
 
 const MODULES = [
   // Do NOT include UniversalModule, HttpModule, or JsonpModule here
@@ -41,7 +44,9 @@ const COMPONENTS = [
   PasswordDisplayComponent,
   RecaptchaComponent,
   SpinnerComponent,
-  ScheduleBlockComponent
+  ScheduleBlockComponent,
+  GoToDirective,
+  ScrollableDirective
 
   // put shared modules here
 ];

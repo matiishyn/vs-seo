@@ -3,5 +3,8 @@
     "dist",
     "src/index.html"
   ],
-  "ext" : "js ts json html"
+  "ext" : "js ts json html",
+  "events": {
+    "start": "browser-sync reload --port 3100"
+  }
 }

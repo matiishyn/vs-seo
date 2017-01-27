@@ -1,9 +1,9 @@
-import {Component, OnInit} from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   templateUrl: 'faq.component.html'
 })
-export class FaqComponent implements OnInit{
+export class FaqComponent {
   isGroupOpen = false;
 
   generalQuestions: Array<any> = [
@@ -168,7 +168,4 @@ export class FaqComponent implements OnInit{
   ];
 
   constructor() {}
-
-  ngOnInit() {
-  }
 }

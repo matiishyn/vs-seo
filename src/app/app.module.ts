@@ -2,6 +2,7 @@ import {NgModule} from '@angular/core';
 import {FormsModule} from '@angular/forms';
 import {TranslateModule} from 'ng2-translate';
 
+
 import {MarketModule} from './market/market.module';
 import {SharedModule} from './shared/shared.module';
 
