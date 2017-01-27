@@ -2,6 +2,7 @@ var webpack = require('webpack');
 var path = require('path');
 var clone = require('js.clone');
 var webpackMerge = require('webpack-merge');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 export var commonPlugins = [
   new webpack.ContextReplacementPlugin(
@@ -71,6 +72,10 @@ export var clientPlugins = [
     },
     sourceMap: false
   }),
+  // sitemap
+  new CopyWebpackPlugin([
+    { from:'./src/sitemap/sitemap.xml' }
+  ])
 ];
 export var clientConfig = {
   target: 'web',

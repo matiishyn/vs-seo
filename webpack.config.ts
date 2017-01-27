@@ -3,6 +3,7 @@ var path = require('path');
 var clone = require('js.clone');
 var webpackMerge = require('webpack-merge');
 const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 export var commonPlugins = [
   new webpack.ContextReplacementPlugin(
@@ -56,6 +57,9 @@ export var clientPlugins = [
     port: 3100,
     proxy: 'http://localhost:3000/'
   })*/
+  new CopyWebpackPlugin([
+    { from:'./src/sitemap/sitemap.xml' }
+  ])
 ];
 export var clientConfig = {
   target: 'web',
