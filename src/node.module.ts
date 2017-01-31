@@ -15,6 +15,8 @@ import {Http} from "@angular/http";
 // see https://github.com/angular/angular/pull/12322
 import { Meta } from './angular2-meta';
 import {TranslateUniversalLoader} from "./universal-loader";
+import { ModelService } from "./app/shared/model/model.service";
+import {ApiService} from "./app/shared/api.service";
 
 export function getLRU() {
   return new Map();
@@ -36,7 +38,7 @@ export const UNIVERSAL_KEY = 'UNIVERSAL_CACHE';
       provide: TranslateLoader,
       // useFactory: (http: Http) => new TranslateStaticLoader(http, '/assets/lang', '.json'),
       useClass: TranslateUniversalLoader,
-      deps: [Http]
+      deps: [ApiService]
     }),
     // MaterialModule.forRoot() should be included first
     UniversalModule, // BrowserModule, HttpModule, and JsonpModule are included

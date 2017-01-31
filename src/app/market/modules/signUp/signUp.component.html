@@ -19,7 +19,8 @@
                 </div>
               </div>
               <h4 class="subheading" *ngIf="!socialProvider">{{'registration_signupWith' | translate}}</h4>
-              <h4 class="subheading" *ngIf="socialProvider">{{'registration_signUpWith' | translate}} {{socialProvider}}</h4>
+              <h4 class="subheading" *ngIf="socialProvider">{{'registration_signUpWith' | translate}}
+                {{socialProvider}}</h4>
               <div class="form-row text-left">
                 <div class="form-col col-half-width">
                   <input
@@ -100,9 +101,14 @@
               <div class="form-row submit-row">
                 <button type="submit" value class="btn btn-default">{{'login_signup' | translate}}</button>
               </div>
-              <div class="form-row form-footer text-center"
-                   [innerHTML]="'registration_haveAnAccount' | translate"></div>
-              <div class="form-row agreement" [innerHTML]="'registration_agreement' | translate"></div>
+              <div class="form-row form-footer text-center">
+                {{'registration_haveAnAccount' | translate}} <a [routerLink]="['/', lang, 'login']" [queryParams]="params">{{'login_login' |
+                translate}}</a>
+              </div>
+              <div class="form-row agreement">
+                <p>{{'registration_agreement' | translate}}</p>
+                <p>{{'registration_agreement1' | translate}} <a [routerLink]="['/', lang, 'terms-conditions']">{{'layout_terms' | translate}}</a> {{'registration_agreement2' | translate}} <a [routerLink]="['/', lang, 'privacy-policy']">{{'layout_privacy' | translate}}</a>.</p>
+              </div>
             </fieldset>
           </form>
         </div>

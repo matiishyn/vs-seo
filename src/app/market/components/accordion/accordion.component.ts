@@ -46,9 +46,10 @@ export class Accordion {
                   <!--</div>-->
                 <!--</div>-->
                 <div class="panel panel-default" [ngClass]="{'panel-open': isOpen}">
-                  <div class="panel-heading accordion-item" (click)="toggleOpen($event)">
+                  <div class="panel-heading accordion-item" [ngClass]="{'active': isOpen}" (click)="toggleOpen($event)">
                     <h4 class="panel-title title">
                       <span>{{heading}}</span>
+                      <div class="icon"></div>
                     </h4>
                   </div>
                   <div class="panel-collapse" [hidden]="!isOpen">

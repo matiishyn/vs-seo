@@ -2,6 +2,8 @@ var webpack = require('webpack');
 var path = require('path');
 var clone = require('js.clone');
 var webpackMerge = require('webpack-merge');
+var config = require('./config.json');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 export var commonPlugins = [
   new webpack.ContextReplacementPlugin(
@@ -13,10 +15,14 @@ export var commonPlugins = [
     }
   ),
 
+  new webpack.DefinePlugin({
+    API_URL: JSON.stringify(config[process.env.API_URL])
+  }),
+
   // Loader options
   new webpack.LoaderOptionsPlugin({
-    // minimize: true,
-    // debug: false
+    minimize: true,
+    debug: false
   }),
 
 ];
@@ -71,6 +77,10 @@ export var clientPlugins = [
     },
     sourceMap: false
   }),
+  // static
+  new CopyWebpackPlugin([
+    {from: './src/static'},
+  ])
 ];
 export var clientConfig = {
   target: 'web',
@@ -92,25 +102,25 @@ export var clientConfig = {
 // Server.
 export var serverPlugins = [
   /*new webpack.optimize.UglifyJsPlugin({
-    // beautify: true,
-    mangle: false, // to ensure process.env still works
-    output: {
-      comments: false
-    },
-    compress: {
-      warnings: false,
-      conditionals: true,
-      unused: true,
-      comparisons: true,
-      sequences: true,
-      dead_code: true,
-      evaluate: true,
-      if_return: true,
-      join_vars: true,
-      negate_iife: false // we need this for lazy v8
-    },
-    sourceMap: false
-  }),*/
+   // beautify: true,
+   mangle: false, // to ensure process.env still works
+   output: {
+   comments: false
+   },
+   compress: {
+   warnings: false,
+   conditionals: true,
+   unused: true,
+   comparisons: true,
+   sequences: true,
+   dead_code: true,
+   evaluate: true,
+   if_return: true,
+   join_vars: true,
+   negate_iife: false // we need this for lazy v8
+   },
+   sourceMap: false
+   }),*/
 
 ];
 export var serverConfig = {

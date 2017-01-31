@@ -8,9 +8,9 @@
             <div class="selected" dropdownToggle>{{langTranslated}}</div>
             <div class="options" dropdownMenu>
               <ul>
-                <li (click)="selectLanguage('en')">{{'language_english' | translate}}</li>
-                <li (click)="selectLanguage('es')">{{'language_spanish' | translate}}</li>
-                <li (click)="selectLanguage('pt')">{{'language_portuguese' | translate}}</li>
+                <li><a [routerLink]="'/en/' + urlWithoutLang">{{'language_english' | translate}}</a></li>
+                <li><a [routerLink]="'/es/' + urlWithoutLang">{{'language_spanish' | translate}}</a></li>
+                <li><a [routerLink]="'/pt/' + urlWithoutLang">{{'language_portuguese' | translate}}</a></li>
               </ul>
             </div>
           </div>

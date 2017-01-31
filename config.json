@@ -1,3 +1,6 @@
 {
-  "api": "https://dev.visalex.com/"
+  "api": "https://qa.dev.visalex.com/",
+  "apiLocal": "http://imatiyshin.universe.dart.spb:7777/",
+  "apiQa": "https://qa.dev.visalex.com/",
+  "apiStage": "https://dev.visalex.com/"
 }

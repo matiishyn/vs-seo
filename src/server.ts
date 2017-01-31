@@ -17,7 +17,7 @@ import * as compression from 'compression';
 // import * as request from 'request';
 const request = require("request");
 const fs = require("fs");
-const config = require('../config.json');
+// const config = require('../config.json');
 
 // Angular 2
 import { enableProdMode } from '@angular/core';
@@ -34,14 +34,18 @@ import { routes } from './server.routes';
 // enable prod for faster renders
 enableProdMode();
 
+declare var API_URL: string;
+console.log(API_URL);
+
 const app = express();
 const ROOT = path.join(path.resolve(__dirname, '..'));
 
 
 app.use(proxy('/api', {
-  target: config.api,
+  target: API_URL,
   changeOrigin: true,
-  auth: 'visalex:e57h495YowZn'
+  auth: 'visalex:e57h495YowZn',
+  secure: false
 }));
 
 // Express View

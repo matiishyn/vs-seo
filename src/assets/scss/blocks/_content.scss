@@ -141,7 +141,7 @@
   }
 }
 
-&.dependent {
+.dependent {
   padding: 5px 0 0;
   .form-col {
     float: left;
@@ -234,7 +234,7 @@
   }
 }
 
-&.qualifying {
+.qualifying {
   padding: 5px 0 0;
   @include clearfix;
   .content-header-holder {

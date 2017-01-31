@@ -1,8 +1,8 @@
-import { Injectable } from '@angular/core';
-import { Http, Response } from "@angular/http";
-import { Observable } from "rxjs";
-import { Router } from "@angular/router";
-import { isBrowser } from "angular2-universal";
+import {Injectable} from '@angular/core';
+import {Observable} from "rxjs";
+import {Router} from "@angular/router";
+import {isBrowser} from "angular2-universal";
+import {ApiService} from "../../shared/api.service";
 
 @Injectable()
 export class EnvService {
@@ -12,9 +12,7 @@ export class EnvService {
     internalDomain: 'http://localhost:9999'
   };
 
-  private envConfigUrl: string = '/api/env/config';
-
-  constructor(private http: Http, private Router: Router) {
+  constructor(public api: ApiService, private Router: Router) {
     if (isBrowser) {
       this.getConfig()
         .subscribe(config => {
@@ -26,7 +24,7 @@ export class EnvService {
   }
 
   redirectToClient(routes, queryParams) {
-    window.location.href = this.generateLink(routes, queryParams, 'CLIENT');
+    window.location.href = this.generateLink(routes, {queryParams}, 'CLIENT');
   }
 
   generateLink(routes, queryParams, instance) {
@@ -36,19 +34,12 @@ export class EnvService {
       PORTAL: 'internalDomain'
     };
     const domain = map[instance];
-    const routerLink = this.Router.createUrlTree(routes, {queryParams}).toString();
+    const routerLink = this.Router.createUrlTree(routes, queryParams).toString();
     return `${this.config[domain]}${routerLink}`;
   }
 
   private getConfig() {
-    return this.http.get(this.envConfigUrl)
+    return this.api.get(`env/config`)
       .map(res => res.json())
-      .catch(this.handleError)
   }
-
-  private handleError(err: Response): Observable<any> {
-    console.error(err);
-    return Observable.throw(err);
-  }
-
 }

@@ -2,7 +2,9 @@ var webpack = require('webpack');
 var path = require('path');
 var clone = require('js.clone');
 var webpackMerge = require('webpack-merge');
+var config = require('./config.json');
 const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 export var commonPlugins = [
   new webpack.ContextReplacementPlugin(
@@ -13,6 +15,10 @@ export var commonPlugins = [
       // your Angular Async Route paths relative to this root directory
     }
   ),
+
+  new webpack.DefinePlugin({
+    API_URL: JSON.stringify(config.apiLocal)
+  }),
 
   // Loader options
   new webpack.LoaderOptionsPlugin({
@@ -56,6 +62,9 @@ export var clientPlugins = [
     port: 3100,
     proxy: 'http://localhost:3000/'
   })*/
+  new CopyWebpackPlugin([
+    { from:'./src/static' }
+  ])
 ];
 export var clientConfig = {
   target: 'web',

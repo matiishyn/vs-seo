@@ -29,13 +29,15 @@
                   #email="ngModel"
                   [placeholder]="'profile_email' | translate"
                   [(ngModel)]="credentials.login"
+                  (ngModelChange)="wrongEmailOrPassword=false"
                   [ngClass]="{'ng-invalid-required': email.errors && email.errors.required}"
                   required>
                 <div class="message error-required">{{'user_registration_missing_email' | translate}}</div>
               </div>
               <div class="form-row">
                 <div class="password-holder">
-                  <password-display name="password" [(ngModel)]="credentials.password" required=""></password-display>
+                  <password-display name="password" [(ngModel)]="credentials.password" required=""
+                                    (ngModelChange)="wrongEmailOrPassword=false"></password-display>
                   <div
                     *ngIf="wrongEmailOrPassword"
                     class="message show">{{'login_incorrect_details' | translate}}
@@ -46,12 +48,18 @@
                 <button type="submit" class="btn btn-default btn-block">{{'login_login' | translate}}</button>
               </div>
               <div class="form-row form-footer">
-                <div class="form-col col-7" [innerHTML]="'login_dont_have_account1' | translate"></div>
+                <div class="form-col col-7">
+                  {{'login_dont_have_account1' | translate}} <a [routerLink]="['/', lang, 'signup']" [queryParams]="params">{{'login_signup' |
+                  translate}}</a>
+                </div>
                 <div class="form-col col-5 pull-right">
                   <a [routerLink]="['/', lang, 'forgot-password']">{{'login_forgot_password' | translate}}</a>
                 </div>
               </div>
-              <div class="form-row agreement" [innerHTML]="'login_agreement1' | translate"></div>
+              <div class="form-row agreement">
+                <p>{{'login_agreement1' | translate}}</p>
+                <p>{{'login_agreement2' | translate}} <a [routerLink]="['/', lang, 'terms-conditions']">{{'layout_terms' | translate}}</a> {{'login_agreement2' | translate}} <a [routerLink]="['/', lang, 'privacy-policy']">{{'layout_privacy' | translate}}</a>.</p>
+              </div>
             </fieldset>
           </form>
         </div>

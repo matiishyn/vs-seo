@@ -1,8 +1,8 @@
 .accordion-item {
-	display: block;
-	text-align: left;
-	overflow: hidden;
-	padding: 3px;
+  display: block;
+  text-align: left;
+  overflow: hidden;
+  padding: 3px;
 
   .panel-body {
     .text-wrap {
@@ -13,75 +13,71 @@
         padding: 30px;
         font-size: 15px;
         line-height: 30px;
-        @include respond-to(mobileLG){
+        @include respond-to(mobileLG) {
 
         }
       }
     }
   }
 
-	.title {
-		background-color: $accordion_title_fill;
-		border: 1px solid $accordion_title_border;
-		padding: 9px 120px 9px 30px;
-		font-family: $PNRegular;
-		font-size: 15px;
-		line-height: 30px;
-		cursor: pointer;
-		position: relative;
-		@include transition($property: all, $duration: .15s, $animation: 'ease-out');
-		@include respond-to(mobileMD){
-			padding: 9px 60px 9px 30px;
-		}
-		icon {
-			width: 12px;
-			display: inline-block;
-			position: absolute;
-			top: 50%;
-			margin-top: -12px;
-			right: 20px;
-			vertical-align: middle;
-			height: 24px;
-			svg {
-				width: 100%;
-				max-height: 12px;
-				@include transition($property: all, $duration: .15s, $animation: 'ease-out');
-			}
-		}
-		&:hover {
-			box-shadow: 0 0 3px $accordion_title_shadow;
-			border-color: $accordion_title_border_hover;
-			background: $white;
-		}
-	}
-	.text-wrap {
-		max-height: 0;
-		box-sizing: border-box;
-		@include transition($property: max-height, $duration: .25s, $animation: 'linear');
-		.text {
-			padding: 30px;
-			font-size: 15px;
-			line-height: 30px;
-			@include respond-to(mobileLG){
+  .title {
+    background-color: $accordion_title_fill;
+    border: 1px solid $accordion_title_border;
+    padding: 9px 120px 9px 30px;
+    font-family: $PNRegular;
+    font-size: 15px;
+    line-height: 30px;
+    cursor: pointer;
+    position: relative;
+    @include transition($property: all, $duration: .15s, $animation: 'ease-out');
+    @include respond-to(mobileMD) {
+      padding: 9px 60px 9px 30px;
+    }
+    .icon {
+      width: 12px;
+      max-height: 12px;
+      display: inline-block;
+      position: absolute;
+      top: 50%;
+      margin-top: -6px;
+      right: 20px;
+      vertical-align: middle;
+      height: 24px;
+      background: url('/assets/images/i-arrowRight.svg') 100% no-repeat;
+      @include transition($property: all, $duration: .15s, $animation: 'ease-out');
+    }
+    &:hover {
+      box-shadow: 0 0 3px $accordion_title_shadow;
+      border-color: $accordion_title_border_hover;
+      background: $white;
+    }
+  }
+  .text-wrap {
+    max-height: 0;
+    box-sizing: border-box;
+    @include transition($property: max-height, $duration: .25s, $animation: 'linear');
+    .text {
+      padding: 30px;
+      font-size: 15px;
+      line-height: 30px;
+      @include respond-to(mobileLG) {
 
-			}
-		}
-	}
-	&.active {
-		.title {
-			font-family: $PNSemibold;
-			icon {
-				svg {
-					@include transform(rotate(90deg));
-				}
-			}
-		}
-		.text-wrap {
-			max-height: 350px;
-			opacity: 1;
-			@include respond-to(mobileMD) {
-				max-height: none;
-			}
-		}
-	}
+      }
+    }
+  }
+  &.active {
+    .title {
+      font-family: $PNSemibold;
+      .icon {
+        @include transform(rotate(90deg));
+      }
+    }
+    .text-wrap {
+      max-height: 350px;
+      opacity: 1;
+      @include respond-to(mobileMD) {
+        max-height: none;
+      }
+    }
+  }
 }

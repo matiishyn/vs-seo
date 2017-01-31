@@ -1470,7 +1470,7 @@
 	}
 }
 .gradient {
-	background: url('/assets/images/gradient.svg') no-repeat 100% 500px;
+	background: url('/assets/images/gradient.png') no-repeat 100% 700px;
 	@include respond-to(tablet) {
 		background-position:100% 430px;
 	}
