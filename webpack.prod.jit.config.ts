@@ -21,8 +21,8 @@ export var commonPlugins = [
 
   // Loader options
   new webpack.LoaderOptionsPlugin({
-    minimize: true,
-    debug: false
+    // minimize: true,
+    // debug: false
   }),
 
 ];
@@ -57,7 +57,7 @@ export var commonConfig = {
 // Client.
 export var clientPlugins = [
   // MINIFY
-  new webpack.optimize.UglifyJsPlugin({
+  /*new webpack.optimize.UglifyJsPlugin({
     // beautify: true,
     // mangle: false,
     output: {
@@ -76,7 +76,7 @@ export var clientPlugins = [
       negate_iife: false // we need this for lazy v8
     },
     sourceMap: false
-  }),
+  }),*/
   // static
   new CopyWebpackPlugin([
     {from: './src/static'},
