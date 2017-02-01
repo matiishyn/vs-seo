@@ -30,7 +30,8 @@ export class PasswordDisplayComponent implements ControlValueAccessor {
     this.visiblePassword = true;
   }
 
-  hidePassword() {
+  hidePassword($event) {
+    $event.target.blur();
     this.visiblePassword = false;
   }
 

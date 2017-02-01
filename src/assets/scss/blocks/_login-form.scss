@@ -1,124 +1,125 @@
 .login-form-wrapper {
-	text-align: center;
-	display: table;
-	vertical-align: middle;
-	text-align: center;
-	width: 100%;
-	height: -webkit-calc(100vh - #{($header_height + $header_indent + $footer_height)});
-	height: -moz-calc(100vh - #{($header_height + $footer_height)});
-	height: calc(100vh - #{($header_height + $footer_height)});
-	.login-form-holder {
-		display: table-cell;
-		vertical-align: middle;
-		.login-form {
-			max-width: 380px;
-			width: 100%;
-			margin: 0 auto;
-      button{
-        	width: 100%;
+  text-align: center;
+  display: table;
+  vertical-align: middle;
+  text-align: center;
+  width: 100%;
+  height: -webkit-calc(100vh - #{($header_height + $header_indent + $footer_height)});
+  height: -moz-calc(100vh - #{($header_height + $footer_height)});
+  height: calc(100vh - #{($header_height + $footer_height)});
+  .login-form-holder {
+    display: table-cell;
+    vertical-align: middle;
+    .login-form {
+      max-width: 380px;
+      width: 100%;
+      margin: 0 auto;
+      button {
+        width: 100%;
       }
-			h2 {
-				margin: 15px 0 29px 0;
-			}
-			h4 {
-				margin: 69px 0 35px;
-				&.subheading {
-					margin: 45px 0 35px;
-				}
-			}
-			.password-tooltip {
-				h4 {
-					margin: 0;
-				}
-			}
-			.form-footer {
-				text-align: left;
-				margin-top: 18px;
-				&.text-center {
-					text-align: center;
-				}
-			}
-			.agreement {
-				margin: 21px 0 10px 0;
-				line-height: 20px;
-			}
-			.btn-facebook {
-				width: 190px;
-				height: 50px;
-				display: block;
-				font-size: 16px;
-				color: #fff;
-				font-family: $PNRegular;
-				position: relative;
-				background: #6d8ac9 url('/assets/images/bg-facebook-login.svg');
-				background: -webkit-linear-gradient(top,  #6d8ac9 0%, #6680bd 100%);
-				background: linear-gradient(to bottom,  #6d8ac9 0%, #6680bd 100%);
-				border-radius: 2px 0 0 2px;
-				line-height: 49px;
-				border: 1px solid #5d74a6;
-				box-sizing: border-box;
-				padding-left: 8px;
-				text-align: center;
+      h2 {
+        margin: 15px 0 29px 0;
+      }
+      h4 {
+        margin: 69px 0 35px;
+        &.subheading {
+          margin: 45px 0 35px;
+        }
+      }
+      .password-tooltip {
+        h4 {
+          margin: 0;
+        }
+      }
+      .form-footer {
+        text-align: left;
+        margin-top: 18px;
+        &.text-center {
+          text-align: center;
+        }
+      }
+      .agreement {
+        margin: 21px 0 10px 0;
+        line-height: 20px;
+      }
+      .btn-facebook {
+        width: 190px;
+        height: 50px;
+        display: block;
+        font-size: 16px;
+        color: #fff;
+        font-family: $PNRegular;
+        position: relative;
+        background: #6d8ac9 url('/assets/images/bg-facebook-login.svg');
+        background: -webkit-linear-gradient(top, #6d8ac9 0%, #6680bd 100%);
+        background: linear-gradient(to bottom, #6d8ac9 0%, #6680bd 100%);
+        border-radius: 2px 0 0 2px;
+        line-height: 49px;
+        border: 1px solid #5d74a6;
+        box-sizing: border-box;
+        padding-left: 8px;
+        text-align: center;
         cursor: pointer;
-				&:after {
-					width: 9px;
-					height: 18px;
-					background: url('/assets/images/i-facebook-login.svg') no-repeat;
-					content: '';
-					position: absolute;
-					left: 35px;
-					top: 14px;
-				}
-				&:hover {
-					background: #7493d6 url('/assets/images/bg-facebook-login-hover.svg');
-					background: -webkit-linear-gradient(top,  #7493d6 0%, #6c87c7 100%);
-					background: linear-gradient(to bottom,  #7493d6 0%, #6c87c7 100%);
-				}
-			}
-			.btn-google {
-				width: 190px;
-				height: 50px;
-				display: block;
-				border: 1px solid #dcdee3;
-				border-left: none;
-				border-radius: 0 2px 2px 0;
-				background: #fff url('/assets/images/bg-google-login.svg');
-				background: -webkit-linear-gradient(top,  #fff 0%, #fafbfc 100%);
-				background: linear-gradient(to bottom,  #fff 0%, #fafbfc 100%);
-				position: relative;
-				line-height: 49px;
-				font-size: 16px;
-				color: #2a2b2e;
-				padding-left: 16px;
-				box-sizing: border-box;
-				text-align: center;
+        &:after {
+          width: 9px;
+          height: 18px;
+          background: url('/assets/images/i-facebook-login.svg') no-repeat;
+          content: '';
+          position: absolute;
+          left: 35px;
+          top: 14px;
+        }
+        &:hover {
+          background: #7493d6 url('/assets/images/bg-facebook-login-hover.svg');
+          background: -webkit-linear-gradient(top, #7493d6 0%, #6c87c7 100%);
+          background: linear-gradient(to bottom, #7493d6 0%, #6c87c7 100%);
+        }
+      }
+      .btn-google {
+        width: 190px;
+        height: 50px;
+        display: block;
+        border: 1px solid #dcdee3;
+        border-left: none;
+        border-radius: 0 2px 2px 0;
+        background: #fff url('/assets/images/bg-google-login.svg');
+        background: -webkit-linear-gradient(top, #fff 0%, #fafbfc 100%);
+        background: linear-gradient(to bottom, #fff 0%, #fafbfc 100%);
+        position: relative;
+        line-height: 49px;
+        font-size: 16px;
+        font-family: $PNRegular;
+        color: #2a2b2e;
+        padding-left: 16px;
+        box-sizing: border-box;
+        text-align: center;
         cursor: pointer;
-				&:after {
-					width: 17px;
-					height: 18px;
-					background: url('/assets/images/i-google-login.svg') no-repeat;
-					content: '';
-					position: absolute;
-					left: 43px;
-					top: 16px;
-				}
-				&:hover {
-					background: #fff;
-				}
-			}
-			.avatar-holder {
-				border-radius: 100%;
-				overflow: hidden;
-				width: 50px;
-				margin: 0 auto;
-			}
-		}
-		.code-form {
-			max-width: 180px;
-			margin: 0 auto;
-			@include respond-to(mobileLG) {
-				max-width: 100%;
-			}
-		}
-	}
+        &:after {
+          width: 17px;
+          height: 18px;
+          background: url('/assets/images/i-google-login.svg') no-repeat;
+          content: '';
+          position: absolute;
+          left: 43px;
+          top: 16px;
+        }
+        &:hover {
+          background: #fff;
+        }
+      }
+      .avatar-holder {
+        border-radius: 100%;
+        overflow: hidden;
+        width: 50px;
+        margin: 0 auto;
+      }
+    }
+    .code-form {
+      max-width: 180px;
+      margin: 0 auto;
+      @include respond-to(mobileLG) {
+        max-width: 100%;
+      }
+    }
+  }
 }

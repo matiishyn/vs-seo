@@ -1,26 +1,5 @@
 <div class="visa-details-page">
   <div class="content-header-holder">
-    <div>
-      <div class="breadcrumb">
-        <span>
-          <a [routerLink]="['../../']">{{"visaDetails_breadcrumb_home" | translate}}</a>
-          <span>&nbsp;&nbsp;>&nbsp;&nbsp;</span>
-        </span>
-        <span *ngIf="type === 'individual'">
-          <a [routerLink]="['../../individual-visas']">{{"visaDetails_breadcrumb_individualVisas" | translate}}</a>
-          <span>&nbsp;&nbsp;>&nbsp;&nbsp;</span>
-        </span>
-        <span *ngIf="type === 'business'">
-          <a [routerLink]="['../../business-visas']">{{"visaDetails_breadcrumb_businessVisas" | translate}}</a>
-          <span>&nbsp;&nbsp;>&nbsp;&nbsp;</span>
-        </span>
-        <span class="active">
-          <span>{{visas[visaId].title | translate}}</span>
-        </span>
-      </div>
-
-    </div>
-
     <back-btn></back-btn>
 
     <div class="page-header">
