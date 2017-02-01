@@ -6,7 +6,10 @@
     <div class="hint">
       <span [innerHTML]="p | translate"></span>
       <a *ngIf="link==='contactUs'" [routerLink]="['../contact-us']">
-        {{'prefooter_links_contactus'|translate}}
+        {{'prefooter_links_contactus' | translate}}.
+      </a>
+      <a *ngIf="link==='helpCenter'" [routerLink]="['../faq']">
+        {{'applications_helpCenter' | translate}}.
       </a>
     </div> <!--bind-html-compile-->
   </div>

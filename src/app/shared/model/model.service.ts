@@ -1,11 +1,11 @@
-import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs/Observable';
+import {Injectable} from '@angular/core';
+import {Observable} from 'rxjs/Observable';
 import 'rxjs/add/observable/of';
 import 'rxjs/add/operator/do';
 import 'rxjs/add/operator/share';
 
-import { CacheService  } from '../cache.service';
-import { ApiService  } from '../api.service';
+import {CacheService} from '../cache.service';
+import {ApiService} from '../api.service';
 
 export function hashCodeString(str: string): string {
   let hash = 0;
@@ -23,14 +23,14 @@ export function hashCodeString(str: string): string {
 // domain/feature service
 @Injectable()
 export class ModelService {
-   // This is only one example of one Model depending on your domain
+  // This is only one example of one Model depending on your domain
   constructor(public _api: ApiService, public _cache: CacheService) {
 
   }
 
- /**
-  * whatever domain/feature method name
-  */
+  /**
+   * whatever domain/feature method name
+   */
   get(url) {
     // you want to return the cache if there is a response in it.
     // This would cache the first response so if your API isn't idempotent
@@ -43,11 +43,13 @@ export class ModelService {
     }
     // you probably shouldn't .share() and you should write the correct logic
     return this._api.get(url)
+      .map((res: any) => res.json())
       .do(json => {
         this._cache.set(key, json);
       })
       .share();
   }
+
   // don't cache here since we're creating
   create() {
     // TODO

@@ -1,16 +1,16 @@
-import { Injectable } from '@angular/core';
-import { Http } from "@angular/http";
-import { ReplaySubject } from "rxjs";
-import { isBrowser } from "angular2-universal";
+import {Injectable} from '@angular/core';
+import {ReplaySubject} from "rxjs";
+import {isBrowser} from "angular2-universal";
+import {ApiService} from "../../shared/api.service";
 
 @Injectable()
 export class GoogleAuthService {
   private auth2: gapi.auth2.GoogleAuth;
   private isApiInitialized: ReplaySubject<any> = new ReplaySubject(1);
 
-  constructor(private http: Http) {
+  constructor(public api: ApiService) {
     if (isBrowser) {
-      http.get('/api/app-social-creds/GOOGLE')
+      this.api.get('app-social-creds/GOOGLE')
         .map(res => {
           const {appId} = res.json();
           gapi.load('auth2', () => {

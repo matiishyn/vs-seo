@@ -81,7 +81,8 @@ export const mainRoutes: Routes = [
     data: {
       keywords: 'keywords_login',
       description: 'description_login',
-      title: 'login_title'
+      title: 'login_title',
+      canonicalHref: '{{absoluteUrl}}/{{lang}}/login'
     }
   },
   {
@@ -98,7 +99,8 @@ export const mainRoutes: Routes = [
     data: {
       keywords: 'keywords_signUp',
       description: 'description_signUp',
-      title: 'registration_title'
+      title: 'registration_title',
+      canonicalHref: '{{absoluteUrl}}/{{lang}}/signup'
     }
   },
   {

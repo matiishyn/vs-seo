@@ -59,6 +59,7 @@
 				box-sizing: border-box;
 				padding-left: 8px;
 				text-align: center;
+        cursor: pointer;
 				&:after {
 					width: 9px;
 					height: 18px;
@@ -91,6 +92,7 @@
 				padding-left: 16px;
 				box-sizing: border-box;
 				text-align: center;
+        cursor: pointer;
 				&:after {
 					width: 17px;
 					height: 18px;

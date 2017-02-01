@@ -1,24 +1,15 @@
-import { Injectable } from '@angular/core';
-import { Http, Response } from "@angular/http";
-import { Observable } from "rxjs";
+import {Injectable} from '@angular/core';
+import {Observable} from "rxjs";
+import {ApiService} from "../../shared/api.service";
 
 @Injectable()
 export class AccountService {
-  private apiUrl: string = '/api';
-  private appSettingsUrl: string = `${this.apiUrl}/account/settings`;
 
-  constructor(private http: Http) {
+  constructor(public api: ApiService) {
   }
 
   getAccountSettings(): Observable<any> {
-    return this.http.get(this.appSettingsUrl)
+    return this.api.get(`account/settings`)
       .map(res => res.json())
-      .catch(this.handleError)
   }
-
-  private handleError(err: Response): Observable<any> {
-    console.error(err);
-    return Observable.throw(err);
-  }
-
 }

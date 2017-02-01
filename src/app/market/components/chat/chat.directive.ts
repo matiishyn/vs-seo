@@ -65,7 +65,9 @@ export class ChatDirective implements AfterViewInit {
   connectLead(appId) {
     var w: any = window;
     w.Intercom('boot', {
-      app_id: appId
+      app_id: appId,
+      custom_launcher_selector: '#chat',
+      hide_default_launcher: true
     });
   }
 }

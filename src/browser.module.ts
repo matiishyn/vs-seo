@@ -14,6 +14,8 @@ import { CacheService } from './app/shared/cache.service';
 import { Meta } from './angular2-meta';
 import {Http} from "@angular/http";
 import {TranslateLoader, TranslateModule, TranslateStaticLoader} from "ng2-translate";
+import { ModelService } from "./app/shared/model/model.service";
+import {ApiService} from "./app/shared/api.service";
 
 // import * as LRU from 'modern-lru';
 
@@ -42,7 +44,7 @@ export const UNIVERSAL_KEY = 'UNIVERSAL_CACHE';
       provide: TranslateLoader,
       // useFactory: (http: Http) => new TranslateStaticLoader(http, '/assets/lang', '.json'),
       useClass: TranslateUniversalLoader,
-      deps: [Http]
+      deps: [ApiService]
     }),
     // MaterialModule.forRoot() should be included first
     UniversalModule, // BrowserModule, HttpModule, and JsonpModule are included

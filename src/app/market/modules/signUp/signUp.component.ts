@@ -1,15 +1,17 @@
-import { Component, ElementRef, ViewChild, NgZone } from '@angular/core';
+import { Component, ElementRef, ViewChild, NgZone, AfterViewInit, OnInit } from '@angular/core';
 import { UserService } from "../../services/user.service";
 import { GoogleAuthService } from "../../services/google.auth.service";
 import { FacebookAuthService } from "../../services/facebook.auth.service";
 import { isBrowser } from "angular2-universal";
 import { NgForm } from "@angular/forms";
 import { EnvService } from "../../services/env.service";
+import { LangService } from "../../services/lang.service";
+import { ActivatedRoute, Params } from "@angular/router";
 
 @Component({
   templateUrl: 'signUp.component.html'
 })
-export class SignUpComponent {
+export class SignUpComponent implements AfterViewInit, OnInit {
 
   @ViewChild('googleBtn') el: ElementRef;
   private user: any = {
@@ -26,12 +28,21 @@ export class SignUpComponent {
   private passwordPattern: string = '^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)[a-zA-Z0-9!@#\$%\^\&*\{\}\\\\\'\"\?\)\(+=._-]{8,}$';
   private emailPattern: string = '^[^\\s@]+@[^\\s@]+\\.[^\\s@]{2,}$';
   private VALIDATION_ERROR_DUPLICATE_EMAIL: string = 'user_registration_duplicate_email';
+  private lang: string;
+  private params: Params;
 
   constructor(private User: UserService,
               private GoogleAuth: GoogleAuthService,
               private FacebookAuth: FacebookAuthService,
               private Env: EnvService,
-              private zone: NgZone) {
+              private zone: NgZone,
+              private Route: ActivatedRoute,
+              private Lang: LangService) {
+    this.lang = Lang.currentLang
+  }
+
+  ngOnInit() {
+    this.Route.queryParams.subscribe((params: Params) => this.params = params);
   }
 
   ngAfterViewInit() {
@@ -59,7 +70,8 @@ export class SignUpComponent {
           this.user = data;
           this.emailRequired = true;
         }
-        this.zone.run(() => {});
+        this.zone.run(() => {
+        });
       });
   }
 
@@ -80,14 +92,15 @@ export class SignUpComponent {
   }
 
   private redirectToClient() {
-    this.Env.redirectToClient(['/'], {});
+    this.Env.redirectToClient(['/'], this.params);
   }
 
   private onSocialError(data, provider, err) {
     this.socialProvider = provider;
     this.errors = err.json();
     this.user = data;
-    this.zone.run(() => {});
+    this.zone.run(() => {
+    });
   }
 
   private isEmailDuplicate() {

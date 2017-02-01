@@ -1,593 +1,585 @@
 .page-wrap.home-page {
-	@include respond-to(mobileLG) {
-		padding: 0 50px;
-	}
-	.img-header {
+  .img-header {
     background: url('/assets/images/jpg/home-background.jpg') no-repeat 50% 50%;
+    height: 600px;
+    padding: 0;
+    margin: 0;
     background-size: cover;
-    padding: 250px 0 140px;
-		h1 {
-      position: relative;
-      top:-80px;
-			font-size: 50px;
-			line-height: 60px;
-			margin-bottom: 45px;
-		}
-    .btns {
-      position: relative;
-      top:-40px;
+    h1 {
+      font-size: 50px;
+      line-height: 60px;
+      margin-bottom: 70px;
+      padding-top: 120px;
     }
-		.text {
-      position: relative;
-      top:-60px;
-			width: 50%;
-			margin: auto;
-			font-size: 20px;
-			line-height: 30px;
-			margin-bottom: 60px;
-			color: $app_text_dark_color;
-			@include respond-to(tablet) {
-				width: 60%;
-			}
-		}
-		.btns {
-			.btn {
-				margin-right: 20px;
-				&:last-child {
-					margin: 0;
-				}
-			}
-		}
-		@include respond-to(mobileMD) {
-			padding: 10px 0 70px;
-			h1 {
-				font-size: 40px;
-				line-height: 50px;
-			}
-			.text {
-				width: 100%;
-				font-size: 20px;
-				line-height: 32px;
-				margin-bottom: 20px;
-			}
-			.btn {
-				width: 100%;
-				font-size: 20px;
-				line-height: 50px;
-				margin: 0 0 15px;
-			}
-		}
-	}
-	.title {
-		font-family: $PNSemibold;
-		font-size: 13px;
-		line-height: 40px;
-		color: #748ea4;
-		text-transform: uppercase;
-		letter-spacing: 0.7px;
-		@include respond-to(mobileLG) {
-			font-size: 14px;
-		}
-	}
-	h2 {
-		font-size: 40px;
-		line-height: 45px;
-		letter-spacing: -0.3px;
-	}
-	.product {
-		padding: 65px 0 80px;
-		background-color: #f9f9f9;
-		border: 1px solid #f2f2f2;
-		margin: 0 -20px;
-		@include clearfix;
-		.product-header {
-			@include clearfix;
-			padding-left: 8.33%;
-		}
-		.details {
-			margin-left: 8.33%;
-			width: 41.66%;
-			float: left;
-			padding: 0 35px 0 1px;
-			box-sizing: border-box;
-			.options {
-				margin-top: 42px;
-				.option {
-					margin-bottom: 25px;
-					h3 {
-						font-size: 16px;
-						line-height: 25px;
-					}
-					p {
-						font-size: 16px;
-						line-height: 25px;
-						color: $app_text_dark_color;
-					}
-				}
-			}
-		}
-		.img-box {
-			background: url('/assets/images/png/mac.png') center/contain no-repeat;
-			width: 60%;
-			margin: 20px -10% 0 -5px;
-			float: right;
-			padding: 220px 0;
-			box-sizing: border-box;
-		}
-		@include respond-to(desktopSM) {
-			padding: 65px 7% 80px;
-			.product-header {
-				padding: 0;
-			}
-			.details {
-				padding-left: 0;
-				margin: 0;
-			}
-			.img-box {
-				width: 50%;
-				padding: 26.5% 0 0;
-				margin: 20px 0 0;
-			}
-		}
-		@include respond-to(tablet) {
-			.product-header {
-				text-align: center;
-			}
-			.details {
-				text-align: center;
-				width: 100%;
-				padding:0;
-			}
-			.img-box {
-				width: 100%;
-				padding-top: 32%;
-				margin: 20px 0 0;
-			}
-		}
-		@include respond-to(mobileLG) {
-			margin: 0 -50px;
-			padding: 20px 7%;
-			.product-header {
-				padding: 0 20px;
-			}
-			.details {
-				width: 100%;
-				padding: 0 20px;
-				.options {
-					.option {
-						padding-right: 0;
-					}
-				}
-			}
-			.img-box {
-				width: 100%;
-				padding-top: 54%;
-				margin: 50px 0 0;
-			}
-		}
-		@include respond-to(mobileMD) {
-			.details {
-				.options {
-					.option {
-						h3, p {
-							font-size: 20px;
-							line-height: 34px;
-							text-align: center;
-						}
-					}
-				}
-			}
-		}
-	}
-	.benefits {
-		padding: 57px 0 60px;
-		text-align: center;
-		h2 {
-			width: 50%;
-			margin: 15px auto 45px;
-			box-sizing: border-box;
-			font-size: 30px;
-			line-height: 40px;
-			strong {
-				font-family: $PNSemibold;
-			}
-		}
-		.switch {
-			@include clearfix;
-			display: table;
-			margin: auto;
-			@include respond-to(mobileMD) {
-				display: block;
-				label {
-					width: 50%;
-					padding: 0;
-					white-space: nowrap;
-					text-align: center;
-				}
-			}
-		}
-		.benefits-list {
-			margin: 73px -15px 76px;
-			@include clearfix;
-			.benefit {
-				width: 25%;
-				padding: 0 15px;
-				float: left;
-				box-sizing: border-box;
-				h3 {
-					font-size: 20px;
-					line-height: 30px;
-					color: #4a4a4a;
-					margin-bottom: 15px;
-				}
-				.details {
-					font-size: 16px;
-					line-height: 20px;
-					color: #74848e;
-				}
-			}
-		}
-		.btns {
-			.create {
-				display: block;
-				line-height: 50px;
-			}
-			.btn {
-				padding: 0 50px;
-			}
-		}
-		@include respond-to(desktopSM) {
-			padding: 45px 7% 30px;
-		}
-		@include respond-to(tablet) {
-			h2 {
-				width: 90%;
-			}
-			.benefits-list {
-				margin-bottom: 40px;
-				.benefit {
-					width: 50%;
-					padding: 0 7%;
-					margin-bottom: 55px;
-				}
-			}
-		}
-		@include respond-to(mobileMD) {
-			padding: 45px 0 30px;
-			margin: 0 -20px;
-			h2 {
-				width: 100%;
-				font-size: 38px;
-				line-height: 44px;
-			}
-			.benefits-list {
-				margin: 50px 0 20px;
-				.benefit {
-					width: 100%;
-					padding: 0;
-					margin-bottom: 45px;
-					h3 {
-						font-size: 20px;
-						line-height: 33px;
-					}
-					.details {
-						font-size: 20px;
-						line-height: 33px;
-					}
-				}
-			}
-			.btns {
-				.btn, .create {
-					width: 100%;
-					font-size: 20px;
-					line-height: 55px;
-				}
-				.create {
-					margin-top: 15px;
-				}
-			}
-		}
-	}
-	.visa-finder {
-		padding: 35px 20px 70px;
-		background-color: #f9f9f9;
-		border: 1px solid #f2f2f2;
-		margin: 0 -20px;
-		.visa-finder-container {
-			@include clearfix;
-			.visa-finder-box {
-				margin-left: 8.333%;
-				width: 50%;
-				float: left;
-				h2 {
-					font-size: 30px;
-					line-height: 40px;
-					margin: 5px 0 15px;
-				}
-				p {
-					width: 66.666%;
-					font-size: 16px;
-					line-height: 20px;
-					color: $app_text_dark_color;
-					margin-bottom: 35px;
-				}
-				.btn {
-					padding: 0 38px;
-				}
-			}
-			.visa-finder-types {
-				width: 41.666%;
-				margin: -70px 0 -105px;
-				float: left;
-				padding-left: 30px;
-				box-sizing: border-box;
-				.list {
-					li {
-						background: #fff;
-						border: 1px solid $app_border;
-						padding: 30px;
-						margin-bottom: 20px;
-						white-space: nowrap;
-						&:last-child {
-							margin-bottom: 0;
-						}
-						.icon {
-							width: 55px;
-							margin-right: 40px;
-							display: inline-block;
-							vertical-align: middle;
-							svg {
-								width: 100%;
-								max-height: 55px;
-								fill : #4c9ce0;
-							}
-						}
-						.details {
-							display: inline-block;
-							vertical-align: middle;
-							.title {
-								font: 16px/30px $PNSemibold;
-							}
-							.description {
-								font-size: 16px;
-								line-height: 25px;
-							}
-						}
-					}
-				}
-			}
-		}
-		@include respond-to(tablet) {
-			.visa-finder-container {
-				padding-left: 35px;
-				.visa-finder-box {
-					width: 50%;
-					box-sizing: border-box;
-					padding-right: 20px;
-					margin: 0;
-					h2 {
-						margin-bottom: 25px;
-					}
-					p {
-						width: 100%;
-					}
-				}
-				.visa-finder-types {
-					width: 50%;
-					padding-left: 10px;
-					margin: -45px 0 -90px;
-					.list {
-						li {
-							padding: 30px 15px;
-							.icon {
-								margin-right: 15px;
-							}
-						}
-					}
-				}
-			}
-		}
-		@include respond-to(mobileLG) {
-			margin: 0 -50px;
-			padding: 40px 0 50px;
-			.visa-finder-container {
-				padding: 0 25px;
-				.visa-finder-box {
-					padding: 0;
-					float: none;
-					margin: 0 auto;
-					text-align: center;
-				}
-				.visa-finder-types {
-					width: 100%;
-					margin: 40px 0 0;
-					.list {
-						li {
-							width: 33.333%;
-							float: left;
-							border: none;
-							border: 1px solid $app_border;
-							box-sizing: border-box;
-							text-align: center;
-							white-space: normal;
-							.icon {
-								margin: 0;
-								svg {
-									max-height: 50px;
-								}
-							}
-							&:first-child,
-							&:last-child {
-								border: 1px solid $app_border;
-							}
-							&:first-child {border-right:0;}
-							&:last-child {border-left:0;}
-						}
-					}
-				}
-			}
-		}
-		@include respond-to(mobileMD) {
-			.visa-finder-container {
-				padding: 0 25px;
-				.visa-finder-box {
-					width: 100%;
-					h2 {
-						font-size: 38px;
-						line-height: 44px;
-					}
-					p {
-						font-size: 20px;
-						line-height: 33px;
-					}
-					.btn {
-						width: 100%;
-						font-size: 20px;
-						line-height: 55px;
-					}
-				}
-			}
-			.visa-finder-types {
-				display: none;
-			}
-		}
-	}
-	.customers {
-		padding: 65px 0 80px;
-		text-align: center;
-		h2 {
-			font-size: 30px;
-			line-height: 40px;
-			margin: 5px 20px 20px;
-			&:after {
-				content: '';
-				display: block;
-				width: 40px;
-				margin: 20px auto 0;
-				border-bottom: 1px solid #c7c9d3;
-			}
-		}
-		.hint {
-			font-size: 16px;
-			line-height: 30px;
-			color: $app_text_dark_color;
-			margin-bottom: 105px;
-		}
-		.customer-list {
-			margin: 0 -10px;
-			@include clearfix;
-			.customer-box {
-				width: 33.333%;
-				float: left;
-				padding: 0 10px;
-				box-sizing: border-box;
-				.customer {
-					background-color: #fafafa;
-					border: 1px solid #eef0f0;
-					padding: 0 30px 20px;
-					min-height: 330px;
-					.img-box {
-						margin: -52px auto 22px;
-						border-radius: 50%;
-						width: 120px;
-						height: 120px;
-						overflow: hidden;
-						img {
-							width: 100%;
-							height: auto;
-						}
-					}
-					.name {
-						font-family: $PNSemibold;
-						font-size: 22px;
-						line-height: 30px;
-						color: #4a4a4a;
-						margin-bottom: 6px;
-					}
-					.description {
-						font-size: 15px;
-						line-height: 20px;
-						color: #748ea4;
-						margin-bottom: 30px;
-					}
-					.review {
-						font-size: 15px;
-						line-height: 20px;
-						color: #4a4a4a;
-					}
-				}
-			}
-		}
-		@include respond-to(tablet) {
-			.customer-list {
-				padding: 0 20px;
-			}
-		}
-		@include respond-to(mobileLG) {
-			padding: 35px 0 0;
-			margin:0 -50px;
-			h2 {
-				font-size: 38px;
-				line-height: 44px;
-				&:after {
-					width: 55px;
-					margin-top: 35px;
-				}
-			}
-			.hint {
-				font-size: 20px;
-				line-height: 33px;
-			}
-			.customer-list {
-				margin: 0;
-				padding: 0;
-				.customer-box {
-					width: 100%;
-					margin-bottom: 90px;
-					padding: 0;
-					.customer {
-						padding: 0 20px 35px;
-						.description {
-							font-size: 16px;
-						}
-						.review {
-							font-size: 20px;
-							line-height: 33px;
-						}
-					}
-				}
-			}
-		}
-	}
-	.video {
-		height: 434px;
-		background-color: #fafafa;
-		background-position: 50% 50%;
-		background-size: cover;
-		background-repeat: no-repeat;
-		position: relative;
-		.video-overlay {
-			background: url('/assets/images/bg-video-overlay.png');
-			position: absolute;
-			left: 0;
-			top: 0;
-			right: 0;
-			bottom: 0;
-			.btn-play {
-				position: absolute;
-				left: 50%;
-				top: 50%;
-				width: 70px;
-				height: 70px;
-				background: url('/assets/images/btn-play.svg') no-repeat;
-				margin-left: -35px;
-				margin-top: -35px;
-				@include hide-text;
-			}
-		}
-		@include respond-to(mobileLG) {
-			margin: -30px -50px 0;
-			height: 240px;
-		}
-	}
+    .text {
+      width: 50%;
+      margin: auto;
+      font-size: 20px;
+      font-weight: 800;
+      line-height: 30px;
+      margin-bottom: 70px;
+      @include respond-to(tablet) {
+        width: 60%;
+      }
+    }
+    .btns {
+      .btn {
+        margin-right: 20px;
+        &:last-child {
+          margin: 0;
+        }
+      }
+    }
+    @include respond-to(mobileMD) {
+      padding: 10px 0 70px;
+      h1 {
+        font-size: 40px;
+        line-height: 50px;
+      }
+      .text {
+        width: 100%;
+        font-size: 20px;
+        line-height: 32px;
+        margin-bottom: 20px;
+      }
+      .btn {
+        width: 100%;
+        font-size: 20px;
+        line-height: 50px;
+        margin: 0 0 15px;
+      }
+    }
+  }
+  .title {
+    font-family: $PNSemibold;
+    font-size: 13px;
+    line-height: 40px;
+    color: #748ea4;
+    text-transform: uppercase;
+    letter-spacing: 0.7px;
+    @include respond-to(mobileLG) {
+      font-size: 14px;
+    }
+  }
+  h2 {
+    font-size: 40px;
+    line-height: 45px;
+    letter-spacing: -0.3px;
+  }
+  .product {
+    padding: 65px 0 80px;
+    background-color: #f9f9f9;
+    border: 1px solid #f2f2f2;
+    margin: 0 -20px;
+    @include clearfix;
+    .product-header {
+      @include clearfix;
+      padding-left: 8.33%;
+    }
+    .details {
+      margin-left: 8.33%;
+      width: 41.66%;
+      float: left;
+      padding: 0 35px 0 1px;
+      box-sizing: border-box;
+      .options {
+        margin-top: 42px;
+        .option {
+          margin-bottom: 25px;
+          h3 {
+            font-size: 16px;
+            line-height: 25px;
+          }
+          p {
+            font-size: 16px;
+            line-height: 25px;
+            color: $app_text_dark_color;
+          }
+        }
+      }
+    }
+    .img-box {
+      background: url('/assets/images/png/mac.png') center/contain no-repeat;
+      width: 60%;
+      margin: 20px -10% 0 -5px;
+      float: right;
+      padding: 220px 0;
+      box-sizing: border-box;
+    }
+    @include respond-to(desktopSM) {
+      padding: 65px 7% 80px;
+      .product-header {
+        padding: 0;
+      }
+      .details {
+        padding-left: 0;
+        margin: 0;
+      }
+      .img-box {
+        width: 50%;
+        padding: 26.5% 0 0;
+        margin: 20px 0 0;
+      }
+    }
+    @include respond-to(tablet) {
+      .product-header {
+        text-align: center;
+      }
+      .details {
+        text-align: center;
+        width: 100%;
+        padding:0;
+      }
+      .img-box {
+        width: 100%;
+        padding-top: 32%;
+        margin: 20px 0 0;
+      }
+    }
+    @include respond-to(mobileLG) {
+      margin: 0 -50px;
+      padding: 20px 7%;
+      .product-header {
+        padding: 0 20px;
+      }
+      .details {
+        width: 100%;
+        padding: 0 20px;
+        .options {
+          .option {
+            padding-right: 0;
+          }
+        }
+      }
+      .img-box {
+        width: 100%;
+        padding-top: 54%;
+        margin: 50px 0 0;
+      }
+    }
+    @include respond-to(mobileMD) {
+      .details {
+        .options {
+          .option {
+            h3, p {
+              font-size: 20px;
+              line-height: 34px;
+              text-align: center;
+            }
+          }
+        }
+      }
+    }
+  }
+  .benefits {
+    padding: 57px 0 60px;
+    text-align: center;
+    h2 {
+      width: 50%;
+      margin: 15px auto 45px;
+      box-sizing: border-box;
+      font-size: 30px;
+      line-height: 40px;
+      strong {
+        font-family: $PNSemibold;
+      }
+    }
+    .switch {
+      @include clearfix;
+      display: table;
+      margin: auto;
+      @include respond-to(mobileMD) {
+        display: block;
+        label {
+          width: 50%;
+          padding: 0;
+          white-space: nowrap;
+          text-align: center;
+        }
+      }
+    }
+    .benefits-list {
+      margin: 73px -15px 76px;
+      @include clearfix;
+      .benefit {
+        width: 25%;
+        padding: 0 15px;
+        float: left;
+        box-sizing: border-box;
+        h3 {
+          font-size: 20px;
+          line-height: 30px;
+          color: #4a4a4a;
+          margin-bottom: 15px;
+        }
+        .details {
+          font-size: 16px;
+          line-height: 20px;
+          color: #74848e;
+        }
+      }
+    }
+    .btns {
+      .create {
+        display: block;
+        line-height: 50px;
+      }
+      .btn {
+        padding: 0 50px;
+      }
+    }
+    @include respond-to(desktopSM) {
+      padding: 45px 7% 30px;
+    }
+    @include respond-to(tablet) {
+      h2 {
+        width: 90%;
+      }
+      .benefits-list {
+        margin-bottom: 40px;
+        .benefit {
+          width: 50%;
+          padding: 0 7%;
+          margin-bottom: 55px;
+        }
+      }
+    }
+    @include respond-to(mobileMD) {
+      padding: 45px 0 30px;
+      margin: 0 -20px;
+      h2 {
+        width: 100%;
+        font-size: 38px;
+        line-height: 44px;
+      }
+      .benefits-list {
+        margin: 50px 0 20px;
+        .benefit {
+          width: 100%;
+          padding: 0;
+          margin-bottom: 45px;
+          h3 {
+            font-size: 20px;
+            line-height: 33px;
+          }
+          .details {
+            font-size: 20px;
+            line-height: 33px;
+          }
+        }
+      }
+      .btns {
+        .btn, .create {
+          width: 100%;
+          font-size: 20px;
+          line-height: 55px;
+        }
+        .create {
+          margin-top: 15px;
+        }
+      }
+    }
+  }
+  .visa-finder {
+    padding: 35px 20px 70px;
+    background-color: #f9f9f9;
+    border: 1px solid #f2f2f2;
+    margin: 0 -20px;
+    .visa-finder-container {
+      @include clearfix;
+      .visa-finder-box {
+        margin-left: 8.333%;
+        width: 50%;
+        float: left;
+        h2 {
+          font-size: 30px;
+          line-height: 40px;
+          margin: 5px 0 15px;
+        }
+        p {
+          width: 66.666%;
+          font-size: 16px;
+          line-height: 20px;
+          color: $app_text_dark_color;
+          margin-bottom: 35px;
+        }
+        .btn {
+          padding: 0 38px;
+        }
+      }
+      .visa-finder-types {
+        width: 41.666%;
+        margin: -70px 0 -105px;
+        float: left;
+        padding-left: 30px;
+        box-sizing: border-box;
+        .list {
+          li {
+            background: #fff;
+            border: 1px solid $app_border;
+            padding: 30px;
+            margin-bottom: 20px;
+            white-space: nowrap;
+            &:last-child {
+              margin-bottom: 0;
+            }
+            .icon {
+              width: 55px;
+              margin-right: 40px;
+              display: inline-block;
+              vertical-align: middle;
+              svg {
+                width: 100%;
+                max-height: 55px;
+                fill : #4c9ce0;
+              }
+            }
+            .details {
+              display: inline-block;
+              vertical-align: middle;
+              .title {
+                font: 16px/30px $PNSemibold;
+              }
+              .description {
+                font-size: 16px;
+                line-height: 25px;
+              }
+            }
+          }
+        }
+      }
+    }
+    @include respond-to(tablet) {
+      .visa-finder-container {
+        padding-left: 35px;
+        .visa-finder-box {
+          width: 50%;
+          box-sizing: border-box;
+          padding-right: 20px;
+          margin: 0;
+          h2 {
+            margin-bottom: 25px;
+          }
+          p {
+            width: 100%;
+          }
+        }
+        .visa-finder-types {
+          width: 50%;
+          padding-left: 10px;
+          margin: -45px 0 -90px;
+          .list {
+            li {
+              padding: 30px 15px;
+              .icon {
+                margin-right: 15px;
+              }
+            }
+          }
+        }
+      }
+    }
+    @include respond-to(mobileLG) {
+      margin: 0 -50px;
+      padding: 40px 0 50px;
+      .visa-finder-container {
+        padding: 0 25px;
+        .visa-finder-box {
+          padding: 0;
+          float: none;
+          margin: 0 auto;
+          text-align: center;
+        }
+        .visa-finder-types {
+          width: 100%;
+          margin: 40px 0 0;
+          .list {
+            li {
+              width: 33.333%;
+              float: left;
+              border: none;
+              border: 1px solid $app_border;
+              box-sizing: border-box;
+              text-align: center;
+              white-space: normal;
+              .icon {
+                margin: 0;
+                svg {
+                  max-height: 50px;
+                }
+              }
+              &:first-child,
+              &:last-child {
+                border: 1px solid $app_border;
+              }
+              &:first-child {border-right:0;}
+              &:last-child {border-left:0;}
+            }
+          }
+        }
+      }
+    }
+    @include respond-to(mobileMD) {
+      .visa-finder-container {
+        padding: 0 25px;
+        .visa-finder-box {
+          width: 100%;
+          h2 {
+            font-size: 38px;
+            line-height: 44px;
+          }
+          p {
+            font-size: 20px;
+            line-height: 33px;
+          }
+          .btn {
+            width: 100%;
+            font-size: 20px;
+            line-height: 55px;
+          }
+        }
+      }
+      .visa-finder-types {
+        display: none;
+      }
+    }
+  }
+  .customers {
+    padding: 65px 0 80px;
+    text-align: center;
+    h2 {
+      font-size: 30px;
+      line-height: 40px;
+      margin: 5px 20px 20px;
+      &:after {
+        content: '';
+        display: block;
+        width: 40px;
+        margin: 20px auto 0;
+        border-bottom: 1px solid #c7c9d3;
+      }
+    }
+    .hint {
+      font-size: 16px;
+      line-height: 30px;
+      color: $app_text_dark_color;
+      margin-bottom: 105px;
+    }
+    .customer-list {
+      margin: 0 -10px;
+      @include clearfix;
+      .customer-box {
+        width: 33.333%;
+        float: left;
+        padding: 0 10px;
+        box-sizing: border-box;
+        .customer {
+          background-color: #fafafa;
+          border: 1px solid #eef0f0;
+          padding: 0 30px 20px;
+          min-height: 330px;
+          .img-box {
+            margin: -52px auto 22px;
+            border-radius: 50%;
+            width: 120px;
+            height: 120px;
+            overflow: hidden;
+            img {
+              width: 100%;
+              height: auto;
+            }
+          }
+          .name {
+            font-family: $PNSemibold;
+            font-size: 22px;
+            line-height: 30px;
+            color: #4a4a4a;
+            margin-bottom: 6px;
+          }
+          .description {
+            font-size: 15px;
+            line-height: 20px;
+            color: #748ea4;
+            margin-bottom: 30px;
+          }
+          .review {
+            font-size: 15px;
+            line-height: 20px;
+            color: #4a4a4a;
+          }
+        }
+      }
+    }
+    @include respond-to(tablet) {
+      .customer-list {
+        padding: 0 20px;
+      }
+    }
+    @include respond-to(mobileLG) {
+      padding: 35px 0 0;
+      margin:0 -50px;
+      h2 {
+        font-size: 38px;
+        line-height: 44px;
+        &:after {
+          width: 55px;
+          margin-top: 35px;
+        }
+      }
+      .hint {
+        font-size: 20px;
+        line-height: 33px;
+      }
+      .customer-list {
+        margin: 0;
+        padding: 0;
+        .customer-box {
+          width: 100%;
+          margin-bottom: 90px;
+          padding: 0;
+          .customer {
+            padding: 0 20px 35px;
+            .description {
+              font-size: 16px;
+            }
+            .review {
+              font-size: 20px;
+              line-height: 33px;
+            }
+          }
+        }
+      }
+    }
+  }
+  .video {
+    height: 434px;
+    background-color: #fafafa;
+    background-position: 50% 50%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+    .video-overlay {
+      background: url('/assets/images/bg-video-overlay.png');
+      position: absolute;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      .btn-play {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        width: 70px;
+        height: 70px;
+        background: url('/assets/images/btn-play.svg') no-repeat;
+        margin-left: -35px;
+        margin-top: -35px;
+        @include hide-text;
+      }
+    }
+    @include respond-to(mobileLG) {
+      margin: -30px -50px 0;
+      height: 240px;
+    }
+  }
 }

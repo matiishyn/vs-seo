@@ -11,7 +11,7 @@ import { bootloader } from '@angularclass/bootloader';
 import { load as loadWebFont } from 'webfontloader';
 
 // enable prod for faster renders
-// enableProdMode();
+enableProdMode();
 
 import { MainModule } from './browser.module';
 

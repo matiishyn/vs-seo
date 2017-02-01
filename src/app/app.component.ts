@@ -4,7 +4,7 @@ import {Meta} from "../angular2-meta";
 import {TranslateService} from "ng2-translate";
 import {DOCUMENT} from '@angular/platform-browser';
 import {isBrowser} from "angular2-universal";
-import {ModelService} from "./shared/model/model.service";
+import {ABSOLUTE_URL} from "./constants";
 
 @Component({
   changeDetection: ChangeDetectionStrategy.Default,
@@ -22,9 +22,10 @@ export class AppComponent implements OnInit {
   ngOnInit() {
     this.router.events.subscribe(event => {
       if (event instanceof NavigationEnd) {
-        const title = this.getRouterData('title', this.router.routerState, this.router.routerState.root).pop();
-        const description = this.getRouterData('description', this.router.routerState, this.router.routerState.root).pop();
-        const keywords = this.getRouterData('keywords', this.router.routerState, this.router.routerState.root).pop();
+        const title: string = this.getRouterData('title', this.router.routerState, this.router.routerState.root).pop();
+        const description: string = this.getRouterData('description', this.router.routerState, this.router.routerState.root).pop();
+        const keywords: string = this.getRouterData('keywords', this.router.routerState, this.router.routerState.root).pop();
+        const canonicalHref: string = this.getRouterData('canonicalHref', this.router.routerState, this.router.routerState.root).pop();
         // translate title
         this.translate.get(title).subscribe((res: string) => {
           this.meta.setTitle(res);
@@ -38,12 +39,23 @@ export class AppComponent implements OnInit {
           this.meta.updateMeta('keywords', res);
         });
 
+        if (canonicalHref) {
+          const madeCanonicalHref = this.makeCanonicalHref(canonicalHref);
+          this.meta.addCanonicalLink(madeCanonicalHref);
+        }
+
         // scroll top on every page transition
         if (isBrowser) {
           this.document.body.scrollTop = 0;
         }
       }
     });
+  }
+
+  makeCanonicalHref(canonicalHref: string): string {
+    canonicalHref = canonicalHref.replace('{{absoluteUrl}}', ABSOLUTE_URL);
+    canonicalHref = canonicalHref.replace('{{lang}}', this.translate.currentLang);
+    return canonicalHref
   }
 
   // todo refactor this, can be performance leak here

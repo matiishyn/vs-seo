@@ -1430,7 +1430,7 @@
 
 @media (max-width:768px) {
 	.page-wrap, .page-wrap.individual-visas {
-		padding: 0 20px;
+		padding: 0;
 		.page-content {
 			.visa-details-page {
 				.main {
@@ -1470,14 +1470,15 @@
 	}
 }
 .gradient {
-	background: url('/assets/images/gradient.svg') no-repeat 100% 500px;
+	background: url('/assets/images/gradient.png') no-repeat 0 620px;
+    background-size: 100%;
 	@include respond-to(tablet) {
-		background-position:100% 430px;
+		background-position:100% 850px;
 	}
 	@include respond-to(mobileLG) {
-		background-position:100% 360px;
+		background-position:100% 830px;
 	}
 	@include respond-to(mobileMD) {
-		background-position:100% 540px;
+		background-position:100% 1020px;
 	}
 }
